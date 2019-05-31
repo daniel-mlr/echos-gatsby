@@ -7,7 +7,7 @@ const AboutPage = () => {
     <Layout>
       <h1>About</h1>
       <p>This is the about page.  Place to talk about choir story, location, etc.</p>
-      <p><Link to="contact">Venez à nos pratiques.</Link>
+      <p><Link to="/contact">Venez à nos pratiques.</Link>
       </p>
     </Layout>
   )
