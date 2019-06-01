@@ -17,5 +17,6 @@
   "debug.console.fontSize": 12,
   "markdown.preview.fontSize": 12,
   "editor.tabSize": 2,
-  "html.format.indentHandlebars": true
+  "html.format.indentHandlebars": true,
+  "workbench.colorTheme": "Monokai Pro"
 }
