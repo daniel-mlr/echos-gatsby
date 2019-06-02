@@ -11,6 +11,7 @@ module.exports = {
     author: 'Les Échos du Pacifique'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {
