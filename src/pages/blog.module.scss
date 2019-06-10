@@ -1,3 +1,5 @@
+@import '../styles/settings.scss';
+
 .posts {
   list-style-type: none;
   margin: 0;
@@ -7,7 +9,8 @@
   margin: 1rem 0;
 
   a {
-    background: rgb(107, 187, 175);
+    // background: rgb(107, 187, 175);
+    background: $headerbackgroundcolor;
     color: #222;
     display: block;
     padding: 1rem;

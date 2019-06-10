@@ -7,6 +7,10 @@
       "before": [ "j", "j" ],
       "after": [ "<esc>" ]
     }, 
+    {
+      "before": [ ";", ";" ],
+      "after": [ "<esc>", "$", "A" ]
+    }, 
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {

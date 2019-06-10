@@ -7,9 +7,9 @@ import Head from '../components/head'
 
 export const query = graphql`
   query ($slug: String) {
-    contentfulBlogPost(slug: {eq: $slug}) {
-      title
-      publishedDate(formatString: "MMMM Do, YYYY")
+    contentfulBlogues(slug: {eq: $slug}) {
+      titre
+      publicationDate(formatString: "MMMM Do, YYYY")
       body { json }
     }
   }
@@ -27,10 +27,10 @@ const Blog = (props) => {
   }
   return (
     <Layout>
-      <Head title={props.data.contentfulBlogPost.title}/>
-      <h1>{props.data.contentfulBlogPost.title} </h1>
-      <p>{props.data.contentfulBlogPost.publishedDate} </p>
-      { documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+      <Head title={props.data.contentfulBlogues.tirle}/>
+      <h1>{props.data.contentfulBlogues.titre} </h1>
+      <p>{props.data.contentfulBlogues.publicationDate} </p>
+      { documentToReactComponents(props.data.contentfulBlogues.body.json, options)}
     </Layout>
   )
 }

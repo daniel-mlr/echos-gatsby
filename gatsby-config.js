@@ -8,7 +8,15 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Les Échos du Pacifique',
-    author: 'Les Échos du Pacifique'
+    author: 'Daniel Meilleur - Les Échos du Pacifique',
+    menuItems: {
+      home: 'Accueil',
+      concerts: 'Concerts',
+      pratiques: 'Pratiques',
+      nouvelles: 'Nouvelles',
+      contact: 'Contact',
+      about: 'À propos'
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
