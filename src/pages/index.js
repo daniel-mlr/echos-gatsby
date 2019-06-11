@@ -22,6 +22,7 @@ const IndexPage = () => {
                 url
               }
             }
+            callToAction
           }
         }
       }
@@ -58,6 +59,13 @@ const IndexPage = () => {
         <p>{concerts.allContentfulConcerts.edges[0].node.concertName}</p>
         <p>{concerts.allContentfulConcerts.edges[0].node.announcementDate}</p>
         { documentToReactComponents(concerts.allContentfulConcerts.edges[0].node.description.json, options)}
+        <form 
+          action={concerts.allContentfulConcerts.edges[0].node.callToAction}
+          method="get"
+          target="_blank"
+        >
+          <button type="submit">Billets / Tickets</button>
+        </form>
       </div>
     </Layout>
   )
