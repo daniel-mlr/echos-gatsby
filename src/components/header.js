@@ -23,7 +23,7 @@ const Header = () => {
     }
   }
   `)
-  console.log('@@@@@@@@@ data @@@@@@@@@', data)
+
   return (
     <header className={headerStyles.header}>
       <nav className={headerStyles.navigation}>

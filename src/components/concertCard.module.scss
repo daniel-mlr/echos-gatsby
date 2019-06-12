@@ -1,23 +1,25 @@
-.main-container {
+
+.main-container{
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-.img-container {
+.img-container{
   align-self: end;
   justify-self: end;
   min-width: 880px;
   img {
-    width: 100%;
+    width: 100%;    
   }
 }
-.content-container {
+.content-container{
   align-self: center;
   padding-left: 30px;
   padding-right: 15px;
-
+  
   p {
-    color: grey;
+    color:grey;
     text-align: justify;
+    
   }
 }

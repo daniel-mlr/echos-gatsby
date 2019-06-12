@@ -1,17 +1,17 @@
 import React from 'react'
-// import { Link, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import localStyle from './concertCard.module.scss'
 
 const ConcertCard = (props) => {
-  // console.log(props.imgUrl)
   return (
+
     <section className={localStyle.mainContainer}>
       <div className={localStyle.imgContainer}>
         <img src={props.imgUrl}></img>
       </div>
       <div className={localStyle.contentContainer}>
-        <p>{props.name}</p>
+
+        <h2>{props.name}</h2>
         <p>{props.date} </p>
         {props.content}
         <button type="submit">Billets / Tickets</button>

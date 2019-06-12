@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Jumbotron from '../components/jumbotron'
 import ConcertCard from '../components/concertCard'
+import BlogGridCard from '../components/blogGridCard'
 
 const IndexPage = () => {
   const concerts = useStaticQuery(graphql`
@@ -30,7 +31,6 @@ const IndexPage = () => {
       }
     }
 `)
-
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -67,8 +67,7 @@ const IndexPage = () => {
           <button type="submit">Billets / Tickets</button>
         </form>
       </div> */}
-      <section><p>Blog HERE</p></section>
-
+      <BlogGridCard></BlogGridCard>
     </Layout>
   )
 }
