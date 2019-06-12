@@ -1,9 +1,8 @@
 import React from 'react'
-// import { Link, useStaticQuery } from 'gatsby'
-
 import localStyle from './concertCard.module.scss'
 
 const ConcertCard = (props) => {
+  console.log('inside ConcertCard')
   console.log(props)
   console.log(props.imgUrl)
 return (
