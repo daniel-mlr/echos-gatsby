@@ -41,7 +41,7 @@ This is a draft for the future website for
 
 1.  **Create "Recent News" section** 
 
-    This section would be rendered on the first page, pbssibly below the concert anouncement (short format)
+    This section would be rendered on the first page, possibly below the concert anouncement (short format)
 
     This section would be displayed in 3 (or 4) columns on large screens and in single column on narrow screen, with image on top of each item. Each item would include a link to the long story. 
 

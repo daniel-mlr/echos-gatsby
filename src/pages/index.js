@@ -40,8 +40,6 @@ const IndexPage = () => {
     }
   }
 
-    
-  console.log('@@@@@@@ concerts @@@@@', concerts)
   return (
     <Layout>
       <Head title="Home"/>
