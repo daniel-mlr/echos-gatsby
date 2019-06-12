@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import localStyle from './concertCard.module.scss'
 
 const ConcertCard = (props) => {
-  console.log(props)
   // console.log(props.imgUrl)
   return (
     <section className={localStyle.mainContainer}>
