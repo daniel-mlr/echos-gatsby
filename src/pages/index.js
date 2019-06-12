@@ -42,6 +42,8 @@ const IndexPage = () => {
     }
   }
 
+    
+  console.log('@@@@@@@ concerts @@@@@', concerts)
   return (
     <Layout>
 
