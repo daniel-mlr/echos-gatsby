@@ -2,6 +2,7 @@ import React from 'react'
 import { Link , graphql, useStaticQuery } from 'gatsby'
 
 import headerStyles from './header.module.scss'
+// import { FaClosedCaptioning } from 'react-icons/fa'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +23,7 @@ const Header = () => {
     }
   }
   `)
+  console.log('@@@@@@@@@ data @@@@@@@@@', data)
   return (
     <header className={headerStyles.header}>
       <nav className={headerStyles.navigation}>
