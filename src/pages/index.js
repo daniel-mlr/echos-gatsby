@@ -5,6 +5,8 @@ import homeStyles from './index.module.scss'
 import { FaBeer, FaTwitter, FaFacebook, FaInstagram} from 'react-icons/fa'
 import { graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Jumbotron from '../components/jumbotron';
+import ConcertCard from '../components/concertCard';
 
 const IndexPage = () => {
   const concerts = useStaticQuery(graphql`
@@ -42,17 +44,14 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Head title="Home"/>
-      <div className={homeStyles.background}>
-        <h1>Hello</h1>
-        <FaTwitter style={{color:'blue', fontSize: '1.5rem'}} />
-        <FaFacebook style={{color:'blue', fontSize: '1.5rem'}} />
-        <FaInstagram style={{color:'blue', fontSize: '1.5rem'}} />
-        <p> Lets go for a <FaBeer style={{color: 'red', fontSize: '1.5rem'}}  />? </p>
-        {/* <img src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1555399164/echos/regards_sourires-650x350.jpg" alt="mon image"/> */}
-      </div>
-      <button>Nos concerts</button>
-      <div>
+
+      <Head title="Home" />
+      <Jumbotron />
+      <ConcertCard imgUrl={concerts.allContentfulConcerts.edges[0].node.poster.file.url}
+        name={concerts.allContentfulConcerts.edges[0].node.concertName}
+        date={concerts.allContentfulConcerts.edges[0].node.announcementDate}
+        content={documentToReactComponents(concerts.allContentfulConcerts.edges[0].node.description.json, options)} />
+      {/* <div>
         <img src={concerts.allContentfulConcerts.edges[0].node.poster.file.url} />
         <p>{concerts.allContentfulConcerts.edges[0].node.concertName}</p>
         <p>{concerts.allContentfulConcerts.edges[0].node.announcementDate}</p>
@@ -64,7 +63,9 @@ const IndexPage = () => {
         >
           <button type="submit">Billets / Tickets</button>
         </form>
-      </div>
+      </div> */}
+      <section><p>Blog HERE</p></section>
+
     </Layout>
   )
 }

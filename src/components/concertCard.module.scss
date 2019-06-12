@@ -1,0 +1,23 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.img-container {
+  align-self: end;
+  justify-self: end;
+  min-width: 880px;
+  img {
+    width: 100%;
+  }
+}
+.content-container {
+  align-self: center;
+  padding-left: 30px;
+  padding-right: 15px;
+
+  p {
+    color: grey;
+    text-align: justify;
+  }
+}
