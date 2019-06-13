@@ -1,13 +1,15 @@
 .main-container {
-  position: relative;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 0;
+  border: 1px dashed lightgray;
   border-radius: 0; 
   width: 300px;
   text-align: center;
-  padding: 0px 5px;
+  padding: 5px;
+  margin: 40px 20px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

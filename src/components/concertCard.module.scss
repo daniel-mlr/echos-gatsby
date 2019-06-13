@@ -1,21 +1,23 @@
 
 .main-container{
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
 }
 
 .img-container{
-  align-self: end;
-  justify-self: end;
-  min-width: 880px;
+  width: 50%;
+  min-height: 120px;
+  max-height: auto;
+  float: left;
+  margin: 0;
+  padding: 0;
   img {
-    width: 100%;    
+    width: 100%;
+    height: auto;
   }
 }
 .content-container{
-  align-self: center;
-  padding-left: 30px;
-  padding-right: 15px;
+  width: 47%;
+  margin: 6%;
   
   p {
     color:grey;
