@@ -12,7 +12,7 @@ const ConcertCard = (props) => {
       <div className={localStyle.contentContainer}>
 
         <h2>{props.name}</h2>
-        <p>{props.date} </p>
+        <p>{props.date}</p>
         {props.content}
         <button type="submit">Billets / Tickets</button>
       </div>

@@ -1,9 +1,7 @@
 /* globals module */
 const path = require('path')
 
-// Cette config est pour Contentful.
-// Consulter versions précédentes pour voir configuration 
-// pour fichiers locaux markdown.
+// see Gatsby Node APIs
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve('./src/templates/blog.js')

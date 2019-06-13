@@ -29,20 +29,24 @@ const Header = () => {
       <nav className={headerStyles.navigation}>
         <div className={headerStyles.navContainer}>
           <Link className={headerStyles.title} to="/">
-            <span className={headerStyles.logo}>Logo</span>
-            <h3 className={headerStyles.sitenames}>
+            <img
+              className={headerStyles.logo}
+              src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560419215/echos/Les-Echos-du-Pacifique_logo_alpha.png'
+              alt='logo
+              '/>
+            {/* <h3 className={headerStyles.sitenames}>
               {data.site.siteMetadata.title}
-            </h3>
+            </h3> */}
           </Link>
           <div>
             <ul className={headerStyles.navList}>
-              <li>
+              {/* <li>
                 <Link
                   className={headerStyles.navItem}
                   activeClassName={headerStyles.activeNavItem}
                   to="/">{data.site.siteMetadata.menuItems.home}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className={headerStyles.navItem}
