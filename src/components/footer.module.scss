@@ -8,16 +8,14 @@
   margin-left: auto;
 }
 .container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
-  margin-left: 48;
-  margin-right: 48px;
+  display: flex;
+  margin:0; 
   p {
     margin:0px;
+    flex-grow: 1;
   }
 }
 .social {
+  flex-grow: 1;
   text-align: right;  
 }
