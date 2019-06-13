@@ -4,11 +4,12 @@ import { Link} from 'gatsby'
 import PropTypes from 'prop-types'
 
 const BlogCard = (props) => {
+  
   return (
   
     <div className={localStyle.mainContainer}>
       
-      <img src={props.imgUrl}></img>
+      <img alt={props.imgAlt} src={props.imgUrl}></img>
       
       <div className={localStyle.bodyContent}>  
         <h3>{props.name}</h3>

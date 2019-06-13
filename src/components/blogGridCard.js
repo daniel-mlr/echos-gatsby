@@ -13,6 +13,13 @@ const BlogGridCard = () => {
             titre
             publicationDate(formatString: "MMM Do, YYYY")
             slug
+            previewPicture { 
+              title 
+              description
+              file {
+                url
+              }
+            }
             body { json }
           }
         }
@@ -25,21 +32,15 @@ const BlogGridCard = () => {
       <div className={localStyle.container} >
         {
           blogData.allContentfulBlogues.edges.map((edge, idx) => {
-            const options = {
-              renderNode: {
-                'embedded-asset-block': (node) => {
-                  return node.data.target.fields.file['en-US'].url
-                }
-              }
-            }
-
+                      
             return (
               <BlogCard 
                 name={edge.node.titre}
                 key={idx}
                 date={edge.node.publicationDate}
                 slug={edge.node.slug}
-                imgUrl={documentToReactComponents(edge.node.body.json, options)[2]}
+                imgUrl={edge.node.previewPicture.file.url}
+                imgAlt={edge.node.previewPicture.description}
                 content="">
               </BlogCard>
             )
