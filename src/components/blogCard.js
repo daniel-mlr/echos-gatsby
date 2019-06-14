@@ -25,6 +25,7 @@ BlogCard.propTypes = {
   date: PropTypes.string,
   content: PropTypes.string,
   imgUrl: PropTypes.string,
-  slug: PropTypes.string
+  slug: PropTypes.string,
+  imgAlt: PropTypes.string
 }
 export default BlogCard

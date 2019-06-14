@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link , useStaticQuery } from 'gatsby'
+// import { Link , useStaticQuery } from 'gatsby'
 
 import localStyle from './jumbotron.module.scss'
 
 const Jumbotron = () => {
 
-return (
+  return (
 
     <section className={localStyle.section}>
       <div className={localStyle.content}>

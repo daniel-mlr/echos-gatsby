@@ -2,12 +2,15 @@ import React from 'react'
 import localStyle from './blogGridCard.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import BlogCard from '../components/blogCard'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const BlogGridCard = () => {
   const blogData = useStaticQuery(graphql`
     query {
-      allContentfulBlogues(sort: { fields: publicationDate, order: DESC }) {
+      allContentfulBlogues(
+        sort: { fields: publicationDate, order: DESC }
+        limit: 3
+      ) {
         edges {
           node {
             titre
@@ -32,7 +35,6 @@ const BlogGridCard = () => {
       <div className={localStyle.container} >
         {
           blogData.allContentfulBlogues.edges.map((edge, idx) => {
-                      
             return (
               <BlogCard 
                 name={edge.node.titre}

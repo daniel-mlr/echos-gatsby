@@ -42,19 +42,3 @@ const BlogPage = () => {
   )
 }
 export default BlogPage
-
-// query {
-//   allMarkdownRemark {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             date
-//           }
-//           fields {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
