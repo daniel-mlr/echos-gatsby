@@ -13,6 +13,7 @@ const BlogPage = () => {
             titre
             publicationDate(formatString: "MMM Do, YYYY")
             slug
+            summary { summary }
           }
         }
       }
@@ -22,22 +23,26 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog"/>
-      <h1>Nouvelles</h1>
-      <ol className={blogStyles.posts}>
+      <section className={blogStyles.section} >
+        <h1>Nouvelles</h1>
+        <div className={blogStyles.mainContainer} >
         {
           data.allContentfulBlogues.edges.map((edge, id) => {
             return (
-              <li className={blogStyles.post} key={id} >
-                <Link to={`/blog/${edge.node.slug}`}>
-                  <h2>{edge.node.titre}</h2>
-                  <p>{edge.node.publicationDate}</p>
-                </Link>
-              </li>
+              <article className={blogStyles.articleContainer} key={id} >
+                
+                  <header>
+                    <h2>{edge.node.titre}</h2>
+                    <p>{edge.node.publicationDate}</p>
+                  </header>
+                  <p>{edge.node.summary.summary}</p>
+                  <Link to={`/blog/${edge.node.slug}`}>Read more</Link>
+              </article>
             )
           })
         }
-      </ol>
-
+        </div>
+    </section>
     </Layout>
   )
 }
