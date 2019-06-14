@@ -13,8 +13,8 @@ const BlogCard = (props) => {
       
       <div className={localStyle.bodyContent}>  
         <h3>{props.name}</h3>
-        <p>{props.date} </p>
-        {props.content}
+        <p className={localStyle.date} >{props.date} </p>
+        <p className={localStyle.content} >{props.content}</p>
       </div>
       <Link to={`/blog/${props.slug}`}>More...</Link>
     </div>

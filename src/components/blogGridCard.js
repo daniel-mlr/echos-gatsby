@@ -20,6 +20,7 @@ const BlogGridCard = () => {
                 url
               }
             }
+            summary { summary }
             body { json }
           }
         }
@@ -41,7 +42,7 @@ const BlogGridCard = () => {
                 slug={edge.node.slug}
                 imgUrl={edge.node.previewPicture.file.url}
                 imgAlt={edge.node.previewPicture.description}
-                content="">
+                content={edge.node.summary.summary} >
               </BlogCard>
             )
           })
