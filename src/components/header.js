@@ -1,24 +1,14 @@
 import React from 'react'
 import { Link , graphql, useStaticQuery } from 'gatsby'
-
 import headerStyles from './header.module.scss'
-// import { FaClosedCaptioning } from 'react-icons/fa'
+import Menu from './menu';
 
 const Header = () => {
   const data = useStaticQuery(graphql`
   query {
     site {
       siteMetadata {
-        title
-        author
-        menuItems {
-          home
-          concerts
-          pratiques
-          nouvelles
-          contact
-          about
-        }
+        menu { id, href, text }
       }
     }
   }
@@ -27,57 +17,16 @@ const Header = () => {
   return (
     <header className={headerStyles.header}>
       <nav className={headerStyles.navigation}>
-        <div className={headerStyles.navContainer}>
-          <Link className={headerStyles.title} to="/">
-            <img
-              className={headerStyles.logo}
-              src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560419215/echos/Les-Echos-du-Pacifique_logo_alpha.png'
-              alt='logo
-              '/>
-            {/* <h3 className={headerStyles.sitenames}>
-              {data.site.siteMetadata.title}
-            </h3> */}
-          </Link>
-          <div>
-            <ul className={headerStyles.navList}>
-              {/* <li>
-                <Link
-                  className={headerStyles.navItem}
-                  activeClassName={headerStyles.activeNavItem}
-                  to="/">{data.site.siteMetadata.menuItems.home}
-                </Link>
-              </li> */}
-              <li>
-                <Link
-                  className={headerStyles.navItem}
-                  activeClassName={headerStyles.activeNavItem}
-                  to="/concerts">{data.site.siteMetadata.menuItems.concerts}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={headerStyles.navItem}
-                  activeClassName={headerStyles.activeNavItem}
-                  to="/contact">{data.site.siteMetadata.menuItems.contact}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={headerStyles.navItem}
-                  activeClassName={headerStyles.activeNavItem}
-                  to="/blog">{data.site.siteMetadata.menuItems.nouvelles}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={headerStyles.navItem}
-                  activeClassName={headerStyles.activeNavItem}
-                  to="/about">{data.site.siteMetadata.menuItems.about}
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        {/* <Link className={headerStyles.title} to="/">
+          <img
+            className={headerStyles.logo}
+            src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560419215/echos/Les-Echos-du-Pacifique_logo_alpha.png'
+            alt='logo
+            '/>
+        </Link>
+         */}
+          <Menu links={data.site.siteMetadata.menu} />
+        
       </nav>
     </header>
   )
