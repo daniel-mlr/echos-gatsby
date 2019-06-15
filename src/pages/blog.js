@@ -26,23 +26,22 @@ const BlogPage = () => {
       <section className={blogStyles.section} >
         <h1>Nouvelles</h1>
         <div className={blogStyles.mainContainer} >
-        {
-          data.allContentfulBlogues.edges.map((edge, id) => {
-            return (
-              <article className={blogStyles.articleContainer} key={id} >
-                
+          {
+            data.allContentfulBlogues.edges.map((edge, id) => {
+              return (
+                <article className={blogStyles.articleContainer} key={id} >
                   <header>
                     <h2>{edge.node.titre}</h2>
                     <p>{edge.node.publicationDate}</p>
                   </header>
                   <p>{edge.node.summary.summary}</p>
                   <Link to={`/blog/${edge.node.slug}`}>Read more</Link>
-              </article>
-            )
-          })
-        }
+                </article>
+              )
+            })
+          }
         </div>
-    </section>
+      </section>
     </Layout>
   )
 }

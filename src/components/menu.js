@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import menuStyles from './menu.module.scss'
-import { FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 
 class Menu extends Component {
   
@@ -11,10 +12,10 @@ class Menu extends Component {
     position: 0
   }  
 
-  handleOnClick = () => {    
+  handleOnClick = () => {
     this.state.isOpen
       ? this.setState(state => ({ ...state, isOpen: false }))
-      : this.setState(state => ({ ...state, isOpen: true }))    
+      : this.setState(state => ({ ...state, isOpen: true }))
   }
 
   render(){
@@ -25,7 +26,6 @@ class Menu extends Component {
     
     return (
       <div className={menuClassName}>
-
         <Link className={menuStyles.title} to="/">
           <img
             className={menuStyles.logo}
@@ -34,17 +34,20 @@ class Menu extends Component {
             '/>
         </Link>
    
-      {this.props.links.map(link => {
-        return (
-          <Link to={link.href} key={link.id} activeClassName={menuStyles.active} >{link.text}</Link>
-        )
-      })}
-      <a href="javascript:void(0);" className={menuStyles.bars} onClick={this.handleOnClick}>
-        <FaBars size={40} />
-      </a>
+        {this.props.links.map(link => {
+          return (
+            <Link to={link.href} key={link.id} activeClassName={menuStyles.active} >{link.text}</Link>
+          )
+        })}
+        <a href="javascript:void(0);" className={menuStyles.bars} onClick={this.handleOnClick}>
+          <FaBars size={40} />
+        </a>
       </div>
-      )
+    )
   }
+}
+Menu.propTypes = {
+  links: PropTypes.array.isRequired
 }
 
 export default Menu
