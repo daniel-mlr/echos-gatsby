@@ -54,19 +54,7 @@ const IndexPage = () => {
             concerts.allContentfulConcerts.edges[0].node.description.json, options
           )
         } />
-      {/* <div>
-        <img src={concerts.allContentfulConcerts.edges[0].node.poster.file.url} />
-        <p>{concerts.allContentfulConcerts.edges[0].node.concertName}</p>
-        <p>{concerts.allContentfulConcerts.edges[0].node.announcementDate}</p>
-        { documentToReactComponents(concerts.allContentfulConcerts.edges[0].node.description.json, options)}
-        <form 
-          action={concerts.allContentfulConcerts.edges[0].node.callToAction}
-          method="get"
-          target="_blank"
-        >
-          <button type="submit">Billets / Tickets</button>
-        </form>
-      </div> */}
+        
       <BlogGridCard></BlogGridCard>
     </Layout>
   )
