@@ -9,15 +9,28 @@ module.exports = {
   siteMetadata: {
     title: 'Les Échos du Pacifique',
     author: 'Daniel Meilleur - Les Échos du Pacifique',
-    menuItems: {
-      home: 'Accueil',
-      concerts: 'Concerts',
-      pratiques: 'Pratiques',
-      nouvelles: 'Nouvelles',
-      contact: 'Contact',
-      about: 'À propos'
-    }
-  },
+    menu:[
+      {
+        id: 1,
+        href: '/concerts',
+        text: 'Concerts'
+      },
+      {
+        id: 2,
+        href: '/contact',
+        text: 'Contact'
+      },
+      {
+        id: 3,
+        href: '/blog',
+        text: 'Nouvelles'
+      },
+      {
+        id: 4,
+        href: '/about',
+        text: 'À propos'
+      }
+    ]},
   plugins: [
     'gatsby-plugin-react-helmet',
     {
