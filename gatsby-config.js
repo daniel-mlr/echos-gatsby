@@ -12,13 +12,13 @@ module.exports = {
     menu:[
       {
         id: 1,
-        href: '/concerts',
-        text: 'Concerts'
+        href: '/',
+        text: 'Accueil'
       },
       {
         id: 2,
-        href: '/contact',
-        text: 'Contact'
+        href: '/concerts',
+        text: 'Concerts'
       },
       {
         id: 3,
@@ -27,10 +27,20 @@ module.exports = {
       },
       {
         id: 4,
+        href: '/contact',
+        text: 'Joignez-nous'
+      },
+      {
+        id: 5,
         href: '/about',
-        text: 'À propos'
+        text: 'La chorale'
       }
-    ]},
+    ],
+    hero: {
+      main: 'Les Échos du Pacifique',
+      sub:  'La chorale francophone de Vancouver'
+    } 
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {

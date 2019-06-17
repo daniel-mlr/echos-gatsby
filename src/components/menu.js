@@ -30,8 +30,8 @@ class Menu extends Component {
           <img
             className={menuStyles.logo}
             src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560419215/echos/Les-Echos-du-Pacifique_logo_alpha.png'
-            alt='logo
-            '/>
+            alt='logo'
+          />
         </Link>
    
         {this.props.links.map(link => {

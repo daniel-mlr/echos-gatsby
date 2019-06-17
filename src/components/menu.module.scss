@@ -31,11 +31,11 @@
   
   /* Change the color of links on hover */
   a:hover {    
-    color: #de6320;;
+    color: $nav-items-color-hover;
   }
   /* Add an active class to highlight the current page */
   a.active {    
-    color: #de6320;
+    color:$nav-items-color-active;
     font-weight: bolder;
   }
   a.bars {
