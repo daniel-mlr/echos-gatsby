@@ -36,9 +36,13 @@ class Menu extends Component {
    
         {this.props.links.map(link => {
           return (
-            <Link to={link.href} key={link.id} activeClassName={menuStyles.active} >{link.text}</Link>
-          )
-        })}
+            <Link
+              to={link.href}
+              key={link.id}
+              activeClassName={menuStyles.active}
+            >{link.text}</Link>
+          )})
+        }
         <a href="javascript:void(0);" className={menuStyles.bars} onClick={this.handleOnClick}>
           <FaBars size={40} />
         </a>

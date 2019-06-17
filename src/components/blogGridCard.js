@@ -2,7 +2,6 @@ import React from 'react'
 import localStyle from './blogGridCard.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import BlogCard from '../components/blogCard'
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const BlogGridCard = () => {
   const blogData = useStaticQuery(graphql`

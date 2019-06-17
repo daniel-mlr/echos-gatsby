@@ -4,8 +4,6 @@ import Footer from './footer'
 import PropTypes from 'prop-types'
 import '../styles/index.scss'
 import layoutStyles  from './layout.module.scss'
-// import { graphql, useStaticQuery } from 'gatsby'
-
 
 const Layout = (props) => {
   return (

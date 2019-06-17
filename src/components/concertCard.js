@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import localStyle from './concertCard.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -29,8 +28,6 @@ const ConcertCard = () => {
 
   const concert = concerts.allContentfulConcerts.edges[0].node
 
-  console.log('--- concerts ---', concerts)
-
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -57,12 +54,5 @@ const ConcertCard = () => {
     </section>
   )
 }
-
-// ConcertCard.propTypes = {
-//   name: PropTypes.string,
-//   date: PropTypes.string,
-//   content: PropTypes.array,
-//   imgUrl: PropTypes.string
-// }
 
 export default ConcertCard

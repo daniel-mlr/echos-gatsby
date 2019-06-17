@@ -12,7 +12,10 @@ const ContactPage = () => {
         <div className={Style.mainContainer} >
           <p>Address and phone number, etc.</p>
           <p>
-            <a href="https://twitter.com/ChoeurLesEchos" rel="noopener noreferrer" target="_blank">Our Twitter</a>
+            <a
+              href="https://twitter.com/ChoeurLesEchos"
+              rel="noopener noreferrer"
+              target="_blank">Our Twitter</a>
           </p>
           <div className={Style.iframeContainer} >
             <iframe
@@ -22,7 +25,6 @@ const ContactPage = () => {
               frameBorder="0"
               style={{border:0}}
               allowFullScreen>
-
             </iframe>
           </div>
         </div>

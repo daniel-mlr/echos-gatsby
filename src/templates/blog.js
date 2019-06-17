@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -35,16 +35,15 @@ const Blog = (props) => {
         <h1>Nouvelles</h1>
         <div className={blogStyles.mainContainer} >
           <article className={blogStyles.articleContainer} >
-            
-              <header>
-                <h2>{props.data.contentfulBlogues.titre}</h2>
-                <p>{props.data.contentfulBlogues.publicationDate}</p>
-              </header>
-              <p>{ documentToReactComponents(props.data.contentfulBlogues.body.json, options)}</p>
+            <header>
+              <h2>{props.data.contentfulBlogues.titre}</h2>
+              <p>{props.data.contentfulBlogues.publicationDate}</p>
+            </header>
+            <p>{documentToReactComponents(props.data.contentfulBlogues.body.json, options)}</p>
 
           </article>
         </div>
-    </section>
+      </section>
     </Layout>
   )
 }
