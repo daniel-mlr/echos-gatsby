@@ -3,17 +3,16 @@
 .section {
   position: relative;
   height: 400px;
-  background: url('https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560459372/echos/tenors-sopranos3-crop-1920x1200.jpg') left center no-repeat;
   z-index: 1;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  width: 100%;
-  max-width: 620px;
-  text-align: center;
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+  
+  }
 }
