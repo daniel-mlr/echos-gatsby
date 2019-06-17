@@ -2,14 +2,16 @@ import React from 'react'
 import localStyle from './blogCard.module.scss'
 import { Link} from 'gatsby'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 
 const BlogCard = (props) => {
-  
+  console.log('props',props)
   return (
   
     <div className={localStyle.mainContainer}>
       
-      <img alt={props.imgAlt} src={props.imgUrl}></img>
+      <Img fluid={props.imgFluid.fluid} />
+      {/* <img alt={props.imgAlt} src={props.imgUrl}></img> */}
       
       <div className={localStyle.bodyContent}>  
         <h3>{props.name}</h3>
