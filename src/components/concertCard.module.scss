@@ -1,10 +1,11 @@
 
 .main-container{
   display: flex;
+  flex-flow: wrap;
 }
 
 .img-container{
-  width: 50%;
+  width: 47%;
   min-height: 120px;
   max-height: auto;
   float: left;
@@ -16,11 +17,21 @@
   }
 }
 .content-container{
-  width: 47%;
+  width: 41%;
   margin: 6%;
   
   p {
     color:grey;
     text-align: justify;
   }
+}
+
+@media screen and (max-width: 768px) {  
+
+  .img-container{
+    width: 100%;
+  }
+  .content-container{
+    width: 100%;
+  }  
 }
