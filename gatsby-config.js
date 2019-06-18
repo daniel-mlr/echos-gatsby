@@ -1,9 +1,10 @@
+/* globals module __dirname process*/
+
 /**
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-/* globals module __dirname process*/
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -43,8 +44,8 @@ module.exports = {
     address1: '1200 avenue Cartier,',
     address2: 'Coquitlam, C.-B. V3K 2C3',
     phone: '1-234-567-8900'
-
   },
+
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -77,6 +78,17 @@ module.exports = {
             }
           }
         ]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        // develop: true, // Enable while using `gatsby develop`
+        // tailwind: true, // Enable tailwindcss support
+        // whitelist: ['whitelist'], // Don't remove this selector
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       }
     }
   ]

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 const BlogCard = (props) => {
-  console.log('props',props)
   return (
   
     <div className={localStyle.mainContainer}>
@@ -29,6 +28,9 @@ BlogCard.propTypes = {
   // imgUrl: PropTypes.string,
   slug: PropTypes.string,
   // imgAlt: PropTypes.string,
-  imgFluid: PropTypes.ContentfulFluid
+  // imgFluid: {
+  //   fluid: PropTypes.ContentfulFluid
+  // } 
+  imgFluid: PropTypes.object
 }
 export default BlogCard
