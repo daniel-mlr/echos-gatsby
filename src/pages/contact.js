@@ -2,15 +2,43 @@ import React from 'react'
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Style from './contact.module.scss'
+import { graphql, useStaticQuery } from 'gatsby'
+import { FaLocationArrow, FaPhoneSquare } from 'react-icons/fa'
 
 const ContactPage = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    site {
+      siteMetadata {
+        address1
+        address2
+        phone
+      }
+    }
+  }
+  `)
+
   return (
     <Layout>
       <Head title="Contact" />
       <section className={Style.section} >
-        <h1>Contact</h1>
+        <h1>Venez nous joindre</h1>
         <div className={Style.mainContainer} >
-          <p>Address and phone number, etc.</p>
+          <h3>Nous recrutons de nouveaux membres</h3>
+          <p>
+            Quelle meilleure façon de pratiquer vos connaissances en français
+            que de le chanter! Nous reprenons nos pratiques cet automne. Contactez-nous
+            pour toute information.
+          </p>
+          <p className={Style.address}>
+            <FaLocationArrow style={{'margin': '0 0.3rem 0 0'}} />
+            <span>{data.site.siteMetadata.address1}</span>
+            <span>{data.site.siteMetadata.address2}</span>
+          </p>
+          <p className={Style.phone}>
+            <FaPhoneSquare style={{marginRight: '0.3rem'}}  />
+            {data.site.siteMetadata.phone}
+          </p>
           <p>
             <a
               href="https://twitter.com/ChoeurLesEchos"

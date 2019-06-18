@@ -39,7 +39,11 @@ module.exports = {
     hero: {
       main: 'Les Échos du Pacifique',
       sub:  'La chorale francophone de Vancouver'
-    } 
+    },
+    address1: '1200 avenue Cartier,',
+    address2: 'Coquitlam, C.-B. V3K 2C3',
+    phone: '1-234-567-8900'
+
   },
   plugins: [
     'gatsby-plugin-react-helmet',

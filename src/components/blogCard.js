@@ -10,7 +10,7 @@ const BlogCard = (props) => {
   
     <div className={localStyle.mainContainer}>
       
-      <Img fluid={props.imgFluid.fluid} />
+      <Img fluid={props.imgFluid.fluid} alt={props.imgFluid.description} />
       {/* <img alt={props.imgAlt} src={props.imgUrl}></img> */}
       
       <div className={localStyle.bodyContent}>

@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "env-cmd": "^9.0.2",
+    "gatsby-plugin-purify-css": "^2.2.1",
     "prettier": "^1.17.1"
   },
   "repository": {
