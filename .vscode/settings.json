@@ -10,7 +10,7 @@
     {
       "before": [ ";", ";" ],
       "after": [ "<esc>", "$", "A" ]
-    }, 
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {

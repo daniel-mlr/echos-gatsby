@@ -52,6 +52,13 @@ const ContactPage = () => {
               height="600"
               frameBorder="0"
               style={{border:0}}
+              styles={
+                [
+                  { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+                  { elementType: 'labels.text.stroke', stylers: [{ color: '#0cc' }] },
+                  { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+                ]
+              } 
               allowFullScreen>
             </iframe>
           </div>

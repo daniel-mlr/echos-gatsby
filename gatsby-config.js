@@ -49,11 +49,40 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'LesEchosDuPacifique',
+        short_name: 'Echos',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+      },
     },
     'gatsby-plugin-sass',
     {
