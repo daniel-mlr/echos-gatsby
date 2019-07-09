@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -7,7 +7,7 @@ import Head from '../components/head'
 import blogStyles from './blog.module.scss'
 
 export const query = graphql`
-  query ($slug: String) {
+  query ($slug: String!) {
     contentfulBlogues(slug: {eq: $slug}) {
       titre
       publicationDate(formatString: "MMMM Do, YYYY")
@@ -40,8 +40,8 @@ const Blog = (props) => {
               <h2>{props.data.contentfulBlogues.titre}</h2>
               <p>{props.data.contentfulBlogues.publicationDate}</p>
             </header>
-            <p>{documentToReactComponents(props.data.contentfulBlogues.body.json, options)}</p>
-
+            {documentToReactComponents(props.data.contentfulBlogues.body.json, options)}
+            <Link to={`/blog`}>Retour</Link>
           </article>
         </div>
       </section>

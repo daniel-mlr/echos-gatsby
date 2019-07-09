@@ -1,58 +1,38 @@
 import React from 'react'
 import localStyle from './concertCard.module.scss'
-import { graphql, useStaticQuery } from 'gatsby'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+// import { graphql, useStaticQuery } from 'gatsby'
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 
-const ConcertCard = () => {
-  const concerts = useStaticQuery(graphql`
-    query {
-      allContentfulConcerts {
-        edges {
-          node {
-            concertName
-            announcementDate(formatString: "Do MMMM YYYY")
-            description { json }
-            poster { 
-              title 
-              description
-              file {
-                url
-              }
-            }
-            callToAction
-          }
-        }
-      }
-    }
-`)
-
-  const concert = concerts.allContentfulConcerts.edges[0].node
-
-  const options = {
-    renderNode: {
-      // eslint-disable-next-line react/display-name
-      'embedded-asset-block': (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
-      },
-    }
-  }
+const ConcertCard = (props) => {
 
   return (
-
     <section className={localStyle.mainContainer}>
       <div className={localStyle.imgContainer}>
-        <img src={concert.poster.file.url} alt={concert.poster.title} />
+        {/* <img src={concert.poster.file.url} alt={concert.poster.title} /> */}
+        <Img fluid={props.imgFluid.fluid} alt={props.imgFluid.description} />
       </div>
       <div className={localStyle.contentContainer}>
-        <h2>{concert.concertName}</h2>
-        <p>{concert.announcementDate}</p>
-        {documentToReactComponents(concert.description.json, options)}
+        <h2>{props.concertName}</h2>
+        <p>{props.concertDate}</p>
+        <p>{props.artisticDirection}</p>
+        <p>{props.pianiste}</p>
+        <p>{props.participation}</p>
+        <p>{props.summary}</p>
+        <p>{props.slug}</p>
+        {/* {documentToReactComponents(concert.description.json, options)} */}
         <button type="submit">Billets / Tickets</button>
       </div>
     </section>
   )
+}
+ConcertCard.propTypes = {
+  concertName: PropTypes.string,
+  announcementDate: PropTypes.string,
+  summary: PropTypes.string,
+  slug: PropTypes.string,
+  imgFluid: PropTypes.object
 }
 
 export default ConcertCard

@@ -8,7 +8,7 @@ const BlogGridCard = () => {
     query {
       allContentfulBlogues(
         sort: { fields: publicationDate, order: DESC }
-        limit: 3
+        limit: 4
       ) {
         edges {
           node {
@@ -30,11 +30,13 @@ const BlogGridCard = () => {
     }
   `)
 
+  const nbCard = 2
+
   return (
     <section>
       <div className={localStyle.container} >
         {
-          blogData.allContentfulBlogues.edges.map((edge, idx) => {
+          blogData.allContentfulBlogues.edges.slice(0, nbCard).map((edge, idx) => {
             return (
               <BlogCard 
                 name={edge.node.titre}
