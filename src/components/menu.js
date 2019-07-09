@@ -29,7 +29,7 @@ class Menu extends Component {
         <Link className={menuStyles.title} to="/">
           <img
             className={menuStyles.logo}
-            src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1560419215/echos/Les-Echos-du-Pacifique_logo_alpha.png'
+            src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662608/echos/Les_Echos_du_Pacifique_logo_color_1200x800-13.png'
             alt='logo'
           />
         </Link>

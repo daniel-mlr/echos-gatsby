@@ -30,7 +30,8 @@ const BlogGridCard = () => {
     }
   `)
 
-  const nbCard = 2
+  // this nbCard should be determined by the @media size
+  const nbCard = 3
 
   return (
     <section>

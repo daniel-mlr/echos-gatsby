@@ -11,9 +11,9 @@ const Jumbotron = () => {
           hero { main, sub}
         }
       }
-      file(name: {eq: "tenors-sopranos3-crop-1920x1200"}) {
+      file(name: {eq: "nom_femme-crop-1920x1200"}) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 4160) {
+          fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -21,13 +21,10 @@ const Jumbotron = () => {
     }
   `)
 
-  // return (
-  //   <section className={localStyle.section}>
-  //     <div className={localStyle.content}>
-  //       <h1>{data.site.siteMetadata.hero.main}</h1>
-  //       <h2>{data.site.siteMetadata.hero.sub}</h2>
-  //     </div>
-  //   </section>
+// in the image directory, there are other potential images (1900x1200)
+// if we want to make a carousel (fade-in-out would be preferred, rather
+// than sliding).
+
   return (
     <BackgroundImage
       fluid={data.file.childImageSharp.fluid} 

@@ -1,5 +1,6 @@
 import React from 'react'
 import localStyle from './concertCard.module.scss'
+import { Link } from 'gatsby'
 // import { graphql, useStaticQuery } from 'gatsby'
 // import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import PropTypes from 'prop-types'
@@ -20,9 +21,11 @@ const ConcertCard = (props) => {
         <p>{props.pianiste}</p>
         <p>{props.participation}</p>
         <p>{props.summary}</p>
-        <p>{props.slug}</p>
+        <Link to={`concert#${props.slug}`}><p>... read more</p></Link>
         {/* {documentToReactComponents(concert.description.json, options)} */}
-        <button type="submit">Billets / Tickets</button>
+        <Link to={props.ticketsUrl}>
+          <button type="submit">Billets / Tickets</button>
+        </Link>
       </div>
     </section>
   )
