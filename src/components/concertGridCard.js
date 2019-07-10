@@ -35,23 +35,23 @@ const ConcertGridCard = () => {
       {/* to do: filter in the query */}
       {
         concertData.allContentfulConcerts.edges
-        .filter((edge, idx) => new Date(edge.node.concertDate) >= new Date() )
-        .map((edge, idx)=> {
-          return (
-            <ConcertCard
-              key={idx}
-              concertName={edge.node.concertName}
-              concertDate={edge.node.concertDate}
-              artisticDirection={edge.node.artisticDirection}
-              pianiste={edge.node.pianiste}
-              participation={edge.node.participation}
-              summary={edge.node.summary.summary}
-              imgFluid={edge.node.poster}
-              slug={edge.node.slug}
-              ticketsUrl={edge.node.ticketsUrl} 
+          .filter((edge, idx) => new Date(edge.node.concertDate) >= new Date())
+          .map((edge, idx) => {
+            return (
+              <ConcertCard
+                key={idx}
+                concertName={edge.node.concertName}
+                concertDate={edge.node.concertDate}
+                artisticDirection={edge.node.artisticDirection}
+                pianiste={edge.node.pianiste}
+                participation={edge.node.participation}
+                summary={edge.node.summary.summary}
+                imgFluid={edge.node.poster}
+                slug={edge.node.slug}
+                ticketsUrl={edge.node.ticketsUrl}
               ></ConcertCard>
-          )
-        })
+            )
+          })
       }
     </section>
   )

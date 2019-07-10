@@ -12,6 +12,7 @@ const Jumbotron = () => {
         }
       }
       file(name: {eq: "nom_femme-crop-1920x1200"}) {
+      # file(name: {eq: "Echo_Choir_1920x1200"}) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -21,9 +22,9 @@ const Jumbotron = () => {
     }
   `)
 
-// in the image directory, there are other potential images (1900x1200)
-// if we want to make a carousel (fade-in-out would be preferred, rather
-// than sliding).
+  // in the image directory, there are other potential images (1900x1200)
+  // if we want to make a carousel (fade-in-out would be preferred, rather
+  // than sliding).
 
   return (
     <BackgroundImage

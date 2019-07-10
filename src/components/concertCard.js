@@ -21,11 +21,11 @@ const ConcertCard = (props) => {
         <p>{props.pianiste}</p>
         <p>{props.participation}</p>
         <p>{props.summary}</p>
-        <Link to={`concert#${props.slug}`}><p>... read more</p></Link>
+        <Link to={`concerts#${props.slug}`}><p>... read more</p></Link>
         {/* {documentToReactComponents(concert.description.json, options)} */}
-        <Link to={props.ticketsUrl}>
+        <a href={props.ticketsUrl} target="_blank" rel="noopener noreferrer">
           <button type="submit">Billets / Tickets</button>
-        </Link>
+        </a>
       </div>
     </section>
   )
