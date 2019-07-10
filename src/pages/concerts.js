@@ -69,8 +69,8 @@ const ConcertsPage = () => {
             <Img fluid={edge.node.poster.fluid } alt={edge.node.poster.description} />
             {documentToReactComponents(edge.node.description.json, options)}
             {(
-               new Date(edge.node.concertDate) >= new Date()
-             ) && 
+              new Date(edge.node.concertDate) >= new Date()
+            ) && 
               <p>achetez billets</p>
             }
             <hr/>

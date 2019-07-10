@@ -1,4 +1,4 @@
-/* globals module __dirname process*/
+/* globals module __dirname process */
 
 /**
  * Configure your Gatsby site with this file.

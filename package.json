@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "env-cmd": "^9.0.2",
+    "eslint-config-gatsby-standard": "^2.2.0",
     "prettier": "^1.17.1"
   },
   "repository": {

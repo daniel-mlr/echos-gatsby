@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="http://lesechosdupacifique.info">
+    <img alt="Les Échos Logo" src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662437/echos/Les_Echos_du_Pacifique_logo_illustration_color_800x800-16.png" width="60" />
   </a>
 </p>
 <h1 align="center">
