@@ -1,8 +1,10 @@
-@import '../styles/settings.scss';
+// @import '../styles/settings.scss';
+@import '../styles/style.scss';
 
 .title {
   // color: #12557c;
-  color: $master-color;
+  // color: $master-color;
+  color: $primary-color;
   text-decoration: none;
   display: flex;
   float:left;
@@ -11,7 +13,6 @@
   width:200px;
   color: white;
 }
-
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -22,7 +23,7 @@
   /* Style the links inside the navigation bar */
   a {    
     display: inline-block;
-    color: $nav-items-color;
+    // color: $nav-items-color;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -31,11 +32,12 @@
   
   /* Change the color of links on hover */
   a:hover {    
-    color: $nav-items-color-hover;
+    color: $primary-color;
+    // color: $nav-items-color-hover;
   }
   /* Add an active class to highlight the current page */
   a.active {    
-    color:$nav-items-color-active;
+    // color:$nav-items-color-active;
     font-weight: bolder;
   }
   a.bars {
