@@ -3,3 +3,28 @@
 // Importing Bulma from node_modules
 @import '~bulma/bulma.sass';
 
+
+.has-text-orange {
+  color: $orange;
+}
+.has-text-blue {
+  color: $blue !important;
+}
+
+
+// fix: hero background image
+.hero-has-bg {
+  position: relative;
+
+  .hero-bg {
+    height: 600px;    
+  }
+  .hero-content {
+    position:absolute;
+    top: 0;
+    left:0;
+    background-color: #ddd;
+    opacity: 0.8;
+  }
+}
+

@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import localStyle from './jumbotron.module.scss'
-import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 
 const Jumbotron = () => {
   const data = useStaticQuery(graphql`
@@ -27,13 +26,25 @@ const Jumbotron = () => {
   // than sliding).
 
   return (
-    <BackgroundImage
-      fluid={data.file.childImageSharp.fluid} 
-      className={localStyle.section}
-    >
-      <h1>{data.site.siteMetadata.hero.main}</h1>
-      <h2>{data.site.siteMetadata.hero.sub}</h2>
-    </BackgroundImage>
+    <section className="hero is-light hero-has-bg">
+      <Img 
+        fluid={data.file.childImageSharp.fluid} 
+        className="hero-bg"
+        imgStyle={{
+          objectPosition: "top",
+        }}
+      />
+
+      <div className="hero-body hero-content">
+        <div class="container">
+          <h1 className="title has-text-blue">LES ECHOS DU PACIFIQUE</h1>
+          <h2 className="subtitle">
+            La chorale francophone de <span class="has-text-orange">Vancouver</span>
+          </h2>
+        </div>
+      </div>
+      
+    </section>
   )
 }
 
