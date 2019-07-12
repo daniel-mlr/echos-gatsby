@@ -31,13 +31,13 @@ const Jumbotron = () => {
         fluid={data.file.childImageSharp.fluid} 
         className="hero-bg"
         imgStyle={{
-          objectPosition: "top",
+          objectPosition: 'top',
         }}
       />
 
       <div className="hero-body hero-content">
         <div className="container">
-          <h1 className="title has-text-blue">LES ECHOS DU PACIFIQUE</h1>
+          <h1 className="title has-text-blue">LES ÉCHOS<br/>DU PACIFIQUE</h1>
           <h2 className="subtitle">
             La chorale francophone de <span className="has-text-orange">Vancouver</span>
           </h2>

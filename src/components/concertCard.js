@@ -41,6 +41,7 @@ const ConcertCard = (props) => {
                 Acheter vos billetes / Buy tickets
               </a>
           </div>
+
       </div>
        </div></div>
        </div>

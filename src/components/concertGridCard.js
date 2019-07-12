@@ -30,7 +30,8 @@ const ConcertGridCard = () => {
       }
     }
   `)
-  
+
+  // console.log('@@@@@', concertData.allContentfulConcerts.edges)
   return (
     <section className="section">
       <div className="container mt-10 mb-50">
