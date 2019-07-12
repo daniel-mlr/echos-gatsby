@@ -10,6 +10,7 @@ const ConcertGridCard = () => {
         edges {
           node {
             concertName
+            concertDateFormated: concertDate (formatString: "MMMM Do, YYYY")
             concertDate
             artisticDirection
             pianiste
@@ -18,8 +19,8 @@ const ConcertGridCard = () => {
             poster { 
               title 
               description
-              fluid(maxWidth: 500) {
-                ...GatsbyContentfulFluid
+              fixed(width: 300, height: 300) {
+                ...GatsbyContentfulFixed
               }
             }
             slug
@@ -29,9 +30,16 @@ const ConcertGridCard = () => {
       }
     }
   `)
-  console.log('@@@@@', concertData.allContentfulConcerts.edges)
+  
   return (
-    <section>
+    <section className="section">
+      <div className="container mt-10 mb-50">
+      <div className="label">
+        <div className="label-item has-text-centered">
+          <p className="title is-5">NOTRE PROCHAIN CONCERT</p>
+        </div>
+      </div>
+      </div>
       {/* to do: filter in the query */}
       {
         concertData.allContentfulConcerts.edges
@@ -41,12 +49,12 @@ const ConcertGridCard = () => {
               <ConcertCard
                 key={idx}
                 concertName={edge.node.concertName}
-                concertDate={edge.node.concertDate}
+                concertDate={edge.node.concertDateFormated}
                 artisticDirection={edge.node.artisticDirection}
                 pianiste={edge.node.pianiste}
                 participation={edge.node.participation}
                 summary={edge.node.summary.summary}
-                imgFluid={edge.node.poster}
+                poster={edge.node.poster}
                 slug={edge.node.slug}
                 ticketsUrl={edge.node.ticketsUrl}
               ></ConcertCard>

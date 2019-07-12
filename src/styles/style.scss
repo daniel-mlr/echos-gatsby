@@ -28,3 +28,18 @@
   }
 }
 
+//To add margin or padding.
+// <div class="mt-10">This div has top margin 10px</div>
+$sizes: (0,10,15,20,25,30,50);
+$positions: ('top','left','bottom','right');
+
+@each $size in $sizes {
+  @each $position in $positions {
+    .m#{str-slice($position, 0, 1)}-#{$size} {
+      margin-#{$position}: $size + px;
+    }
+    .p#{str-slice($position, 0, 1)}-#{$size} {
+      padding-#{$position}: $size + px;
+    }
+  }
+}
