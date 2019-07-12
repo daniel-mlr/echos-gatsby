@@ -29,7 +29,7 @@ const ConcertGridCard = () => {
       }
     }
   `)
-  console.log('@@@@@', concertData.allContentfulConcerts.edges)
+  // console.log('@@@@@', concertData.allContentfulConcerts.edges)
   return (
     <section>
       {/* to do: filter in the query */}

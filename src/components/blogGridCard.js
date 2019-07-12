@@ -44,7 +44,6 @@ const BlogGridCard = () => {
                 key={idx}
                 date={edge.node.publicationDate}
                 slug={edge.node.slug}
-                //imgUrl={edge.node.previewPicture.file.url}
                 imgFluid={edge.node.previewPicture}                
                 content={edge.node.summary.summary} >
               </BlogCard>
