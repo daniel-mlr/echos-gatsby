@@ -4,12 +4,22 @@
   background-color: $headerbackgroundcolor;
   padding: 0.5rem;
   width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
  }
+.logo {
+  width:200px;
+  color: white;
+  margin-left: 2vw;
+}
 .navigation {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 20px 0px;
+  // padding: 20px 0px;
+  justify-content: space-between;
 }
 .sitenames {
   font-size: 1.5rem;
@@ -33,4 +43,9 @@
 }
 .spacer {
   flex: 1;
+}
+.lang {
+  color: red;
+  margin-right: 2vw;
+  font-size: smaller;
 }

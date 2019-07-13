@@ -43,7 +43,6 @@ const Jumbotron = () => {
           </h2>
         </div>
       </div>
-      
     </section>
   )
 }

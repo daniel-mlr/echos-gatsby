@@ -2,16 +2,10 @@
 @import '../styles/style.scss';
 
 .title {
-  // color: #12557c;
-  // color: $master-color;
   color: $primary-color;
   text-decoration: none;
   display: flex;
   float:left;
-}
-.logo {
-  width:200px;
-  color: white;
 }
 
 /* Add a black background color to the top navigation */
@@ -25,7 +19,8 @@
     display: inline-block;
     // color: $nav-items-color;
     text-align: center;
-    padding: 14px 16px;
+    // padding: 14px 16px;
+    padding: 0 1vw;
     text-decoration: none;
     font-size: 17px;
   }
@@ -48,7 +43,10 @@
 /* When the screen is less than 768 pixels wide, hide all links, except for the first one ("Home"). 
 Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 768px) {
-  .topnav a:not(:first-child) {display: none;}
+  // .topnav a:not(:first-child) {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.bars {
     float: right;
     display: block;
@@ -56,7 +54,6 @@ Show the link that contains should open and close the topnav (.icon) */
     align-items: center;
     height: 120px;
   }
-  
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. 

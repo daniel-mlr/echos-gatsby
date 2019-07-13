@@ -20,20 +20,12 @@ class Menu extends Component {
 
   render(){
     
-    const menuClassName = this.state.isOpen 
+    const menuClassNames = this.state.isOpen 
       ? `${menuStyles.topnav} ${menuStyles.responsive}`
       : menuStyles.topnav 
     
     return (
-      <div className={menuClassName}>
-        <Link className={menuStyles.title} to="/">
-          <img
-            className={menuStyles.logo}
-            src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662608/echos/Les_Echos_du_Pacifique_logo_color_1200x800-13.png'
-            alt='logo'
-          />
-        </Link>
-   
+      <div className={menuClassNames}>
         {this.props.links.map(link => {
           return (
             <Link

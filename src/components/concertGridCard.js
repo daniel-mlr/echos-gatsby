@@ -19,8 +19,10 @@ const ConcertGridCard = () => {
             poster { 
               title 
               description
-              fixed(width: 300, height: 300) {
-                ...GatsbyContentfulFixed
+             # fixed(width: 300, height: 300) {
+             #   ...GatsbyContentfulFixed
+              fluid {
+                ...GatsbyContentfulFluid
               }
             }
             slug
@@ -35,11 +37,12 @@ const ConcertGridCard = () => {
   return (
     <section className="section">
       <div className="container mt-10 mb-50">
-      <div className="label">
-        <div className="label-item has-text-centered">
-          <p className="title is-5">NOTRE PROCHAIN CONCERT</p>
+        <div className="label">
+          <div className="label-item has-text-centered">
+            <hr/>
+            <p className="title is-5">NOTRE PROCHAIN CONCERT</p>
+          </div>
         </div>
-      </div>
       </div>
       {/* to do: filter in the query */}
       {
