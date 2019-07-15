@@ -30,5 +30,6 @@
   "markdown.preview.fontSize": 12,
   "editor.tabSize": 2,
   "html.format.indentHandlebars": true,
+  "emmet.triggerExpansionOnTab": true,
   "workbench.colorTheme": "Monokai Pro"
 }

@@ -22,7 +22,7 @@ const ContactPage = () => {
     <Layout>
       <Head title="Contact" />
       <section className={Style.section} >
-        <h1>Venez nous joindre</h1>
+        <h1>Contactez-nous</h1>
         <div className={Style.mainContainer} >
           <h3>Nous recrutons de nouveaux membres</h3>
           <p>

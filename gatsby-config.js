@@ -14,26 +14,32 @@ module.exports = {
       {
         id: 1,
         href: '/',
+        // text: { 'FR': 'Accueil', 'EN': 'Home' }
+        // text: ['Accueil', 'Home']
         text: 'Accueil'
       },
       {
         id: 2,
         href: '/concerts',
+        // text: ['Concerts', 'Concerts' ] 
         text: 'Concerts'
       },
       {
         id: 3,
         href: '/blog',
+        // text: ['Nouvelles', 'News' ]
         text: 'Nouvelles'
       },
       {
         id: 4,
         href: '/contact',
+        // text: ['Joignez-nous', 'Join us' ]
         text: 'Joignez-nous'
       },
       {
         id: 5,
         href: '/about',
+        // text: ['La chorale', 'About Us' ]
         text: 'La chorale'
       }
     ],
