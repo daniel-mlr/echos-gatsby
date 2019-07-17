@@ -38,6 +38,7 @@
     "react-icons": "^3.7.0"
   },
   "devDependencies": {
+    "bloomer": "^0.6.5",
     "env-cmd": "^9.0.2",
     "eslint-config-gatsby-standard": "^2.2.0",
     "prettier": "^1.17.1"
