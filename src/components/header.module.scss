@@ -4,12 +4,15 @@
   background-color: $headerbackgroundcolor;
   padding: 0.5rem;
   width: 100%;
+  // height: 15vh;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
  }
 .logo {
+  max-width: unset;
   width:200px;
   color: white;
   margin-left: 2vw;
@@ -48,4 +51,9 @@
   color: red;
   margin-right: 2vw;
   font-size: smaller;
+}
+// from menu.module
+a.active {
+  // color:$nav-items-color-active;
+  font-weight: bolder;
 }

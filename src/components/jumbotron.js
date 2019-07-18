@@ -28,7 +28,7 @@ const Jumbotron = () => {
   // than sliding).
 
   return (
-    <Hero size="large" color="transparent">
+    <Hero size="large">
       <BackgroundImage
         Tag="div"
         className="test-bg-img"
