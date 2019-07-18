@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
+import { Hero } from 'react-bulma-components'
+import BackgroundImage from 'gatsby-background-image'
 
 const Jumbotron = () => {
   const data = useStaticQuery(graphql`
@@ -26,24 +28,41 @@ const Jumbotron = () => {
   // than sliding).
 
   return (
-    <section className="hero is-light hero-has-bg">
-      <Img 
-        fluid={data.file.childImageSharp.fluid} 
-        className="hero-bg"
-        imgStyle={{
-          objectPosition: 'top',
-        }}
-      />
+    <Hero size="large" color="transparent">
+      <BackgroundImage
+        Tag="div"
+        className="test-bg-img"
+        fluid={data.file.childImageSharp.fluid}
+        backgroundColor={'#999'}
+      >
+        <Hero.Body>
+          <h1>Hello Background image!!!</h1>
+          <p>heheheh</p>
+          <p>heheheh</p>
+          <p>heheheh</p>
+        </Hero.Body>
+      </BackgroundImage>
+    </Hero>
 
-      <div className="hero-body hero-content">
-        <div className="container">
-          <h1 className="title has-text-blue">LES ÉCHOS<br/>DU PACIFIQUE</h1>
-          <h2 className="subtitle">
-            La chorale francophone de <span className="has-text-orange">Vancouver</span>
-          </h2>
-        </div>
-      </div>
-    </section>
+
+  // <section className="hero is-light hero-has-bg">
+  //   <Img 
+  //     fluid={data.file.childImageSharp.fluid} 
+  //     className="hero-bg"
+  //     imgStyle={{
+  //       objectPosition: 'top',
+  //     }}
+  //   />
+
+  //   <div className="hero-body hero-content">
+  //     <div className="container">
+  //       <h1 className="title has-text-blue">LES ÉCHOS<br/>DU PACIFIQUE</h1>
+  //       <h2 className="subtitle">
+  //         La chorale francophone de <span className="has-text-orange">Vancouver</span>
+  //       </h2>
+  //     </div>
+  //   </div>
+  // </section>
   )
 }
 

@@ -15,21 +15,31 @@
 
 
 // fix: hero background image
-.hero-has-bg {
-  position: relative;
+// .hero-has-bg {
+//   position: relative;
 
-  .hero-bg {
-    height: 600px;    
-  }
-  .hero-content {
-    position:absolute;
-    top: 0;
-    left:0;
-    background-color: #ddd;
-    opacity: 0.8;
-  }
+//   .hero-bg {
+//     height: 600px;    
+//   }
+//   .hero-content {
+//     position:absolute;
+//     top: 0;
+//     left:0;
+//     background-color: #ddd;
+//     opacity: 0.8;
+//   }
+// }
+
+.test-bg-img {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-
 //To add margin or padding.
 // <div class="mt-10">This div has top margin 10px</div>
 $sizes: (0,10,15,20,25,30,50);
