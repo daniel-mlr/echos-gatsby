@@ -24,17 +24,3 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-module.exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /react-bulma-components/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}
