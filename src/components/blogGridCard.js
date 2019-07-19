@@ -1,5 +1,5 @@
 import React from 'react'
-import localStyle from './blogGridCard.module.scss'
+// import localStyle from './blogGridCard.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import BlogCard from '../components/blogCard'
 
@@ -34,8 +34,10 @@ const BlogGridCard = () => {
   const nbCard = 3
 
   return (
-    <section>
-      <div className={localStyle.container} >
+    <section className="section">
+      {/* <div className={localStyle.container} > */}
+      <div >
+        <div className="is-divider has-text-black" data-content="Nouvelles"></div>
         {
           blogData.allContentfulBlogues.edges.slice(0, nbCard).map((edge, idx) => {
             return (

@@ -36,12 +36,10 @@ const ConcertGridCard = () => {
   // console.log('@@@@@', concertData.allContentfulConcerts.edges)
   return (
     <section className="section">
+      <div className="is-divider" data-content="NOTRE PROCHAIN CONCERT"></div>
       <div className="container mt-10 mb-50">
         <div className="label">
-          <div className="label-item has-text-centered">
-            <hr/>
-            <p className="title is-5">NOTRE PROCHAIN CONCERT</p>
-          </div>
+          <div className="label-item has-text-centered"></div>
         </div>
       </div>
       {/* to do: filter in the query */}
