@@ -1,26 +1,34 @@
 import React from 'react'
-// import localStyle from './concertCard.module.scss'
+import localStyle from './concertCard.module.scss'
 import { Link } from 'gatsby'
-// import { graphql, useStaticQuery } from 'gatsby'
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import { Content, 
+        Columns, 
+        Container,
+        Heading } from "react-bulma-components/full";
 
 const ConcertCard = (props) => {
   return (
-    <div className="container">
-      <div className="columns">
-        <div className="column is-mobile is-four-fifths is-offset-1">
-          <div className="columns">
-            <div className="column" style={{ textAlign: 'center' }}>
+    <Container>
+      <Columns>
+        <Columns.Column className="is-mobile is-four-fifths is-offset-1">
+          <Columns>
+            <Columns.Column style={{ textAlign: 'center' }}>
               <Img
                 // fixed={props.poster.fixed}
                 fluid={props.poster.fluid}
                 alt={props.poster.description} />
-            </div>
-            <div className="column">
-              <div className="content">
-                <p className="title is-4">{props.concertName}</p>
+            </Columns.Column>
+            <Columns.Column>
+              <Content>
+                <Heading 
+                  renderAs="p"
+                  className={localStyle.headerSection}>
+                  {props.concertName}
+                </Heading>
+
+                
                 <p>Direction Artistique: {props.artisticDirection}</p>
                 <p>Pianiste: {props.pianiste}</p>
                 {(props.participation) && <p>{props.participation}</p>}
@@ -33,12 +41,12 @@ const ConcertCard = (props) => {
                   target="_blank"
                   rel="noopener noreferrer">
                   Acheter vos billetes / Buy tickets</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              </Content>
+            </Columns.Column>
+          </Columns>
+        </Columns.Column>
+      </Columns>
+    </Container>
   )
 }
 ConcertCard.propTypes = {

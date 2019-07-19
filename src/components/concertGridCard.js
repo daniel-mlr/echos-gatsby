@@ -1,12 +1,13 @@
 import React from 'react'
-// import localStyle from './blogGridCard.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import ConcertCard from '../components/concertCard'
+import { Container, Section, Heading } from "react-bulma-components/full";
+import localStyle from "./concertGridCard.module.scss"
 
 const ConcertGridCard = () => {
   const concertData = useStaticQuery(graphql`
     query {
-      allContentfulConcerts (sort: {fields: concertDate, order: ASC}) {
+      allContentfulConcerts (limit:1, sort: {fields: concertDate, order: DESC}) {
         edges {
           node {
             concertName
@@ -33,18 +34,15 @@ const ConcertGridCard = () => {
     }
   `)
 
-  // console.log('@@@@@', concertData.allContentfulConcerts.edges)
   return (
-    <section className="section">
-      <div className="container mt-10 mb-50">
-        <div className="label">
-          <div className="label-item has-text-centered">
-            <hr/>
-            <p className="title is-5">NOTRE PROCHAIN CONCERT</p>
-          </div>
-        </div>
-      </div>
-      {/* to do: filter in the query */}
+    <Section>
+      <Container>
+        <Heading 
+          renderAs="p"
+          className={localStyle.headerSection}>
+          NOTRE PROCHAIN CONCERT
+        </Heading>
+     </Container>
       {
         concertData.allContentfulConcerts.edges
           .filter((edge, idx) => new Date(edge.node.concertDate) >= new Date())
@@ -65,7 +63,8 @@ const ConcertGridCard = () => {
             )
           })
       }
-    </section>
+    </Section>
+    
   )
 }
 
