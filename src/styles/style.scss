@@ -19,6 +19,7 @@
 }
 
 @media screen and (max-width: 1200px) {
+  // laptop 
   .site-name {
     font-size: 2.8em;
   }
@@ -28,6 +29,7 @@
   }
 }
 @media screen and (max-width: 768px) {
+  // tablet and phone landscape
   .site-name {
     font-size: 1.7rem;
   }
@@ -37,6 +39,7 @@
   }
 }
 @media screen and (max-width: 350px) {
+  // iPhone 5 vertical
   .site-name {
     font-size: 1.1rem;
   }
@@ -101,4 +104,8 @@ $positions: ('top','left','bottom','right');
 .hero-body {
     position: absolute;
     top: 10vh;
+}
+.card {
+  min-width: 300px;
+  max-width: 350px;
 }
