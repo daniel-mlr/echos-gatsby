@@ -1,19 +1,10 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link} from 'gatsby'
 import headerStyles from './header.module.scss'
-import Menu from './menu'
+import HeaderNav from './headerNav'
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
-  query {
-    site {
-      siteMetadata {
-        menu { id, href, text }
-      }
-    }
-  }
-  `)
-
+ 
   return (
     <header className={headerStyles.header}>
       <Link to="/">
@@ -23,11 +14,12 @@ const Header = () => {
           alt='logo'
         />
       </Link>
-      <nav className={headerStyles.navigation}>
-        <Menu links={data.site.siteMetadata.menu} />
-      </nav>
+      <HeaderNav/>
+
       {/* place holder for language switcher */}
-      <div className={headerStyles.lang}>English</div>
+      <div className={headerStyles.lang} style={{visibility:"hidden"}} >English</div>
+
+
     </header>
   )
 }
