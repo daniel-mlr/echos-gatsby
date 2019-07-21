@@ -6,19 +6,11 @@ import Img from 'gatsby-image'
 
 const BlogCard = (props) => {
   return (
-    
     <div className="card">
       <div className="card-image">
         <Img fluid={props.imgFluid.fluid}
           alt={props.imgFluid.description} />
       </div> 
-
-      {/* <div className={localStyle.bodyContent}> */}
-      {/* <div className="card-header-title">
-        <h3>{props.name}</h3>
-      </div> */}
-      {/* <p className={localStyle.date} >{props.date} </p>
-      <p className={localStyle.content} >{props.content}</p> */}
 
       <div className="card-content">
         <h3 className="title is-4">{props.name}</h3>

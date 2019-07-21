@@ -27,6 +27,9 @@
   .site-vancouver {
     font-size: 1.7rem;
   }
+  .is-hidden-until-widescreen {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 768px) {
   // tablet and phone landscape
@@ -105,7 +108,7 @@ $positions: ('top','left','bottom','right');
     position: absolute;
     top: 10vh;
 }
-.card {
-  min-width: 300px;
-  max-width: 350px;
-}
+// .card {
+//   min-width: 300px;
+//   max-width: 350px;
+// }u
