@@ -37,9 +37,7 @@ const BurgerMenu = () => {
         <Header />
       </main>
     </div> 
-
   )
-
 }
 
 export default BurgerMenu

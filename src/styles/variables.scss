@@ -1,6 +1,7 @@
 // VARIABLES
 
 $primary-color: #eca000 ;
+// $primary: #eca000 ;
 $secondary-color: #dc4619;
 $logo-letter-color: #005f9d;
 
@@ -11,8 +12,10 @@ $family-title: "Tenor Sans";
 $orange: #ED9A00;
 $blue: #0B93C9;
 
-$divider-font-size: 1.25rem;
-$divider-color: black;
+$divider-font-size: 2rem;
+$divider-color: hsl(0, 0%, 29%);
+$divider-thickness: .15rem;
+
 
 $card-content-padding: 0;
 // $card-background-color: #aaa;

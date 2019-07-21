@@ -1,5 +1,4 @@
 import React from 'react'
-// import localStyle from './blogCard.module.scss'
 import { Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
@@ -14,7 +13,7 @@ const BlogCard = (props) => {
 
       <div className="card-content">
         <h3 className="title is-4 blog-card-title" >{props.name}</h3>
-        <p className="date">
+        <p className="date is-italic has-text-weight-light">
           <time dateTime={props.date} >{props.date} </time>
         </p>
         <div className="content">

@@ -145,3 +145,15 @@ $positions: ('top','left','bottom','right');
   width: 50%;
   text-align: center;
 }
+
+// correction bulma-divider
+.is-divider, .is-divider-vertical {
+  margin: 1em 0;
+}
+.is-divider[data-content]::after, .is-divider-vertical[data-content]::after {
+  margin: -0.5em 0 0 0;
+}
+
+// .with-divider {
+//   padding-top: 0;
+// }

@@ -36,7 +36,10 @@ const ConcertGridCard = () => {
   // console.log('@@@@@', concertData.allContentfulConcerts.edges)
   return (
     <section className="section">
-      <div className="is-divider" data-content="NOTRE PROCHAIN CONCERT"></div>
+      <div
+        className="is-divider"
+        data-content="Notre prochain concert">
+      </div>
       <div className="container mt-10 mb-50">
         <div className="label">
           <div className="label-item has-text-centered"></div>
