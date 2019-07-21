@@ -8,6 +8,7 @@ import BlogGridCard from '../components/blogGridCard'
 const IndexPage = () => {
   return (
     <Layout>
+      
       <Head title="Home" />
       <Jumbotron />
       <ConcertGridCard />
