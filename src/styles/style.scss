@@ -19,6 +19,7 @@
 }
 
 @media screen and (max-width: 1200px) {
+  // laptop 
   .site-name {
     font-size: 2.8em;
   }
@@ -26,8 +27,12 @@
   .site-vancouver {
     font-size: 1.7rem;
   }
+  .is-hidden-until-widescreen {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 768px) {
+  // tablet and phone landscape
   .site-name {
     font-size: 1.7rem;
   }
@@ -37,6 +42,7 @@
   }
 }
 @media screen and (max-width: 350px) {
+  // iPhone 5 vertical
   .site-name {
     font-size: 1.1rem;
   }
@@ -101,4 +107,40 @@ $positions: ('top','left','bottom','right');
 .hero-body {
     position: absolute;
     top: 10vh;
+}
+// .card {
+//   min-width: 300px;
+//   max-width: 350px;
+// }
+
+.blog-card-title {
+  margin: 1rem 0;
+  height: 1.5em;
+}
+.date {
+  padding-bottom: 1rem;
+}
+.overflow-fade {
+  height: 4.1em;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  line-height: 1.5em;
+  // outline: solid 1px red;
+  margin-bottom: 0;
+}
+
+    // rgba(255, 255, 255, 0) 0%,
+.overflow-fade::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    $white-bis 50%);
+  content: '\200C';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 3em;
+  width: 50%;
+  text-align: center;
 }
