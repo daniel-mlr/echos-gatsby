@@ -13,11 +13,18 @@ const BlogCard = (props) => {
       </div> 
 
       <div className="card-content">
-        <h3 className="title is-4">{props.name}</h3>
-        <time dateTime={props.date} >{props.date} </time>
+        <h3 className="title is-4 blog-card-title" >{props.name}</h3>
+        <p className="date">
+          <time dateTime={props.date} >{props.date} </time>
+        </p>
         <div className="content">
-          <p>{props.content}</p>
-          <Link to={`/blog/${props.slug}`}>More...</Link>
+          <p className="overflow-fade has-background-white-bis">
+            {props.content}
+          </p>
+          <Link
+            to={`/blog/${props.slug}`}
+            className="button is-primary"
+          >Lire...</Link>
         </div>
       </div>
     </div>
