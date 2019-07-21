@@ -31,24 +31,28 @@ const BlogGridCard = () => {
   `)
 
   // this nbCard should be determined by the @media size
-  const nbCard = 3
-
+  // const nbCard = 4
   return (
     <section className="section">
-      {/* <div className={localStyle.container} > */}
-      <div >
-        <div className="is-divider has-text-black" data-content="Nouvelles"></div>
+      <div className="is-divider has-text-black" data-content="Nouvelles"></div>
+      <div className="columns">
         {
-          blogData.allContentfulBlogues.edges.slice(0, nbCard).map((edge, idx) => {
+          // blogData.allContentfulBlogues.edges.slice(0, nbCard).map((edge, idx) => {
+          blogData.allContentfulBlogues.edges.map((edge, idx) => {
+            const column = idx === 2 ? 'column is-hidden-touch' 
+              : idx === 3 ? 'column is-hidden-until-widescreen' 
+                : 'column'
             return (
-              <BlogCard 
-                name={edge.node.titre}
-                key={idx}
-                date={edge.node.publicationDate}
-                slug={edge.node.slug}
-                imgFluid={edge.node.previewPicture}                
-                content={edge.node.summary.summary} >
-              </BlogCard>
+              <div className={column} key={idx}>
+                <BlogCard
+                  name={edge.node.titre}
+                  key={idx}
+                  date={edge.node.publicationDate}
+                  slug={edge.node.slug}
+                  imgFluid={edge.node.previewPicture}
+                  content={edge.node.summary.summary} >
+                </BlogCard>
+              </div>
             )
           })
         }
