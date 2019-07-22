@@ -25,6 +25,7 @@ const ConcertGridCard = () => {
                 ...GatsbyContentfulFluid
               }
             }
+            prix
             slug
             ticketsUrl
           }
@@ -40,29 +41,29 @@ const ConcertGridCard = () => {
         className="is-divider"
         data-content="Notre prochain concert">
       </div>
-      <div className="container mt-10 mb-50">
+      {/* <div className="container mt-10 mb-50">
         <div className="label">
           <div className="label-item has-text-centered"></div>
         </div>
-      </div>
+      </div> */}
       {/* to do: filter in the query */}
       {
         concertData.allContentfulConcerts.edges
           .filter((edge, idx) => new Date(edge.node.concertDate) >= new Date())
           .map((edge, idx) => {
             return (
-              <ConcertCard
-                key={idx}
-                concertName={edge.node.concertName}
-                concertDate={edge.node.concertDateFormated}
-                artisticDirection={edge.node.artisticDirection}
-                pianiste={edge.node.pianiste}
-                participation={edge.node.participation}
-                summary={edge.node.summary.summary}
-                poster={edge.node.poster}
-                slug={edge.node.slug}
-                ticketsUrl={edge.node.ticketsUrl}
-              ></ConcertCard>
+              <ConcertCard node={edge.node} key={idx} />
+              // key={idx}
+              // concertName={edge.node.concertName}
+              // concertDate={edge.node.concertDateFormated}
+              // artisticDirection={edge.node.artisticDirection}
+              // pianiste={edge.node.pianiste}
+              // participation={edge.node.participation}
+              // summary={edge.node.summary.summary}
+              // poster={edge.node.poster}
+              // slug={edge.node.slug}
+              // ticketsUrl={edge.node.ticketsUrl}
+              // ></ConcertCard>
             )
           })
       }
