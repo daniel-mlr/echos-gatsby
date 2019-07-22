@@ -5,16 +5,19 @@ import Img from 'gatsby-image'
 
 const ConcertCard = (props) => {
   const concertDate = new Date(props.node.concertDate)
-  const dateFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  const dateFormatOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  }
+  console.log('participation:', props.node.participation)
+
   return (
     <div className="container">
-      {/* <div className="columns">
-        <div className="column is-mobile is-four-fifths is-offset-1"> */}
       <div className="columns">
-        {/* <div className="column" style={{ textAlign: 'center' }}> */}
         <div className="column">
           <Img
-            // fixed={props.poster.fixed}
             fluid={props.node.poster.fluid}
             alt={props.node.poster.description} />
         </div>
@@ -23,7 +26,15 @@ const ConcertCard = (props) => {
             <p className="title is-4">{props.node.concertName}</p>
             <p>Direction Artistique: {props.node.artisticDirection}</p>
             <p>Pianiste: {props.node.pianiste}</p>
-            {(props.node.participation) && <p>{props.node.participation}</p>}
+            {
+              (props.node.participation) && 
+              <>
+              <p>Artistes invités</p>
+              <ul>{props.node.participation.map(
+                (p, key) => <li key={key}>{p}</li>
+              )}</ul>
+              </>
+            }
             <p>{props.node.summary.summary}
               <Link
                 to={`/concerts#${props.node.slug}`}
@@ -40,7 +51,7 @@ const ConcertCard = (props) => {
                 </time>
               </span>
             </p>
-            <a className="button is-danger is-rounded"
+            <a className="button is-primary is-rounded"
               href={props.node.ticketsUrl}
               target="_blank"
               rel="noopener noreferrer">
@@ -49,8 +60,6 @@ const ConcertCard = (props) => {
         </div>
       </div>
     </div>
-    //   </div>
-    // </div>
   )
 }
 ConcertCard.propTypes = {
