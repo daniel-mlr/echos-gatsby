@@ -58,11 +58,13 @@ const ConcertCard = (props) => {
                   </span>
                 </p>
               </div>
-              <a className="button is-primary is-rounded"
-                href={props.node.ticketsUrl}
-                target="_blank"
-                rel="noopener noreferrer">
-                Acheter vos billetes / Buy tickets</a>
+              <div className="content">
+                <a className="button is-primary is-rounded"
+                  href={props.node.ticketsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Acheter vos billetes / Buy tickets</a>
+              </div>
             </div>
           </div>
         </div>
