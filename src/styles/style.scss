@@ -19,6 +19,26 @@
   font-size: 2rem;
 }
 
+.concert-text {
+  height: 43vw;
+  max-height: 570px;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.concert-summary {
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+}
+.flex-read-more {
+  padding: 1rem 0;
+}
+.date {
+  padding: 0 0 1rem 0;
+}
+
 @media screen and (max-width: 1215px) {
   // laptop 
   .site-name {
@@ -32,6 +52,23 @@
     display: none !important;
   }
 }
+
+@media screen and (max-width: 926px) and (min-width: 769px) {
+  .artistes {
+    p, ol, li {
+      padding: 0;
+      margin: 0 0 0.2rem 0;
+    }
+    // h4.artistes:not(:last-child) {
+    //   margin: 0 0 0.5rem 0 !important;
+    // }
+    p:not(:last-child),
+    ol:not(:last-child) {
+      margin-bottom: 0.1rem;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   // tablet and phone landscape
   .site-name {
@@ -40,6 +77,9 @@
   .site-subname,
   .site-vancouver {
     font-size: 1.2rem;
+  }
+  .concert-text {
+    height: unset;
   }
 }
 @media screen and (max-width: 350px) {
@@ -52,7 +92,6 @@
     font-size: 0.8rem;
   }
 }
-
 // fix: hero background image
 .hero-has-bg {
   position: relative;
@@ -109,10 +148,6 @@ $positions: ('top','left','bottom','right');
     position: absolute;
     top: 10vh;
 }
-// .card {
-//   min-width: 300px;
-//   max-width: 350px;
-// }
 
 .blog-card-title {
   margin: 1rem 0;
@@ -131,7 +166,6 @@ $positions: ('top','left','bottom','right');
   margin-bottom: 0;
 }
 
-    // rgba(255, 255, 255, 0) 0%,
 .overflow-fade::before {
   background: linear-gradient(
     to right,
@@ -148,32 +182,15 @@ $positions: ('top','left','bottom','right');
 
 // correction bulma-divider
 .is-divider, .is-divider-vertical {
-  margin: 1em 0;
+  margin: -3rem 0 3em 0;
 }
 .is-divider[data-content]::after, .is-divider-vertical[data-content]::after {
   margin: -0.5em 0 0 0;
 }
 
-// .with-divider {
-//   padding-top: 0;
-// }
-
 .container { 
   max-width: 1200px;
  }
-//  .section { 
-//    max-width: 1300px;
-//  }
-.concert-text {
-  height: 43vw;
-  max-height: 570px;
-  // border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-}
-.concert-summary {
-  flex-grow: 1;
-  overflow: hidden;
-  padding: 0 0 25px 0;
-  margin: 0 0 25px 0;
+.hero {
+  margin-bottom: 3rem;
 }

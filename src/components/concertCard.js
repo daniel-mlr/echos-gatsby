@@ -22,36 +22,42 @@ const ConcertCard = (props) => {
         </div>
         <div className="column">
           <div className="content">
-            <div className="concert-text">
-              <p className="title is-4">{props.node.concertName}</p>
-              <p>Direction Artistique: {props.node.artisticDirection}</p>
-              <p>Pianiste: {props.node.pianiste}</p>
-              {
-                (props.node.participation) &&
-                <>
-                  <p>Artistes invités</p>
-                  <ul>{props.node.participation.map(
-                    (p, key) => <li key={key}>{p}</li>
-                  )}</ul>
-                </>
-              }
+            <div className="concert-text ">
+              <h4 className="title is-4 artistes">{props.node.concertName}</h4>
+              <div className="content artistes">
+                <p>Direction Artistique: {props.node.artisticDirection}</p>
+                <p>Pianiste: {props.node.pianiste}</p>
+                {
+                  (props.node.participation) &&
+                  <>
+                    <p>Artistes invités</p>
+                    <ul>{props.node.participation.map(
+                      (p, key) => <li key={key}>{p}</li>
+                    )}</ul>
+                  </>
+                }
+              </div>
               <div className="concert-summary">
                 <p>{props.node.summary.summary}</p>
-                <Link
-                  to={`/concerts#${props.node.slug}`}
-                  className="link">... read more
-                </Link>
               </div>
-              <p>
-                {'Date du concert: '}
-                <span className="has-text-danger">
-                  <time dateTime={props.node.concertDate}>
-                    {concertDate.toLocaleDateString(
-                      'fr-CA', dateFormatOptions
-                    )}
-                  </time>
-                </span>
-              </p>
+              <div className="flex-read-more">
+                <Link
+                  className="button is-primary is-small"
+                  to={`/concerts#${props.node.slug}`}
+                >Lire... </Link>
+              </div>
+              <div className="date">
+                <p>
+                  {'Date du concert: '}
+                  <span className="has-text-danger">
+                    <time dateTime={props.node.concertDate}>
+                      {concertDate.toLocaleDateString(
+                        'fr-CA', dateFormatOptions
+                      )}
+                    </time>
+                  </span>
+                </p>
+              </div>
               <a className="button is-primary is-rounded"
                 href={props.node.ticketsUrl}
                 target="_blank"
