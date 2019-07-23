@@ -11,7 +11,6 @@ const ConcertCard = (props) => {
     month: 'long', 
     day: 'numeric' 
   }
-  console.log('participation:', props.node.participation)
 
   return (
     <div className="container">
@@ -23,39 +22,42 @@ const ConcertCard = (props) => {
         </div>
         <div className="column">
           <div className="content">
-            <p className="title is-4">{props.node.concertName}</p>
-            <p>Direction Artistique: {props.node.artisticDirection}</p>
-            <p>Pianiste: {props.node.pianiste}</p>
-            {
-              (props.node.participation) && 
-              <>
-              <p>Artistes invités</p>
-              <ul>{props.node.participation.map(
-                (p, key) => <li key={key}>{p}</li>
-              )}</ul>
-              </>
-            }
-            <p>{props.node.summary.summary}
-              <Link
-                to={`/concerts#${props.node.slug}`}
-                className="link">... read more
-              </Link>
-            </p>
-            <p>
-              {'Date du concert: '} 
-              <span className="has-text-danger">
-                <time dateTime={props.node.concertDate}>
-                  {concertDate.toLocaleDateString(
-                    'fr-CA', dateFormatOptions
-                  )}
-                </time>
-              </span>
-            </p>
-            <a className="button is-primary is-rounded"
-              href={props.node.ticketsUrl}
-              target="_blank"
-              rel="noopener noreferrer">
-              Acheter vos billetes / Buy tickets</a>
+            <div className="concert-text">
+              <p className="title is-4">{props.node.concertName}</p>
+              <p>Direction Artistique: {props.node.artisticDirection}</p>
+              <p>Pianiste: {props.node.pianiste}</p>
+              {
+                (props.node.participation) &&
+                <>
+                  <p>Artistes invités</p>
+                  <ul>{props.node.participation.map(
+                    (p, key) => <li key={key}>{p}</li>
+                  )}</ul>
+                </>
+              }
+              <div className="concert-summary">
+                <p>{props.node.summary.summary}</p>
+                <Link
+                  to={`/concerts#${props.node.slug}`}
+                  className="link">... read more
+                </Link>
+              </div>
+              <p>
+                {'Date du concert: '}
+                <span className="has-text-danger">
+                  <time dateTime={props.node.concertDate}>
+                    {concertDate.toLocaleDateString(
+                      'fr-CA', dateFormatOptions
+                    )}
+                  </time>
+                </span>
+              </p>
+              <a className="button is-primary is-rounded"
+                href={props.node.ticketsUrl}
+                target="_blank"
+                rel="noopener noreferrer">
+                Acheter vos billetes / Buy tickets</a>
+            </div>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@
   font-size: 2rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1215px) {
   // laptop 
   .site-name {
     font-size: 2.8em;
@@ -157,3 +157,23 @@ $positions: ('top','left','bottom','right');
 // .with-divider {
 //   padding-top: 0;
 // }
+
+.container { 
+  max-width: 1200px;
+ }
+//  .section { 
+//    max-width: 1300px;
+//  }
+.concert-text {
+  height: 43vw;
+  max-height: 570px;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.concert-summary {
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0 0 25px 0;
+  margin: 0 0 25px 0;
+}
