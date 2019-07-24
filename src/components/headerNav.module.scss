@@ -31,7 +31,8 @@
   
   /* Change the color of links on hover */
   a:hover {    
-    color: $primary-color;
+    // color: $primary-color;
+    color: $secondary;
     // color: $nav-items-color-hover;
   }
   /* Add an active class to highlight the current page */
