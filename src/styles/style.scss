@@ -20,7 +20,7 @@
 }
 
 .concert-text {
-  height: 44vw;
+  height: 43vw;
   max-height: 656px;
   // border: 1px solid red;
   display: flex;
@@ -216,5 +216,6 @@ $positions: ('top','left','bottom','right');
   max-width: 1366px;
  }
 .hero {
-  margin-bottom: 3rem;
+  margin-bottom: nth($section-padding, 1);
+  // margin-bottom: 4rem;
 }
