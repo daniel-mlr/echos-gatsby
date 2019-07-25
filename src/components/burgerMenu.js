@@ -18,7 +18,6 @@ const BurgerMenu = () => {
   return (
 
     <div id="outer-container" style={{height: '100%'}}>
-   
       <Menu id={'slide'} 
         pageWrapId={'page-wrap'} 
         outerContainerId={'gatsby-focus-wrapper'} 
