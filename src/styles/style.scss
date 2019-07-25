@@ -21,7 +21,7 @@
 
 .concert-text {
   height: 43vw;
-  max-height: 570px;
+  max-height: 656px;
   // border: 1px solid red;
   display: flex;
   flex-direction: column;
@@ -37,6 +37,30 @@
 }
 .date {
   padding: 0 0 1rem 0;
+}
+@media screen and (min-width: 1367px) {
+  // when screen is over 1366px we no logner 
+  // grow columns paddings and margins left-right
+  .section {
+    padding: nth($section-padding, 1) 0;
+  }
+  .column {
+    padding: 27px;
+  }
+  .columns {
+    margin-left: (-27px);
+    margin-right: (-27px);
+    margin-top: (-27px);
+    &:last-child {
+      margin-bottom: (-27px);
+    }
+    &:not(:last-child){
+      margin-bottom: calc(1.5rem - #{27px});
+    }
+  }
+  .concert-text {
+    height: 656px;
+  }
 }
 
 @media screen and (max-width: 1215px) {
@@ -188,8 +212,9 @@ $positions: ('top','left','bottom','right');
 }
 
 .container { 
-  max-width: 1200px;
+  max-width: 1366px;
  }
 .hero {
-  margin-bottom: 3rem;
+  margin-bottom: nth($section-padding, 1);
+  // margin-bottom: 4rem;
 }

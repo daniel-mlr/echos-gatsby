@@ -50,23 +50,36 @@ const ConcertsPage = () => {
 
   return (
     <Layout>
-      <p>This is the page where concerts will be announced</p>
+      <div className="section">
+        <p>Hello</p>
+      </div>
+      <div
+        className="is-divider"
+        data-content="Nos prochain concert">
+      </div>
       {concerts.allContentfulConcerts.edges.map((edge, idx) => {
         return (
-          <article key={idx}>
-            <a name={edge.node.slug}></a>
-            <p>{edge.node.concertName}</p>
-            <p>{edge.node.subtitle}</p>
-            <p>{edge.node.concertDate}</p>
-            <p>Artistic Direction: {edge.node.artisticDirection}</p>
-            <p>Pianiste: {edge.node.pianiste}</p>
-            <p>{edge.node.subtitle}</p>
-            {edge.node.participation && edge.node.participation.map((p, idx) => {
-              return (
-                <p key={idx}>{p}</p>
-              )
-            })}
-            <Img fluid={edge.node.poster.fluid } alt={edge.node.poster.description} />
+          <article className="section" key={idx}>
+            {/* <a name={edge.node.slug}></a> */}
+            <h2 className="is-size-2">{edge.node.concertName}</h2>
+            <h3 className="is-size-3">{edge.node.subtitle}</h3>
+            <div className="columns">
+              <div className="column is-one-third" style={{maxWidth: '400px'}}>
+                <Img fluid={edge.node.poster.fluid} alt={edge.node.poster.description} />
+              </div>
+              <div className="column">
+                <p>{edge.node.concertDate}</p>
+                <p>Artistic Direction: {edge.node.artisticDirection}</p>
+                <p>Pianiste: {edge.node.pianiste}</p>
+                <p>{edge.node.subtitle}</p>
+                {edge.node.participation && edge.node.participation.map((p, idx) => {
+                  return (
+                    <p key={idx}>{p}</p>
+                  )
+                })}
+              </div>
+
+            </div>
             {documentToReactComponents(edge.node.description.json, options)}
             {(
               new Date(edge.node.concertDate) >= new Date()

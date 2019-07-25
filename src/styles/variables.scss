@@ -18,7 +18,12 @@ $divider-color: hsl(0, 0%, 48%);
 $divider-thickness: .15rem;
 
 // layout
+$max-container-size: 1366px;
 $card-content-padding: 0;
 $card-shadow: 0 0;
-$section-padding: 3rem 4vw;
+$section-padding: 4rem 4vw;
 $column-gap: 2vw;
+
+
+// other
+$headerbackgroundcolor: rgb(255, 255, 255);

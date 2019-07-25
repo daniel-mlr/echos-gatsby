@@ -6,7 +6,7 @@ import BurgerMenu from '../components/burgerMenu'
 
 const Layout = (props) => {
   return (
-    <div className="">
+    <div className="container">
       <BurgerMenu />
       {props.children}
       
