@@ -50,6 +50,13 @@ const ConcertsPage = () => {
 
   return (
     <Layout>
+      <div className="section">
+        <p>Hello</p>
+      </div>
+      <div
+        className="is-divider"
+        data-content="Nos prochain concert">
+      </div>
       {concerts.allContentfulConcerts.edges.map((edge, idx) => {
         return (
           <article className="section" key={idx}>

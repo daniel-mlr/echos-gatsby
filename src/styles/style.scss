@@ -41,9 +41,8 @@
 @media screen and (min-width: 1367px) {
   // when screen is over 1366px we no logner 
   // grow columns paddings and margins left-right
-
   .section {
-    padding: 3rem 0;
+    padding: nth($section-padding, 1) 0;
   }
   .column {
     padding: 27px;
