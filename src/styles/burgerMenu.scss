@@ -11,12 +11,12 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: $blue;
+  background: $blue-name;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: $orange;
+  background: #373a47;
 }
 
 /* Position and sizing of clickable cross button */
@@ -61,12 +61,34 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: block;
+  padding: 0.5em 0;
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
   display: none;
+}
+
+.bm-menu-item-active {
+  color:$secondary;
+}
+
+.bm-item:focus {
+  outline: none;
+}
+
+a.bm-item:hover {
+  color: $secondary;
+}
+
+.bm-lan-sw {
+  text-align: right;
+  font-size: smaller;
+  color:gray !important;
+}
+.bm-lan-sw:hover {
+  color:gray !important;
 }
 
 

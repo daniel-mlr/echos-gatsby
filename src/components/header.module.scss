@@ -39,7 +39,14 @@
   flex: 1;
 }
 .lang {
-  color: red;
+  color: gray;
   margin-right: 2vw;
   font-size: smaller;
+}
+
+@media screen and (max-width: 768px) {
+  // .topnav a:not(:first-child) {display: none;}
+  .lang {
+    display: none;
+  }
 }
