@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // import { FaSignLanguage } from 'react-icons/fa';
 import Img from 'gatsby-image'
+import '../styles/style.scss'
 
 const ConcertsPage = () => {
   const concerts = useStaticQuery(graphql`
@@ -81,9 +82,10 @@ const ConcertsPage = () => {
                     )
                   })}
                 </div>
-
               </div>
-              {documentToReactComponents(edge.node.description.json, options)}
+              <div className="rich-text">
+                {documentToReactComponents(edge.node.description.json, options)}
+              </div>
               {(
                 new Date(edge.node.concertDate) >= new Date()
               ) &&

@@ -41,7 +41,7 @@ const Blog = (props) => {
               <p>{props.data.contentfulBlogues.publicationDate}</p>
             </header>
             {documentToReactComponents(props.data.contentfulBlogues.body.json, options)}
-            <Link to={`/blog`}>Retour</Link>
+            <Link to={'/blog'}>Retour</Link>
           </article>
         </div>
       </section>

@@ -28,10 +28,10 @@ const BurgerMenu = () => {
           return (
             <Link key={link.id} 
               to={link.href} 
-              
               activeClassName="bm-menu-item-active"
-              >
-              {link.text}</Link>
+            >
+              {link.text}
+            </Link>
           )
         })}
         <a href="#" className="bm-lan-sw">English</a>
