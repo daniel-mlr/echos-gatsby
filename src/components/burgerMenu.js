@@ -18,7 +18,9 @@ const BurgerMenu = () => {
   return (
 
     <div id="outer-container" style={{height: '100%'}}>
-      <Menu id={'slide'} 
+      
+      <Menu disableAutoFocus 
+        id={'slide'} 
         pageWrapId={'page-wrap'} 
         outerContainerId={'gatsby-focus-wrapper'} 
         right >
@@ -26,11 +28,13 @@ const BurgerMenu = () => {
           return (
             <Link key={link.id} 
               to={link.href} 
-              className="menu-item">
-              <span>{link.text}</span></Link>
+              
+              activeClassName="bm-menu-item-active"
+              >
+              {link.text}</Link>
           )
         })}
-    
+        <a href="#" className="bm-lan-sw">English</a>
       </Menu>
       <main id="page-wrap">
         <Header />

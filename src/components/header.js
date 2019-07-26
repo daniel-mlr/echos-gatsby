@@ -17,7 +17,7 @@ const Header = () => {
       <HeaderNav/>
 
       {/* place holder for language switcher */}
-      <div className={headerStyles.lang} style={{visibility:'hidden'}} >English</div>
+      <a href="#" className={headerStyles.lang} >English</a>
 
 
     </header>
