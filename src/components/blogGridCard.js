@@ -6,6 +6,7 @@ const BlogGridCard = () => {
   const blogData = useStaticQuery(graphql`
     query {
       allContentfulBlogues(
+        filter : {node_locale: {eq: "en-US"}}
         sort: { fields: publicationDate, order: DESC }
         limit: 4
       ) {
@@ -23,6 +24,7 @@ const BlogGridCard = () => {
             }
             summary { summary }
             body { json }
+            node_locale
           }
         }
       }
@@ -34,23 +36,28 @@ const BlogGridCard = () => {
       <div className="is-divider" data-content="Nouvelles"></div>
       <div className="columns">
         {
-          blogData.allContentfulBlogues.edges.map((edge, idx) => {
-            const column = idx === 2 ? 'column is-hidden-touch' 
-              : idx === 3 ? 'column is-hidden-until-widescreen' 
-                : 'column'
-            return (
-              <div className={column} key={idx}>
-                <BlogCard
-                  name={edge.node.titre}
-                  key={idx}
-                  date={edge.node.publicationDate}
-                  slug={edge.node.slug}
-                  imgFluid={edge.node.previewPicture}
-                  content={edge.node.summary.summary} >
-                </BlogCard>
-              </div>
-            )
-          })
+          blogData.allContentfulBlogues.edges
+            // .filter((edge) => edge.node.node_locale === 'en-US')
+            .map((edge, idx) => {
+              // console.log('edge, idx:', edge, idx)
+              const column = idx === 2 ? 'column is-hidden-touch'
+                : idx === 3 ? 'column is-hidden-until-widescreen'
+                  : 'column'
+              return (
+                <div className={column} key={idx}>
+                  <BlogCard
+                    key={idx}
+                    // node={edge.node}
+                    name={edge.node.titre}
+                    date={edge.node.publicationDate}
+                    slug={edge.node.slug}
+                    imgFluid={edge.node.previewPicture}
+                    content={edge.node.summary.summary} 
+                  >
+                  </BlogCard>
+                </div>
+              )
+            })
         }
       </div>
     </section>

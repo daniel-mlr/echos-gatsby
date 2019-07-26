@@ -28,6 +28,7 @@ const ConcertGridCard = () => {
             prix
             slug
             ticketsUrl
+            node_locale
           }
         }
       }
@@ -43,7 +44,8 @@ const ConcertGridCard = () => {
       </div>
       {
         concertData.allContentfulConcerts.edges
-          .filter((edge, idx) => new Date(edge.node.concertDate) >= new Date())
+          .filter((edge) => edge.node.node_locale === 'en-US')
+          .filter((edge) => new Date(edge.node.concertDate) >= new Date())
           .map((edge, idx) => {
             return (
               <ConcertCard node={edge.node} key={idx} />

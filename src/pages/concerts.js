@@ -29,6 +29,7 @@ const ConcertsPage = () => {
               }
               slug
               ticketsUrl
+              node_locale
             } next {
               concertDate
             }
@@ -57,39 +58,41 @@ const ConcertsPage = () => {
         className="is-divider"
         data-content="Nos prochain concert">
       </div>
-      {concerts.allContentfulConcerts.edges.map((edge, idx) => {
-        return (
-          <article className="section" key={idx}>
-            {/* <a name={edge.node.slug}></a> */}
-            <h2 className="is-size-2">{edge.node.concertName}</h2>
-            <h3 className="is-size-3">{edge.node.subtitle}</h3>
-            <div className="columns">
-              <div className="column is-one-third" style={{maxWidth: '400px'}}>
-                <Img fluid={edge.node.poster.fluid} alt={edge.node.poster.description} />
-              </div>
-              <div className="column">
-                <p>{edge.node.concertDate}</p>
-                <p>Artistic Direction: {edge.node.artisticDirection}</p>
-                <p>Pianiste: {edge.node.pianiste}</p>
-                <p>{edge.node.subtitle}</p>
-                {edge.node.participation && edge.node.participation.map((p, idx) => {
-                  return (
-                    <p key={idx}>{p}</p>
-                  )
-                })}
-              </div>
+      {concerts.allContentfulConcerts.edges
+        .filter((edge) => edge.node.node_locale === 'en-US')
+        .map((edge, idx) => {
+          return (
+            <article className="section" key={idx}>
+              {/* <a name={edge.node.slug}></a> */}
+              <h2 className="is-size-2">{edge.node.concertName}</h2>
+              <h3 className="is-size-3">{edge.node.subtitle}</h3>
+              <div className="columns">
+                <div className="column is-one-third" style={{ maxWidth: '400px' }}>
+                  <Img fluid={edge.node.poster.fluid} alt={edge.node.poster.description} />
+                </div>
+                <div className="column">
+                  <p>{edge.node.concertDate}</p>
+                  <p>Artistic Direction: {edge.node.artisticDirection}</p>
+                  <p>Pianiste: {edge.node.pianiste}</p>
+                  <p>{edge.node.subtitle}</p>
+                  {edge.node.participation && edge.node.participation.map((p, idx) => {
+                    return (
+                      <p key={idx}>{p}</p>
+                    )
+                  })}
+                </div>
 
-            </div>
-            {documentToReactComponents(edge.node.description.json, options)}
-            {(
-              new Date(edge.node.concertDate) >= new Date()
-            ) && 
-              <p>achetez billets</p>
-            }
-            <hr/>
-          </article>
-        )
-      })}
+              </div>
+              {documentToReactComponents(edge.node.description.json, options)}
+              {(
+                new Date(edge.node.concertDate) >= new Date()
+              ) &&
+                <p>achetez billets</p>
+              }
+              <hr />
+            </article>
+          )
+        })}
     </Layout>
   )
 }
