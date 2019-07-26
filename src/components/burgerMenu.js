@@ -2,8 +2,9 @@ import React from 'react'
 import Menu from 'react-burger-menu/lib/menus/slide'
 import Header from './header'
 import {Link, graphql, useStaticQuery } from 'gatsby'
+import LangSwitcher from './langSwitcher';
 
-const BurgerMenu = () => {
+const BurgerMenu = ({path, locale}) => {
 
   const data = useStaticQuery(graphql`
   query {
@@ -34,10 +35,12 @@ const BurgerMenu = () => {
             </Link>
           )
         })}
-        <a href="#" className="bm-lan-sw">English</a>
+        <span className="bm-lan-sw">
+          <LangSwitcher path={path}></LangSwitcher>
+        </span>
       </Menu>
       <main id="page-wrap">
-        <Header />
+        <Header path={path} locale={locale} />
       </main>
     </div> 
   )

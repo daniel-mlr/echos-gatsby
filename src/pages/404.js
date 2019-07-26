@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-const NotFound = () => {
+const NotFound = ({pageContext: { locale }}) => {
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <Head title="404"/>
       <h1>Page not found</h1>
       <p>

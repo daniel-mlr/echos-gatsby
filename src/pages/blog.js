@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import blogStyles from './blog.module.scss'
 import Head from '../components/head'
 
-const BlogPage = () => {
+const BlogPage = ({pageContext: { locale }}) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogues(sort: { fields: publicationDate, order: DESC }) {
@@ -21,7 +21,7 @@ const BlogPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <Head title="Blog"/>
       <section className={blogStyles.section} >
         <h1>Nouvelles</h1>

@@ -1,0 +1,9 @@
+.lang {
+  color: gray;
+  padding: 0 0.5vw;
+  font-size: smaller;
+}
+
+.lang-container span:first-child a {
+  border-right: solid 1px gray;
+}

@@ -4,9 +4,9 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Style from './about.module.scss'
 
-const AboutPage = () => {
+const AboutPage = ({pageContext: { locale }}) => {
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <Head title="About"/>
       <section className={Style.section} >
         <h1>About</h1>

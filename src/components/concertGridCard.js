@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import ConcertCard from '../components/concertCard'
 
-const ConcertGridCard = () => {
+const ConcertGridCard = ({title}) => {
   const concertData = useStaticQuery(graphql`
     query {
       allContentfulConcerts (sort: {fields: concertDate, order: ASC}) {
@@ -40,7 +40,7 @@ const ConcertGridCard = () => {
     <section className="section">
       <div
         className="is-divider"
-        data-content="Notre prochain concert">
+        data-content={title}>
       </div>
       {
         concertData.allContentfulConcerts.edges

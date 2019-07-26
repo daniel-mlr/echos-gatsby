@@ -2,8 +2,10 @@ import React from 'react'
 import { Link} from 'gatsby'
 import headerStyles from './header.module.scss'
 import HeaderNav from './headerNav'
+import LangSwitcher from './langSwitcher';
 
-const Header = () => {
+
+const Header = ({path, locale}) => {
  
   return (
     <header className={headerStyles.header}>
@@ -17,9 +19,10 @@ const Header = () => {
       <HeaderNav/>
 
       {/* place holder for language switcher */}
-      <a href="#" className={headerStyles.lang} >English</a>
-
-
+      <span className={headerStyles.lang}>
+        <LangSwitcher path={path}></LangSwitcher>
+      </span>
+      
     </header>
   )
 }

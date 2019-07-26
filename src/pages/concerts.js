@@ -8,7 +8,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import '../styles/style.scss'
 
-const ConcertsPage = () => {
+const ConcertsPage = ({pageContext: { locale }}) => {
   const concerts = useStaticQuery(graphql`
     query {
       allContentfulConcerts ( sort: {fields: concertDate, order: DESC}) {
@@ -59,7 +59,7 @@ const ConcertsPage = () => {
   // }
 
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <div className="section">
         <p>Hello</p>
       </div>

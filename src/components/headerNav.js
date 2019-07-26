@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import headerStyles from './headerNav.module.scss'
+import LocalizedLink from './localizedLink';
 
 const HeaderNav = () => {
   
@@ -20,11 +21,11 @@ const HeaderNav = () => {
         {data.site.siteMetadata.menu.map(link => {
           
           return (
-            <Link
+            <LocalizedLink
               to={link.href}
               key={link.id}
               activeClassName={headerStyles.active}
-            >{link.text}</Link>
+            >{link.text}</LocalizedLink>
           )})
         }
       </div>
