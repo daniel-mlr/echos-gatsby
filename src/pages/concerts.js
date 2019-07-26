@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
 // import ConcertCard from '../components/concertCard'
+// import {  BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // import { FaSignLanguage } from 'react-icons/fa';
 import Img from 'gatsby-image'
@@ -39,16 +40,23 @@ const ConcertsPage = () => {
     }
   `)
   
-  const options = {
-    renderNode: {
-      // eslint-disable-next-line react/display-name
-      'embedded-asset-block': (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
-      },
-    }
-  }
+  // const H4 = ({children}) => (
+  //   <h4 className="has-background-warning">{children}</h4>
+  // )
+  // const options = {
+  //   displayName: 'mesOptions',
+  //   renderNode: {
+  //     // eslint-disable-next-line react/display-name
+  //     // 'embedded-asset-block': (node) => {
+  //     //   const alt = node.data.target.fields.title['en-US']
+  //     //   const url = node.data.target.fields.file['en-US'].url
+  //     //   return <img alt={alt} src={url} />
+  //     // },
+  //     [BLOCKS.HEADING_4]: (node, children) => <H4>{children}</H4>
+  //   },
+  //   renderMark: {
+  //   }
+  // }
 
   return (
     <Layout>
@@ -65,8 +73,8 @@ const ConcertsPage = () => {
           return (
             <article className="section" key={idx}>
               {/* <a name={edge.node.slug}></a> */}
-              <h2 className="is-size-2">{edge.node.concertName}</h2>
-              <h3 className="is-size-3">{edge.node.subtitle}</h3>
+              <h2 className="title">{edge.node.concertName}</h2>
+              <h3 className="subtitle">{edge.node.subtitle}</h3>
               <div className="columns">
                 <div className="column is-one-third" style={{ maxWidth: '400px' }}>
                   <Img fluid={edge.node.poster.fluid} alt={edge.node.poster.description} />
@@ -83,8 +91,11 @@ const ConcertsPage = () => {
                   })}
                 </div>
               </div>
-              <div className="rich-text">
-                {documentToReactComponents(edge.node.description.json, options)}
+              <div className="content">
+                {documentToReactComponents(
+                  // edge.node.description.json, options
+                  edge.node.description.json
+                )}
               </div>
               {(
                 new Date(edge.node.concertDate) >= new Date()
