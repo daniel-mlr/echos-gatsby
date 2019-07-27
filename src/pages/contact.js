@@ -5,7 +5,7 @@ import Style from './contact.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import { FaLocationArrow, FaPhoneSquare } from 'react-icons/fa'
 
-const ContactPage = () => {
+const ContactPage = ({pageContext: { locale }}) => {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -19,7 +19,7 @@ const ContactPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <Head title="Contact" />
       <section className={Style.section} >
         <h1>Contactez-nous</h1>

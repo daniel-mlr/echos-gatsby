@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Concert from '../components/concert'
 
-const ConcertsPage = () => {
+const ConcertsPage = ({pageContext: { locale }}) => {
   const concerts = useStaticQuery(graphql`
     query {
       allContentfulConcerts ( sort: {fields: concertDate, order: DESC}) {
@@ -37,7 +37,7 @@ const ConcertsPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout path="/" locale={locale}>
       <div className="section">
         <p>Hello</p>
       </div>

@@ -16,7 +16,7 @@ export const query = graphql`
     }
   }
 `
-const Blog = (props) => {
+const Blog = ({pageContext: { locale }, data}) => {
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -29,18 +29,18 @@ const Blog = (props) => {
     }
   }
   return (
-    <Layout>
-      <Head title={props.data.contentfulBlogues.titre}/>
+    <Layout path="/" locale={locale}>
+      <Head title={data.contentfulBlogues.titre}/>
 
       <section className={blogStyles.section} >
         <h1>Nouvelles</h1>
         <div className={blogStyles.mainContainer} >
           <article className={blogStyles.articleContainer} >
             <header>
-              <h2>{props.data.contentfulBlogues.titre}</h2>
-              <p>{props.data.contentfulBlogues.publicationDate}</p>
+              <h2>{data.contentfulBlogues.titre}</h2>
+              <p>{data.contentfulBlogues.publicationDate}</p>
             </header>
-            {documentToReactComponents(props.data.contentfulBlogues.body.json, options)}
+            {documentToReactComponents(data.contentfulBlogues.body.json, options)}
             <Link to={'/blog'}>Retour</Link>
           </article>
         </div>
@@ -48,7 +48,5 @@ const Blog = (props) => {
     </Layout>
   )
 }
-Blog.propTypes = {
-  data: PropTypes.object,
-}
+
 export default Blog
