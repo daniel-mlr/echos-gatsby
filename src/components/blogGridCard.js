@@ -1,9 +1,11 @@
 import React from 'react'
 import BlogCard from '../components/blogCard'
+import ReadMoreButton from '../components/readMoreButton'
 
 const BlogGridCard = ({title, data}) => {
 
   return (
+    <>
     <section className="section">
       <div className="is-divider" data-content={title}></div>
       <div className="columns">
@@ -29,7 +31,14 @@ const BlogGridCard = ({title, data}) => {
           })
         }
       </div>
+      <div className="container" style={{paddingTop: '2rem'}}>
+        <ReadMoreButton
+          // title={data.siteMetadata.readMore...}
+          title={'read more news'}
+        />
+      </div>
     </section>
+    </>
   )
 }
 

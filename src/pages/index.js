@@ -5,7 +5,6 @@ import Jumbotron from '../components/jumbotron'
 import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
-import ReadMoreButton from '../components/readMoreButton'
 
 const IndexPage = ({pageContext: { locale }, data}) => {
   
@@ -19,10 +18,6 @@ const IndexPage = ({pageContext: { locale }, data}) => {
       <BlogGridCard
         title={data.meta.edges[0].node.blogName}
         data={data.blog}
-      />
-      <ReadMoreButton
-        // title={data.siteMetadata.readMore...}
-        title={'read more news'}
       />
     </Layout>
   )
@@ -51,7 +46,8 @@ query ($langtag: String = "fr-CA"){
         previewPicture { 
           title 
           description
-          fluid(maxWidth: 300) {
+          # fluid(maxWidth: 300) {
+          fluid(maxWidth: 450) {
             ...GatsbyContentfulFluid
           }
         }
