@@ -5,6 +5,7 @@ import Jumbotron from '../components/jumbotron'
 import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
+import ReadMoreButton from '../components/readMoreButton'
 
 const IndexPage = ({pageContext: { locale }, data}) => {
   
@@ -12,8 +13,17 @@ const IndexPage = ({pageContext: { locale }, data}) => {
     <Layout path="/" locale={locale}>
       <Head title="Home" />
       <Jumbotron />
-      <ConcertGridCard title={data.meta.edges[0].node.concertHeader1} />
-      <BlogGridCard title={data.meta.edges[0].node.blogName} data={data.blog} />
+      <ConcertGridCard
+        title={data.meta.edges[0].node.concertHeader1}
+      />
+      <BlogGridCard
+        title={data.meta.edges[0].node.blogName}
+        data={data.blog}
+      />
+      <ReadMoreButton
+        // title={data.siteMetadata.readMore...}
+        title={'read more news'}
+      />
     </Layout>
   )
 }

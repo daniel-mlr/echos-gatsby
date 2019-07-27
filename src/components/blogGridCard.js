@@ -16,7 +16,7 @@ const BlogGridCard = ({title, data}) => {
               <div className={column} key={idx}>
                 <BlogCard
                   key={idx}
-                  // node={edge.node}
+                  // {...edge.node}
                   name={edge.node.titre}
                   date={edge.node.publicationDate}
                   slug={edge.node.slug}
