@@ -29,6 +29,7 @@ query ($langtag: String = "fr-CA"){
       }
     },
   blog:allContentfulBlogues(
+    filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }
     limit: 4
   ) {
