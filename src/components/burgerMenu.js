@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from 'react-burger-menu/lib/menus/slide'
 import Header from './header'
 import {Link, graphql, useStaticQuery } from 'gatsby'
-import LangSwitcher from './langSwitcher';
+import LangSwitcher from './langSwitcher'
 
 const BurgerMenu = ({path, locale}) => {
 

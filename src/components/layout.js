@@ -4,14 +4,13 @@ import PropTypes from 'prop-types'
 import '../styles/style.scss'
 import BurgerMenu from '../components/burgerMenu'
 
-
 const {
   Provider: LocaleProvider,
   Consumer: LocaleConsumer
 } = React.createContext()
 
 const Layout = ({children, path, locale}) => {
-  console.log('locale layout',locale)
+  // console.log('locale layout',locale)
   return (    
     <LocaleProvider value={locale}>
       
