@@ -47,18 +47,20 @@ const ConcertsPage = ({pageContext: { locale }}) => {
 
   return (
     <Layout path="/concerts" locale={locale}>
-      <Hero imgFluid={concerts.file.childImageSharp.fluid} />
+      <Hero
+        imgFluid={concerts.file.childImageSharp.fluid}
+        title='Concerts'
+      />
       <article className="section">
         <div
           className="is-divider"
           data-content="Nos prochain concert">
         </div>
-        { // print actual concerts
+        { // print coming concerts
           concerts.allContentfulConcerts.edges
             .filter((edge) => (edge.node.node_locale === 'en-US') 
               & (new Date() <= new Date(edge.node.concertDate)))
             .map((edge, idx) => {
-              console.log('concert date:', edge.node.concertDate)
               return (<Concert key={idx} courant {...edge.node} />)
             })
         }
@@ -73,7 +75,6 @@ const ConcertsPage = ({pageContext: { locale }}) => {
             .filter((edge) => (edge.node.node_locale === 'en-US') 
               & (new Date() > new Date(edge.node.concertDate)))
             .map((edge, idx) => {
-              console.log('concert date:', edge.node.concertDate)
               return (<Concert key={idx} {...edge.node} />)
             })
         }
