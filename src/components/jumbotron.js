@@ -23,7 +23,7 @@ const Jumbotron = () => {
 
   return (
 
-    <section className="hero is-primary is-full-height has-background">
+    <section className="hero is-full-height has-background">
       <Img
         fluid={data.file.childImageSharp.fluid}
         className="hero-background"

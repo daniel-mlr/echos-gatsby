@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
+import BuyButton from './buyButton'
 
 const Concert = (props) => {
   return (
-    <section className="section">
+    <section className="section is-paddingless">
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
       <div className="columns">
@@ -27,19 +28,14 @@ const Concert = (props) => {
                 )}</ul>
               </>
             }
+            {props.courant && <BuyButton href={props.ticketsUrl} />}
           </div>
         </div>
       </div>
       <div className="content">
-        {documentToReactComponents(
-          props.description.json
-        )}
+        {documentToReactComponents( props.description.json)}
       </div>
-      {
-        (new Date(props.concertDate) >= new Date()) &&
-        <p>achetez billets</p>
-      }
-      <hr />
+      {props.courant && <BuyButton href={props.ticketsUrl} />}
     </section>
   )}
   

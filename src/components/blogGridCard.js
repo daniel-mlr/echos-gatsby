@@ -18,12 +18,12 @@ const BlogGridCard = ({title, data}) => {
               <div className={column} key={idx}>
                 <BlogCard
                   key={idx}
-                  // {...edge.node}
-                  name={edge.node.titre}
-                  date={edge.node.publicationDate}
-                  slug={edge.node.slug}
-                  imgFluid={edge.node.previewPicture}
-                  content={edge.node.summary.summary} 
+                  {...edge.node}
+                  // name={edge.node.titre}
+                  // date={edge.node.publicationDate}
+                  // slug={edge.node.slug}
+                  // imgFluid={edge.node.previewPicture}
+                  // content={edge.node.summary.summary} 
                 >
                 </BlogCard>
               </div>

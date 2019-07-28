@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import BuyButton from './buyButton'
 
 const ConcertCard = (props) => {
   const concertDate = new Date(props.node.concertDate)
@@ -59,11 +60,12 @@ const ConcertCard = (props) => {
                 </p>
               </div>
               <div className="content">
-                <a className="button is-primary is-rounded"
+                <BuyButton href={props.node.ticketsUrl} />
+                {/* <a className="button is-primary is-rounded"
                   href={props.node.ticketsUrl}
                   target="_blank"
                   rel="noopener noreferrer">
-                  Acheter vos billetes / Buy tickets</a>
+                  Acheter vos billetes / Buy tickets</a> */}
               </div>
             </div>
           </div>
