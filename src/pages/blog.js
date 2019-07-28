@@ -38,13 +38,13 @@ const BlogPage = ({pageContext: { locale }}) => {
   `)
 
   return (
-    <Layout path="/" locale={locale}>
+    <Layout path="/blog" locale={locale}>
       <Head title="Blog"/>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={'Nouvelles'}
       />
-      <section className="section" >
+      <section className="section" style={{'padding-top': 0}}>
         <div className="container is-desktop">
           {
             data.allContentfulBlogues.edges.map((edge, id) => {

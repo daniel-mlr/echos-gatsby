@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/head'
-import blogStyles from './blog.module.scss'
+// import blogStyles from './blog.module.scss'
 
 export const query = graphql`
   query ($slug: String!) {
@@ -28,14 +28,15 @@ const Blog = ({pageContext: { locale }, data}) => {
       },
     }
   }
+  console.log('data:', data.contentfulBlogues.slug)
   return (
-    <Layout path="/" locale={locale}>
+    <Layout path={`/blog/${data.contentfulBlogues.slug}`} locale={locale}>
       <Head title={data.contentfulBlogues.titre}/>
 
-      <section className={blogStyles.section} >
+      <section className={''} >
         <h1>Nouvelles</h1>
-        <div className={blogStyles.mainContainer} >
-          <article className={blogStyles.articleContainer} >
+        <div className={''} >
+          <article className={''} >
             <header>
               <h2>{data.contentfulBlogues.titre}</h2>
               <p>{data.contentfulBlogues.publicationDate}</p>
