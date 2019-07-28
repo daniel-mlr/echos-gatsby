@@ -44,19 +44,19 @@ const BlogPage = ({pageContext: { locale }}) => {
         imgFluid={data.file.childImageSharp.fluid}
         title={'Nouvelles'}
       />
-      <section className="section" style={{'padding-top': 0}}>
+      <section className="section" style={{'paddingTop': 0}}>
         <div className="container is-desktop">
           {
             data.allContentfulBlogues.edges.map((edge, id) => {
               return (
                 <article className="media" key={id} >
                   <figure className="media-left">
-                    <p className="image is-96x96">
+                    <div className="image is-96x96">
                       <Img
                         fixed={edge.node.previewPicture.fixed}
                         alt={edge.node.previewPicture.description}
                       />
-                    </p>
+                    </div>
                   </figure>
                   <div className="media-content">
                     <h3 className="title is-5 is-marginless">{edge.node.titre}</h3>

@@ -3,7 +3,8 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import Style from './contact.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
-import { FaLocationArrow, FaPhoneSquare } from 'react-icons/fa'
+import { FaLocationArrow, FaPhoneSquare, FaTwitter } from 'react-icons/fa'
+import Hero from '../components/hero'
 
 const ContactPage = ({pageContext: { locale }}) => {
   const data = useStaticQuery(graphql`
@@ -15,54 +16,75 @@ const ContactPage = ({pageContext: { locale }}) => {
         phone
       }
     }
+    file(name: {eq: "water-1920x592"}) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1366) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
   `)
 
   return (
-    <Layout path="/" locale={locale}>
+    <Layout path="/contact" locale={locale}>
       <Head title="Contact" />
-      <section className={Style.section} >
-        <h1>Contactez-nous</h1>
-        <div className={Style.mainContainer} >
-          <h3>Nous recrutons de nouveaux membres</h3>
-          <p>
-            Quelle meilleure façon de pratiquer vos connaissances en français
-            que de le chanter! Nous reprenons nos pratiques cet automne. Contactez-nous
-            pour toute information.
-          </p>
-          <p className={Style.address}>
-            <FaLocationArrow style={{'margin': '0 0.3rem 0 0'}} />
-            <span>{data.site.siteMetadata.address1}</span>
-            <span>{data.site.siteMetadata.address2}</span>
-          </p>
-          <p className={Style.phone}>
-            <FaPhoneSquare style={{marginRight: '0.3rem'}}  />
-            {data.site.siteMetadata.phone}
-          </p>
-          <p>
-            <a
-              href="https://twitter.com/ChoeurLesEchos"
-              rel="noopener noreferrer"
-              target="_blank">Our Twitter</a>
-          </p>
-          <div className={Style.iframeContainer} >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12391.541540037899!2d-122.85109842192472!3d49.23847564793672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867871eb76caf5%3A0x50bd0c8222d0c03!2sPlace+Maillardville+Community+Centre!5e0!3m2!1sfr!2sca!4v1560500215397!5m2!1sfr!2sca"
-              width="800"
-              height="600"
-              frameBorder="0"
-              style={{border:0}}
-              styles={
-                [
-                  { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-                  { elementType: 'labels.text.stroke', stylers: [{ color: '#0cc' }] },
-                  { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
-                ]
-              } 
-              allowFullScreen>
-            </iframe>
+      <Hero
+        imgFluid={data.file.childImageSharp.fluid}
+        title={'Contacts'}
+      />
+      <section className="section" style={{'paddingTop': 0}} >
+        <div className="columns">
+          <div className="column"></div>
+          <div className="column is-four-fifths">
+            <h2 className="title is-3">Contactez-nous</h2>
+            <div className="" >
+              <h3 className="title is-4">Nous recrutons de nouveaux membres</h3>
+              <p style={{'paddingBottom': '1rem'}}>
+                Quelle meilleure façon de pratiquer vos connaissances en français
+                que de le chanter! Nous reprenons nos pratiques cet automne. Contactez-nous
+                pour toute information.
+              </p>
+              {/* <p className={Style.address}> */}
+              <p>
+                <FaLocationArrow style={{ 'margin': '0 0.3rem 0 0' }} />
+                <span className="is-italic">{data.site.siteMetadata.address1}&ensp;</span>
+                <span className="is-italic">{data.site.siteMetadata.address2}</span>
+              </p>
+              {/* <p className={Style.phone}> */}
+              <p>
+                <FaPhoneSquare style={{ marginRight: '0.3rem' }} />
+                {data.site.siteMetadata.phone}
+              </p>
+              <p>
+                <FaTwitter style={{ marginRight: '0.3rem' }} />
+                <a
+                  href="https://twitter.com/ChoeurLesEchos"
+                  rel="noopener noreferrer"
+                  target="_blank">ChoeurLesEchos</a>
+              </p>
+              <div className={Style.iframeContainer} >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12391.541540037899!2d-122.85109842192472!3d49.23847564793672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867871eb76caf5%3A0x50bd0c8222d0c03!2sPlace+Maillardville+Community+Centre!5e0!3m2!1sfr!2sca!4v1560500215397!5m2!1sfr!2sca"
+                  width="800"
+                  height="600"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                  styles={
+                    [
+                      { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+                      { elementType: 'labels.text.stroke', stylers: [{ color: '#0cc' }] },
+                      { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+                    ]
+                  }
+                  allowFullScreen>
+                </iframe>
+              </div>
+            </div>
           </div>
+          <div className="column"></div>
         </div>
+
       </section>
     </Layout>
   )

@@ -2,7 +2,6 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 const Hero = (props) => {
-  console.log('in the hero')
   return (
     <section className="hero has-background">
       <Img
