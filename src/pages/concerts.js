@@ -47,7 +47,10 @@ const ConcertsPage = ({pageContext: { locale }}) => {
 
   return (
     <Layout path="/concerts" locale={locale}>
-      <Hero imgFluid={concerts.file.childImageSharp.fluid} />
+      <Hero
+        imgFluid={concerts.file.childImageSharp.fluid}
+        title='Concerts'
+      />
       <article className="section">
         <div
           className="is-divider"

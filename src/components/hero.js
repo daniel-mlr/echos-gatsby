@@ -14,7 +14,9 @@ const Hero = (props) => {
       />
       <div className="hero-body">
         <div className="container">
-          <h2 className="title has-text-white">Concerts</h2>
+          <h2 className="title has-text-white">
+            {props.title}
+          </h2>
         </div>
       </div>
     </section>
