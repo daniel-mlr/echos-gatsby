@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import BuyButton from './buyButton'
+import '../styles/concert.scss'
 
 const Concert = (props) => {
+  
   return (
-    <section className="section is-paddingless">
+    <section className="section notlastchild">
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
       <div className="columns">

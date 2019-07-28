@@ -53,7 +53,7 @@ const ConcertsPage = ({pageContext: { locale }}) => {
           className="is-divider"
           data-content="Nos prochain concert">
         </div>
-        {
+        { // print actual concerts
           concerts.allContentfulConcerts.edges
             .filter((edge) => (edge.node.node_locale === 'en-US') 
               & (new Date() <= new Date(edge.node.concertDate)))
@@ -68,7 +68,7 @@ const ConcertsPage = ({pageContext: { locale }}) => {
           className="is-divider"
           data-content="Nos précédents concert">
         </div>
-        {
+        { // print former concerts
           concerts.allContentfulConcerts.edges
             .filter((edge) => (edge.node.node_locale === 'en-US') 
               & (new Date() > new Date(edge.node.concertDate)))
