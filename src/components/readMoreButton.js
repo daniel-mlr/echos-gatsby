@@ -2,7 +2,7 @@ import React from 'react'
 import { Link} from 'gatsby'
 
 const ReadMoreButton = ({title}) => {
-  console.log('title', {title})
+  // console.log('title', {title})
   return (
     <Link
       to={'/blog/'}
