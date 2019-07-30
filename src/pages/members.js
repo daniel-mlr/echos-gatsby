@@ -1,13 +1,46 @@
 import React from 'react'
+import Layout from '../components/layout'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 // import PropTypes from 'prop-types'
 
 // TODO: create  a login form to access data on this page
 
-const members = () => {
+const Members = ({pageContext: { locale }}) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulMembres (
+        filter : {node_locale: {eq: "en-US"}}
+      )
+        {
+        edges {
+          node {
+            titre
+            updatedAt(formatString: "MMM Do, YYYY")
+            slug
+          }
+        }
+      }
+    }`
+  )
+
   return (
-    <div>
-      Hello
-    </div>
+    <Layout path="/members" locale={locale}>
+      <section className="section">
+        <ul>
+          {
+            data.allContentfulMembres.edges.map((edge, id) => {
+              return (
+                <li key={id}>
+                  <Link to={`/members/${edge.node.slug}`} >
+                    {edge.node.titre}
+                  </Link>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </section>
+    </Layout>
   )
 }
 
@@ -15,4 +48,4 @@ const members = () => {
 
 // }
 
-export default members
+export default Members
