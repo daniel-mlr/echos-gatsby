@@ -27,8 +27,9 @@ const BurgerMenu = ({path, locale}) => {
         right >
         {data.site.siteMetadata.menu.map(link => {
           return (
-            <Link key={link.id} 
-              to={link.href} 
+            <Link
+              key={link.id}
+              to={link.href}
               activeClassName="bm-menu-item-active"
             >
               {link.text}

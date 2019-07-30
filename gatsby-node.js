@@ -8,16 +8,22 @@ const path = require('path')
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve('./src/templates/blog.js')
+  const membersTemplate= path.resolve('./src/templates/members.js')
   const res = await graphql(`
     query {
-      allContentfulBlogues {
+      blogs:allContentfulBlogues {
+        edges {
+          node { slug }
+        }
+      }
+      members:allContentfulMembres {
         edges {
           node { slug }
         }
       }
     } 
   `)
-  res.data.allContentfulBlogues.edges.forEach( (edge) => {
+  res.data.blogs.edges.forEach( (edge) => {
     Object.keys(locales).map(lang => {
       
       const blogPath = `/blog/${edge.node.slug}`
@@ -27,6 +33,25 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
       createPage({
         component: blogTemplate,
+        path: localizedPath,
+        context: {
+          slug: edge.node.slug,
+          locale: lang
+        }
+      })
+    })
+  })
+  
+  res.data.members.edges.forEach( (edge) => {
+    Object.keys(locales).map(lang => {
+      
+      const membersPath = `/members/${edge.node.slug}`
+      const localizedPath = locales[lang].default
+        ? membersPath
+        : locales[lang].path + membersPath
+
+      createPage({
+        component: membersTemplate,
         path: localizedPath,
         context: {
           slug: edge.node.slug,

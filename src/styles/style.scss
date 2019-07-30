@@ -34,7 +34,8 @@
   margin: 0 0 10px 0;
 }
 .flex-read-more {
-  padding: 1rem 0;
+  // padding: 1rem 0;
+  padding: 0 0 1rem 0;
 }
 .date {
   padding: 0 0 1rem 0;
@@ -174,7 +175,8 @@ $positions: ('top','left','bottom','right');
 }
 
 .blog-card-title {
-  margin: 1rem 0;
+  // margin: 1rem 0;
+  margin: 1.5rem 0 1rem 0;
   height: 1.5em;
 }
 .date {
@@ -206,7 +208,8 @@ $positions: ('top','left','bottom','right');
 
 // correction bulma-divider
 .is-divider, .is-divider-vertical {
-  margin: -3rem 0 3em 0;
+  // margin: -3rem 0 3em 0;
+  margin: -2rem 0 5em 0;
 }
 .is-divider[data-content]::after, .is-divider-vertical[data-content]::after {
   margin: -0.5em 0 0 0;
