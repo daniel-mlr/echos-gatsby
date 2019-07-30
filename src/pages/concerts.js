@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Concert from '../components/concert'
 import Hero from '../components/hero'
 
-const ConcertsPage = ({pageContext: { locale }}) => {
+const ConcertsPage = ({pageContext: { locale, langtag }}) => {
   const concerts = useStaticQuery(graphql`
     query {
       allContentfulConcerts ( sort: {fields: concertDate, order: DESC}) {
@@ -46,7 +46,7 @@ const ConcertsPage = ({pageContext: { locale }}) => {
   `)
 
   return (
-    <Layout path="/concerts" locale={locale}>
+    <Layout path="/concerts" locale={locale} langtag={langtag}>
       <Hero
         imgFluid={concerts.file.childImageSharp.fluid}
         title='Concerts'

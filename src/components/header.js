@@ -5,7 +5,7 @@ import HeaderNav from './headerNav'
 import LangSwitcher from './langSwitcher';
 
 
-const Header = ({path, locale}) => {
+const Header = ({path, langtag}) => {
  
   return (
     <header className={headerStyles.header}>
@@ -16,7 +16,7 @@ const Header = ({path, locale}) => {
           alt='logo'
         />
       </Link>
-      <HeaderNav/>
+      <HeaderNav langtag={langtag}/>
 
       {/* place holder for language switcher */}
       <span className={headerStyles.lang}>

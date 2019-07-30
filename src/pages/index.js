@@ -6,10 +6,10 @@ import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
 
-const IndexPage = ({pageContext: { locale }, data}) => {
+const IndexPage = ({pageContext: { locale, langtag }, data}) => {
   
   return (
-    <Layout path="/" locale={locale}>
+    <Layout path="/" locale={locale} langtag={langtag}>
       <Head title="Home" />
       <Jumbotron />
       <ConcertGridCard

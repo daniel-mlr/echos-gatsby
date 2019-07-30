@@ -36,7 +36,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
         path: localizedPath,
         context: {
           slug: edge.node.slug,
-          locale: lang
+          locale: lang,
+          langtag: locales[lang].locale
         }
       })
     })
@@ -55,7 +56,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
         path: localizedPath,
         context: {
           slug: edge.node.slug,
-          locale: lang
+          locale: lang,
+          langtag: locales[lang].locale
         }
       })
     })

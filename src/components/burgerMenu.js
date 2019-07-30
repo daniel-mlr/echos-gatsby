@@ -4,13 +4,13 @@ import Header from './header'
 import {Link, graphql, useStaticQuery } from 'gatsby'
 import LangSwitcher from './langSwitcher'
 
-const BurgerMenu = ({path, locale}) => {
+const BurgerMenu = ({path, langtag}) => {  
 
   const data = useStaticQuery(graphql`
   query {
     site {
       siteMetadata {
-        menu { id, href, text }
+        menu { id, href, label { node_locale, text} }
       }
     }
   }
@@ -26,13 +26,14 @@ const BurgerMenu = ({path, locale}) => {
         outerContainerId={'gatsby-focus-wrapper'} 
         right >
         {data.site.siteMetadata.menu.map(link => {
+          
           return (
             <Link
               key={link.id}
               to={link.href}
               activeClassName="bm-menu-item-active"
             >
-              {link.text}
+              {link.label.filter(key => key.node_locale === langtag )[0].text} 
             </Link>
           )
         })}
@@ -41,7 +42,7 @@ const BurgerMenu = ({path, locale}) => {
         </span>
       </Menu>
       <main id="page-wrap">
-        <Header path={path} locale={locale} />
+        <Header path={path} langtag={langtag} />
       </main>
     </div> 
   )

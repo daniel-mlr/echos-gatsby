@@ -6,7 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { FaLocationArrow, FaPhoneSquare, FaTwitter } from 'react-icons/fa'
 import Hero from '../components/hero'
 
-const ContactPage = ({pageContext: { locale }}) => {
+const ContactPage = ({pageContext: { locale, langtag }}) => {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -27,7 +27,7 @@ const ContactPage = ({pageContext: { locale }}) => {
   `)
 
   return (
-    <Layout path="/contact" locale={locale}>
+    <Layout path="/contact" locale={locale} langtag={langtag}>
       <Head title="Contact" />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
