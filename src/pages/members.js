@@ -5,7 +5,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 // TODO: create  a login form to access data on this page
 
-const Members = ({pageContext: { locale }}) => {
+const Members = ({pageContext: { locale, langtag }}) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulMembres (
@@ -22,9 +22,9 @@ const Members = ({pageContext: { locale }}) => {
       }
     }`
   )
-
+console.log('mem-langtag',langtag)
   return (
-    <Layout path="/members" locale={locale}>
+    <Layout path="/members" locale={locale} langtag={langtag}>
       <section className="section">
         <ul>
           {

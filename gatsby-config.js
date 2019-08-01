@@ -14,34 +14,80 @@ module.exports = {
       {
         id: 1,
         href: '/',
-        // text: { 'FR': 'Accueil', 'EN': 'Home' }
-        // text: ['Accueil', 'Home']
-        text: 'Accueil'
-      },
+        label:[
+          {
+            node_locale: 'fr-CA',
+            text: 'Accueil'
+          },
+          {
+            node_locale: 'en-US',
+            text: 'Home' 
+          }
+        ]
+      } ,
       {
         id: 2,
         href: '/concerts',
-        // text: ['Concerts', 'Concerts' ] 
-        text: 'Concerts'
+        label:[
+          {
+            node_locale: 'fr-CA',
+            text: 'Concerts'
+          },
+          {
+            node_locale: 'en-US',
+            text: 'Concerts' 
+          }
+        ]
       },
       {
         id: 3,
         href: '/blog',
         // text: ['Nouvelles', 'News' ]
-        text: 'Nouvelles'
+        label:[
+          {
+            node_locale: 'fr-CA',
+            text: 'Nouvelles'
+          },
+          {
+            node_locale: 'en-US',
+            text: 'News' 
+          }
+        ]
+
       },
       {
         id: 4,
         href: '/contact',
         // text: ['Joignez-nous', 'Join us' ]
-        text: 'Joignez-nous'
+        label:[
+          {
+            node_locale: 'fr-CA',
+            text: 'Joignez-nous'
+          },
+          {
+            node_locale: 'en-US',
+            text: 'Join us' 
+          }
+        ]
+
       },
       {
         id: 5,
         href: '/about',
         // text: ['La chorale', 'About Us' ]
-        text: 'La chorale'
+        label:[
+          {
+            node_locale: 'fr-CA',
+            text: 'La chorale'
+          },
+          {
+            node_locale: 'en-US',
+            text: 'About us' 
+          }
+        ]
+
       }
+    
     ],
     hero: {
       main: 'Les Échos du Pacifique',

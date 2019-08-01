@@ -3,13 +3,13 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import headerStyles from './headerNav.module.scss'
 import LocalizedLink from './localizedLink';
 
-const HeaderNav = () => {
+const HeaderNav = (params) => {
   
   const data = useStaticQuery(graphql`
     query {
     site {
       siteMetadata {
-        menu { id, href, text }
+        menu { id, href, label {node_locale, text} }
       }
     }
   }
@@ -19,13 +19,13 @@ const HeaderNav = () => {
     <nav className={headerStyles.navigation}>
       <div className={headerStyles.topnav}>
         {data.site.siteMetadata.menu.map(link => {
-          
+       
           return (
             <LocalizedLink
               to={link.href}
               key={link.id}
               activeClassName={headerStyles.active}
-            >{link.text}</LocalizedLink>
+            >{link.label.filter(key => key.node_locale == params.langtag )[0].text}</LocalizedLink>
           )})
         }
       </div>

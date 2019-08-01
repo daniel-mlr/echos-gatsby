@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-const AboutPage = ({pageContext: { locale }}) => {
+const AboutPage = ({pageContext: { locale, langtag }}) => {
   return (
-    <Layout path="/about" locale={locale}>
+    <Layout path="/about" locale={locale} langtag={langtag}>
       <Head title="About"/>
       <section className="section" style={{'paddingTop': 0}} >
         <div className="columns">

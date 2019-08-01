@@ -16,7 +16,7 @@ export const queryMembers = graphql`
     }
   }
 `
-const Members = ({pageContext: { locale }, data}) => {
+const Members = ({pageContext: { locale, langtag }, data}) => {
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -31,7 +31,7 @@ const Members = ({pageContext: { locale }, data}) => {
 
   // console.log('dans templates members, dans la fonction Members, data ', data)
   return (
-    <Layout path={`/members/${data.contentfulMembres.slug}`} locale={locale}>
+    <Layout path={`/members/${data.contentfulMembres.slug}`} locale={locale} langtag={langtag}>
       <Head title={data.contentfulMembres.titre}/>
       {/* <Hero
         imgFluid={data.file.childImageSharp.fluid}

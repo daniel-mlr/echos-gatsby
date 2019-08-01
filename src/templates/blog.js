@@ -24,7 +24,7 @@ export const query = graphql`
     }
   }
 `
-const Blog = ({pageContext: { locale }, data}) => {
+const Blog = ({pageContext: { locale, langtag }, data}) => {
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -38,7 +38,7 @@ const Blog = ({pageContext: { locale }, data}) => {
   }
 
   return (
-    <Layout path={`/blog/${data.contentfulBlogues.slug}`} locale={locale}>
+    <Layout path={`/blog/${data.contentfulBlogues.slug}`} locale={locale} langtag={langtag}>
       <Head title={data.contentfulBlogues.titre}/>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}

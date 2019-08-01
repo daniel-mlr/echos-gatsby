@@ -7,7 +7,7 @@ import Head from '../components/head'
 import Hero from '../components/hero'
 
 
-const BlogPage = ({pageContext: { locale }}) => {
+const BlogPage = ({pageContext: { locale, langtag }}) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogues(sort: { fields: publicationDate, order: DESC }) {
@@ -38,7 +38,7 @@ const BlogPage = ({pageContext: { locale }}) => {
   `)
 
   return (
-    <Layout path="/blog" locale={locale}>
+    <Layout path="/blog" locale={locale} langtag={langtag}>
       <Head title="Blog"/>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}

@@ -9,13 +9,13 @@ const {
   Consumer: LocaleConsumer
 } = React.createContext()
 
-const Layout = ({children, path, locale}) => {
+const Layout = ({children, path, locale, langtag}) => {
   // console.log('locale layout',locale)
   return (    
     <LocaleProvider value={locale}>
       
       <div className="container">
-        <BurgerMenu path={path} locale={locale}/>
+        <BurgerMenu path={path} langtag={langtag}/>
         {children}
         
         <Footer/>
