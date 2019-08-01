@@ -3,6 +3,9 @@ import Footer from './footer'
 import PropTypes from 'prop-types'
 import '../styles/style.scss'
 import BurgerMenu from '../components/burgerMenu'
+import 'typeface-roboto';
+import 'typeface-tenor-sans';
+import 'typeface-open-sans';
 
 const {
   Provider: LocaleProvider,
