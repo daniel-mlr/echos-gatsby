@@ -2,7 +2,7 @@ import React from 'react'
 import { Link} from 'gatsby'
 import headerStyles from './header.module.scss'
 import HeaderNav from './headerNav'
-import LangSwitcher from './langSwitcher';
+import LangSwitcher from './langSwitcher'
 
 
 const Header = ({path, langtag}) => {
