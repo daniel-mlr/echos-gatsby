@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+import LocalizedLink from './localizedLink';
 
 const BlogCard = (props) => {
-  // console.log('props', props)
+  
   return (
     <div className="card">
       <div className="card-image">
@@ -21,10 +21,11 @@ const BlogCard = (props) => {
           <p className="overflow-fade has-background-white-bis">
             {props.summary.summary}
           </p>
-          <Link
-            to={`/blog/${props.slug}`}
+          <LocalizedLink
+            to={`/blog/${props.slug}`}              
             className="button is-primary"
-          >Lire...</Link>
+          >{props.buttonText}...</LocalizedLink>
+
         </div>
       </div>
     </div>
@@ -34,12 +35,7 @@ BlogCard.propTypes = {
   name: PropTypes.string,
   date: PropTypes.string,
   content: PropTypes.string,
-  // imgUrl: PropTypes.string,
   slug: PropTypes.string,
-  // imgAlt: PropTypes.string,
-  // imgFluid: {
-  //   fluid: PropTypes.ContentfulFluid
-  // } 
   imgFluid: PropTypes.object
 }
 export default BlogCard

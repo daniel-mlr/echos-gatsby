@@ -14,10 +14,13 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
       <Jumbotron />
       <ConcertGridCard
         title={data.meta.edges[0].node.concertHeader1}
+        buttonText={data.meta.edges[0].node.readButtonText}
+        data={data.concert}
       />
       <BlogGridCard
         title={data.meta.edges[0].node.blogName}
         data={data.blog}
+        buttonText={data.meta.edges[0].node.readButtonText}
       />
     </Layout>
   )
@@ -29,7 +32,8 @@ query ($langtag: String = "fr-CA"){
       edges {
         node{
           blogName,
-          concertHeader1
+          concertHeader1,
+          readButtonText
         }
       }
     },
@@ -53,6 +57,36 @@ query ($langtag: String = "fr-CA"){
         }
         summary { summary }
         body { json }
+      }
+    }
+  }
+  concert:allContentfulConcerts (
+    filter: {node_locale: { eq: $langtag }}
+    sort: {fields: concertDate, order: ASC}
+    limit:1
+    ) {
+    edges {
+      node {
+        concertName
+        concertDateFormated: concertDate (formatString: "MMMM Do, YYYY")
+        concertDate
+        artisticDirection
+        pianiste
+        participation
+        summary { summary }
+        poster { 
+          title 
+          description
+         # fixed(width: 300, height: 300) {
+         #   ...GatsbyContentfulFixed
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+        prix
+        slug
+        ticketsUrl
+        node_locale
       }
     }
   }
