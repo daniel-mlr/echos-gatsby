@@ -2,10 +2,9 @@ import React from 'react'
 import BlogCard from '../components/blogCard'
 import ReadMoreButton from '../components/readMoreButton'
 
-const BlogGridCard = ({title, data}) => {
+const BlogGridCard = ({title, buttonText, data}) => {
 
   return (
-    <>
     <section className="section">
       <div className="is-divider" data-content={title}></div>
       <div className="columns">
@@ -19,6 +18,7 @@ const BlogGridCard = ({title, data}) => {
                 <BlogCard
                   key={idx}
                   {...edge.node}
+                  buttonText={buttonText}
                 >
                 </BlogCard>
               </div>
@@ -33,7 +33,6 @@ const BlogGridCard = ({title, data}) => {
         />
       </div>
     </section>
-    </>
   )
 }
 

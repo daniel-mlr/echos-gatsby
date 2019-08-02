@@ -1,41 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 // import blogStyles from './blog.module.scss'
 import Head from '../components/head'
 import Hero from '../components/hero'
+import LocalizedLink from '../components/localizedLink';
 
 
-const BlogPage = ({pageContext: { locale, langtag }}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogues(sort: { fields: publicationDate, order: DESC }) {
-        edges {
-          node {
-            titre
-            publicationDate(formatString: "MMM Do, YYYY")
-            slug
-            previewPicture {
-              title
-              description
-              fixed(width: 96, height:96) {
-                ...GatsbyContentfulFixed
-              }
-            }
-            summary { summary }
-          }
-        }
-      }
-      file(name: {eq: "Choir_groupshot_1920X592"}) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 1366) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/blog" locale={locale} langtag={langtag}>
@@ -47,7 +20,7 @@ const BlogPage = ({pageContext: { locale, langtag }}) => {
       <section className="section" style={{'paddingTop': 0}}>
         <div className="container is-desktop">
           {
-            data.allContentfulBlogues.edges.map((edge, id) => {
+            data.blog.edges.map((edge, id) => {
               return (
                 <article className="media" key={id} >
                   <figure className="media-left">
@@ -61,8 +34,8 @@ const BlogPage = ({pageContext: { locale, langtag }}) => {
                   <div className="media-content">
                     <h3 className="title is-5 is-marginless">{edge.node.titre}</h3>
                     <p className="is-italic">{edge.node.publicationDate}</p>
-                    <p>{edge.node.summary.summary}</p>
-                    <Link to={`/blog/${edge.node.slug}`}>Read more</Link>
+                    <p>{edge.node.summary.summary}</p>                    
+                    <LocalizedLink to={`/blog/${edge.node.slug}`}>Read more</LocalizedLink>                    
                   </div>
                 </article>
               )
@@ -73,4 +46,46 @@ const BlogPage = ({pageContext: { locale, langtag }}) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+query ($langtag: String = "fr-CA"){
+  meta:allContentfulMetadata(filter: {node_locale: { eq: $langtag }} ){
+      edges {
+        node{
+          blogName,
+          concertHeader1,
+          readButtonText
+        }
+      }
+    },
+  blog:allContentfulBlogues(
+    filter: {node_locale: { eq: $langtag }}
+    sort: { fields: publicationDate, order: DESC }
+    limit: 4
+  ) {
+    edges {
+      node {
+        titre
+        publicationDate(formatString: "MMM Do, YYYY")
+        slug
+        previewPicture {
+          title
+          description
+          fixed(width: 96, height:96) {
+            ...GatsbyContentfulFixed
+          }
+        }
+        summary { summary }
+      }
+    }
+  }
+  file(name: {eq: "Choir_groupshot_1920X592"}) {
+    childImageSharp {
+      fluid(quality: 90, maxWidth: 1366) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+}
+`
 export default BlogPage
