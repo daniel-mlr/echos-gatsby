@@ -1,11 +1,15 @@
+// bulma customisation: must be imported before bulma.scss
 @import './variables.scss';
-
 // Importing Bulma from node_modules
 @import '~bulma/bulma.sass';
+// accessories
 @import '~bulma-divider/dist/css/bulma-divider.sass';
-
 @import './burgerMenu.scss';
-// @import './concerts.scss';
+
+
+// *****************************
+//     hero  and jumbotron
+// *****************************
 
 .site-name{
   color: $blue-name !important;
@@ -21,10 +25,55 @@
   font-size: 2rem;
 }
 
+.hero {
+  margin-bottom: nth($section-padding, 1);
+}
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+.hero-background.is-transparent {
+  opacity: 0.6;
+}
+.hero-body {
+    position: absolute;
+    top: 10vh;
+}
+// .hero.is-fullheight {
+//   min-height:80vw;
+// }
+
+// fix: hero background image
+// .hero-has-bg {
+//   position: relative;
+
+//   .hero-bg {
+//     height: 600px;    
+//   }
+//   .hero-content {
+//     position:absolute;
+//     top: 0;
+//     left:0;
+//     background-color: #ddd;
+//     opacity: 0.8;
+//   }
+// }
+
+
+// ************************
+//       concertCard
+// ************************
+
 .concert-text {
   height: 43vw;
   max-height: 656px;
-  // border: 1px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +83,9 @@
   padding: 0 0 10px 0;
   margin: 0 0 10px 0;
 }
+.concert:not(:last-child) {
+  margin-bottom: 4rem;
+}
 .flex-read-more {
   // padding: 1rem 0;
   padding: 0 0 1rem 0;
@@ -41,6 +93,42 @@
 .date {
   padding: 0 0 1rem 0;
 }
+
+// **********************************
+//             blog-card
+// **********************************
+
+.blog-card-title {
+  margin: 1.5rem 0 1rem 0;
+  height: 1.5em;
+}
+.overflow-fade {
+  height: 4.1em;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+.overflow-fade::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    $white-bis 50%);
+  content: '\200C';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 3em;
+  width: 50%;
+  text-align: center;
+}
+
+
+// ***********************************
+//         media settings
+// ***********************************
+
 @media screen and (min-width: 1367px) {
   // when screen is over 1366px we no logner 
   // grow columns paddings and margins left-right
@@ -79,7 +167,6 @@
     display: none !important;
   }
 }
-
 @media screen and (max-width: 926px) and (min-width: 769px) {
   // this section to preserve concert text to overwrite
   // blog section in certain screen sizes
@@ -94,7 +181,6 @@
     }
   }
 }
-
 @media screen and (max-width: 768px) {
   // tablet and phone landscape
   .site-name {
@@ -118,94 +204,35 @@
     font-size: 0.8rem;
   }
 }
-// fix: hero background image
-.hero-has-bg {
-  position: relative;
 
-  .hero-bg {
-    height: 600px;    
-  }
-  .hero-content {
-    position:absolute;
-    top: 0;
-    left:0;
-    background-color: #ddd;
-    opacity: 0.8;
-  }
-}
 
-//To add margin or padding.
-// <div class="mt-10">This div has top margin 10px</div>
-$sizes: (0,10,15,20,25,30,50);
-$positions: ('top','left','bottom','right');
+// ****************************************
+//           utilities generations 
+// ****************************************
+// //To add margin or padding.
+// // <div class="mt-10">This div has top margin 10px</div>
+// $sizes: (0,10,15,20,25,30,50);
+// $positions: ('top','left','bottom','right');
+// 
+// @each $size in $sizes {
+//   @each $position in $positions {
+//     .m#{str-slice($position, 0, 1)}-#{$size} {
+//       margin-#{$position}: $size + px;
+//     }
+//     .p#{str-slice($position, 0, 1)}-#{$size} {
+//       padding-#{$position}: $size + px;
+//     }
+//   }
+// }
 
-@each $size in $sizes {
-  @each $position in $positions {
-    .m#{str-slice($position, 0, 1)}-#{$size} {
-      margin-#{$position}: $size + px;
-    }
-    .p#{str-slice($position, 0, 1)}-#{$size} {
-      padding-#{$position}: $size + px;
-    }
-  }
-}
-.navbar-item img {
-  max-height: 6rem;
-}
-.hero-background {
-  position: absolute;
-  object-fit: cover;
-  object-position: center center;
-  width: 100%;
-  height: 100%;
-}
-.hero.has-background {
-  position: relative;
-  overflow: hidden;
-}
-.hero-background.is-transparent {
-  opacity: 0.6;
-}
-.hero.is-fullheight {
-  min-height:80vw;
-}
+// .navbar-item img {
+//   max-height: 6rem;
+// }
 
-.hero-body {
-    position: absolute;
-    top: 10vh;
-}
 
-.blog-card-title {
-  // margin: 1rem 0;
-  margin: 1.5rem 0 1rem 0;
-  height: 1.5em;
-}
-.date {
-  padding-bottom: 1rem;
-}
-.overflow-fade {
-  height: 4.1em;
-  overflow: hidden;
-  position: relative;
-  display: block;
-  line-height: 1.5em;
-  // outline: solid 1px red;
-  margin-bottom: 0;
-}
-
-.overflow-fade::before {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    $white-bis 50%);
-  content: '\200C';
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 3em;
-  width: 50%;
-  text-align: center;
-}
+// *****************************************
+//         bulma customisations
+// *****************************************
 
 // correction bulma-divider
 .is-divider, .is-divider-vertical {
@@ -215,14 +242,6 @@ $positions: ('top','left','bottom','right');
 .is-divider[data-content]::after, .is-divider-vertical[data-content]::after {
   margin: -0.5em 0 0 0;
 }
-
 .container { 
   max-width: 1366px;
  }
-.hero {
-  margin-bottom: nth($section-padding, 1);
-  // margin-bottom: 4rem;
-}
-.concert:not(:last-child) {
-  margin-bottom: 4rem;
-}

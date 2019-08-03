@@ -19,8 +19,9 @@ const Header = ({path, langtag}) => {
       </LocalizedLink>
       <HeaderNav langtag={langtag}/>
 
-      {/* place holder for language switcher */}
-      <span className={headerStyles.lang}>
+      {/* language switcher */}
+      {/* <span className={headerStyles.lang}> */}
+      <span className="is-hidden-mobile">
         <LangSwitcher path={path}></LangSwitcher>
       </span>
       
