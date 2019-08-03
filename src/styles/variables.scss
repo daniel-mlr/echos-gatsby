@@ -12,8 +12,6 @@ $family-primary: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxyge
 $family-secondary: "Open Sans", "Nunito Sans" , "PT Sans", "Source Sans Pro", "Lato", "Monserrat", BlinkMacSystemFont, -apple-system, "Arial Black", sans-serif;
 $family-title: "Tenor Sans";
 
-// $title-family: "Tenor Sans";
-
 // dividers
 $divider-font-size: 2rem;
 $divider-color: hsl(0, 0%, 48%);
@@ -26,9 +24,8 @@ $card-shadow: 0 0;
 $section-padding: 4rem 4vw;
 $column-gap: 2vw;
 
-
 // other
 $headerbackgroundcolor: rgb(255, 255, 255);
-
+$footer-background-color: hsl(0, 0%, 21%);
 // tests
 // $background: grey;
