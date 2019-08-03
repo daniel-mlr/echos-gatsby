@@ -2,7 +2,8 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   display: none;
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   width: 36px;
   height: 30px;
   right: 36px;
@@ -21,8 +22,8 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
 }
 
 /* Color/shape of close button cross */

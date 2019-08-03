@@ -9,7 +9,7 @@ import '../styles/concert.scss'
 const Concert = (props) => {
   
   return (
-    <section className="section notlastchild" name={props.concertId}>
+    <section className="section lastchild" name={props.concertId}>
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
       <div className="columns">

@@ -1,18 +1,18 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import headerStyles from './headerNav.module.scss'
-import LocalizedLink from './localizedLink';
+import LocalizedLink from './localizedLink'
 
 const HeaderNav = (params) => {
   
   const data = useStaticQuery(graphql`
     query {
-    site {
-      siteMetadata {
-        menu { id, href, label {node_locale, text} }
+      site {
+        siteMetadata {
+          menu { id, href, label {node_locale, text} }
+        }
       }
     }
-  }
   `)
 
   return (
@@ -25,7 +25,7 @@ const HeaderNav = (params) => {
               to={link.href}
               key={link.id}
               activeClassName={headerStyles.active}
-            >{link.label.filter(key => key.node_locale == params.langtag )[0].text}</LocalizedLink>
+            >{link.label.filter(key => key.node_locale === params.langtag )[0].text}</LocalizedLink>
           )})
         }
       </div>
