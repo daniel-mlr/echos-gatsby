@@ -10,7 +10,21 @@ const ConcertGridCard = ({title, buttonText, data}) => {
         className="is-divider"
         data-content={title}>
       </div>
-      <ConcertCard buttonText={buttonText} node={data.edges[0].node} />
+      {
+        data.edges
+          .filter((edge) => {
+            return (new Date(edge.node.concertDate) >= new Date())
+          }) 
+          .map((edge, idx) => {
+            return (
+              <ConcertCard
+                buttonText={buttonText}
+                node={edge.node} key={idx}
+              />
+            )
+          })
+      }
+      {/* <ConcertCard buttonText={buttonText} node={data.edges[0].node} /> */}
     </section>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import BuyButton from './buyButton'
-import LocalizedLink from './localizedLink';
+import LocalizedLink from './localizedLink'
 
 const ConcertCard = (props) => {
   const concertDate = new Date(props.node.concertDate)
@@ -14,7 +14,7 @@ const ConcertCard = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="container concert">
       <div className="columns">
         <div className="column">
           <Img

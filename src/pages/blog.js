@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 // import blogStyles from './blog.module.scss'
 import Head from '../components/head'
 import Hero from '../components/hero'
-import LocalizedLink from '../components/localizedLink';
+import LocalizedLink from '../components/localizedLink'
 
 
 const BlogPage = ({pageContext: { locale, langtag }, data}) => {
@@ -61,7 +61,7 @@ query ($langtag: String = "fr-CA"){
   blog:allContentfulBlogues(
     filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }
-    limit: 4
+    # limit: 4
   ) {
     edges {
       node {

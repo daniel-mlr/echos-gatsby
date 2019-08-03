@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import LocalizedLink from './localizedLink';
+import LocalizedLink from './localizedLink'
+r
 
 const BlogCard = (props) => {
   
@@ -22,7 +23,7 @@ const BlogCard = (props) => {
             {props.summary.summary}
           </p>
           <LocalizedLink
-            to={`/blog/${props.slug}`}              
+            to={`/blog/${props.slug}`}
             className="button is-primary"
           >{props.buttonText}...</LocalizedLink>
 

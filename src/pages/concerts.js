@@ -20,6 +20,7 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         { // print coming concerts
           data.concert.edges
             .filter((edge)=> (new Date() <= new Date(edge.node.concertDate)))
+            .reverse()
             .map((edge, idx) => {
               return (<Concert key={idx} courant {...edge.node} />)
             })
@@ -46,7 +47,8 @@ export const query = graphql`
 query ($langtag: String = "fr-CA"){
   concert:allContentfulConcerts (
     filter: {node_locale: { eq: $langtag }}
-    sort: {fields: concertDate, order: ASC}
+    # sort: {fields: concertDate, order: ASC}
+    sort: {fields: concertDate, order: DESC}
     ) {
     edges {
       node {
