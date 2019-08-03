@@ -223,3 +223,6 @@ $positions: ('top','left','bottom','right');
   margin-bottom: nth($section-padding, 1);
   // margin-bottom: 4rem;
 }
+.concert:not(:last-child) {
+  margin-bottom: 4rem;
+}
