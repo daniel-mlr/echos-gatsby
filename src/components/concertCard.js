@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import BuyButton from './buyButton'
+import LocalizedLink from './localizedLink'
 
 const ConcertCard = (props) => {
   const concertDate = new Date(props.node.concertDate)
@@ -14,7 +14,7 @@ const ConcertCard = (props) => {
   }
 
   return (
-    <div className="container">
+    <div className="container concert">
       <div className="columns">
         <div className="column">
           <Img
@@ -42,10 +42,10 @@ const ConcertCard = (props) => {
                 <p>{props.node.summary.summary}</p>
               </div>
               <div className="flex-read-more">
-                <Link
+                <LocalizedLink
                   className="button is-primary is-small"
                   to={`/concerts#${props.node.slug}`}
-                >Lire... </Link>
+                >{props.buttonText}... </LocalizedLink>
               </div>
               <div className="date">
                 <p>
