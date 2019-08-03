@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import BuyButton from './buyButton'
+import LocalizedLink from './localizedLink'
 import '../styles/concert.scss'
 
 const Concert = (props) => {
   
   return (
-    <section className="section notlastchild">
+    <section className="section notlastchild" name={props.concertId}>
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
       <div className="columns">
@@ -38,6 +39,9 @@ const Concert = (props) => {
         {documentToReactComponents( props.description.json)}
       </div>
       {props.courant && <BuyButton href={props.ticketsUrl} />}
+      <div className="content" style={{paddingTop: '1.5rem'}}>
+        <LocalizedLink to="/">Retour à la page principale</LocalizedLink>
+      </div>
     </section>
   )}
   

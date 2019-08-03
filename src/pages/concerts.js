@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import Concert from '../components/concert'
 import Hero from '../components/hero'
 
@@ -49,9 +49,11 @@ query ($langtag: String = "fr-CA"){
     filter: {node_locale: { eq: $langtag }}
     # sort: {fields: concertDate, order: ASC}
     sort: {fields: concertDate, order: DESC}
-    ) {
+    ) 
+  {
     edges {
       node {
+        concertId
         concertName
         subtitle
         announcementDate
@@ -72,9 +74,8 @@ query ($langtag: String = "fr-CA"){
         ticketsUrl
         node_locale
       } 
-
-      }
     }
+  }
   
   file(name: {eq: "tenors-sopranos3_1920x592"}) {
     childImageSharp {

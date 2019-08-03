@@ -17,14 +17,18 @@ const ConcertCard = (props) => {
     <div className="container concert">
       <div className="columns">
         <div className="column">
-          <Img
-            fluid={props.node.poster.fluid}
-            alt={props.node.poster.description} />
+          <LocalizedLink to={`/concerts#${props.node.slug}`}>
+            <Img
+              fluid={props.node.poster.fluid}
+              alt={props.node.poster.description} />
+          </LocalizedLink>
         </div>
         <div className="column">
           <div className="content">
             <div className="concert-text ">
-              <h4 className="title is-4 artistes">{props.node.concertName}</h4>
+              <LocalizedLink to={`/concerts#${props.node.slug}`}>
+                <h4 className="title is-4 artistes">{props.node.concertName}</h4>
+              </LocalizedLink>
               <div className="content artistes">
                 <p>Direction Artistique: {props.node.artisticDirection}</p>
                 <p>Pianiste: {props.node.pianiste}</p>
