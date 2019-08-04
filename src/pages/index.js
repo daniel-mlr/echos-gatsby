@@ -8,14 +8,14 @@ import { graphql } from 'gatsby'
 
 const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 
-  
   return (
     <Layout path="/" locale={locale} langtag={langtag}>
       <Head title="Home" />
       <Jumbotron />
       <ConcertGridCard
         title={data.meta.edges[0].node.concertHeader1}
-        buttonText={data.meta.edges[0].node.readButtonText}
+        // buttonText={data.meta.edges[0].node.readButtonText}
+        buttonText={data.meta.edges[0].node.readDetail}
         data={data.concert}
       />
       <BlogGridCard
@@ -46,6 +46,7 @@ query (
           blogName,
           concertHeader1,
           readButtonText
+          readDetail
         }
       }
     },

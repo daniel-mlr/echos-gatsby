@@ -46,26 +46,6 @@
     position: absolute;
     top: 10vh;
 }
-// .hero.is-fullheight {
-//   min-height:80vw;
-// }
-
-// fix: hero background image
-// .hero-has-bg {
-//   position: relative;
-
-//   .hero-bg {
-//     height: 600px;    
-//   }
-//   .hero-content {
-//     position:absolute;
-//     top: 0;
-//     left:0;
-//     background-color: #ddd;
-//     opacity: 0.8;
-//   }
-// }
-
 
 // ************************
 //       concertCard
@@ -181,10 +161,18 @@
     }
   }
 }
+// @media screen and (min-width: 769px) and (max-width: 830px) {
+//   #concert-summary {
+//     display: none;
+//   }
+// }
 @media screen and (max-width: 768px) {
   // tablet and phone landscape
   .site-name {
     font-size: 1.7rem;
+  }
+  .concert-summary {
+    display: block;
   }
   .site-subname,
   .site-vancouver {
@@ -224,10 +212,6 @@ $positions: ('top','left','bottom','right');
     }
   }
 }
-
-// .navbar-item img {
-//   max-height: 6rem;
-// }
 
 
 // *****************************************

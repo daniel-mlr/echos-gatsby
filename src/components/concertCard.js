@@ -30,12 +30,16 @@ const ConcertCard = (props) => {
                 <h4 className="title is-4 artistes">{props.node.concertName}</h4>
               </LocalizedLink>
               <div className="content artistes">
-                <p>Direction Artistique: {props.node.artisticDirection}</p>
-                <p>Pianiste: {props.node.pianiste}</p>
+                <p><span
+                  className="has-text-weight-bold">Direction Artistique:&ensp;
+                </span>{props.node.artisticDirection}</p>
+                <p><span
+                  className="has-text-weight-bold">Pianiste:&ensp;
+                </span> {props.node.pianiste}</p>
                 {
                   (props.node.participation) &&
                   <>
-                    <p>Artistes invités</p>
+                    <p className="has-text-weight-bold">Artistes invités</p>
                     <ul>{props.node.participation.map(
                       (p, key) => <li key={key}>{p}</li>
                     )}</ul>
@@ -65,11 +69,6 @@ const ConcertCard = (props) => {
               </div>
               <div className="content">
                 <BuyButton href={props.node.ticketsUrl} />
-                {/* <a className="button is-primary is-rounded"
-                  href={props.node.ticketsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Acheter vos billetes / Buy tickets</a> */}
               </div>
             </div>
           </div>
