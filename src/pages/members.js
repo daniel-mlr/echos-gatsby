@@ -4,7 +4,6 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 // import PropTypes from 'prop-types'
 
 // TODO: create  a login form to access data on this page
-
 const Members = ({pageContext: { locale, langtag }}) => {
   const data = useStaticQuery(graphql`
     query {
@@ -22,10 +21,11 @@ const Members = ({pageContext: { locale, langtag }}) => {
       }
     }`
   )
-console.log('mem-langtag',langtag)
+
   return (
     <Layout path="/members" locale={locale} langtag={langtag}>
       <section className="section">
+        <h3 className="title is-size-3">Informations pour les membres</h3>
         <ul>
           {
             data.allContentfulMembres.edges.map((edge, id) => {
@@ -45,7 +45,6 @@ console.log('mem-langtag',langtag)
 }
 
 // members.propTypes = {
-
 // }
 
 export default Members

@@ -9,7 +9,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Les Échos du Pacifique',
-    author: 'Les Échos du Pacifique',
+    author: 'Daniel Meilleur',
     menu:[
       {
         id: 1,

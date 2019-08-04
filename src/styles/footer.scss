@@ -1,0 +1,25 @@
+.footermenu {
+  // padding: 0;
+  margin: 0 0 2rem 0.5rem !important;
+
+  li {
+    list-style: none;
+  }
+  a:hover {
+    font-weight: bold;
+    color: inherit;
+  }
+
+  * {
+    color: inherit;
+  }
+}
+.fmlink {
+  a {
+    color: inherit;
+  }
+  a:hover {
+    font-weight: bold;
+    color: inherit;
+  }
+}
