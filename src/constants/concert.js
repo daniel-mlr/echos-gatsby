@@ -11,11 +11,26 @@ export default {
     'en-US': 'Guest Performers',
     'fr-CA': 'Artistes invités'
   },
-  'dateDuConcert': {
-    'en-US': 'Concert Date',
-    'fr-CA': 'Date du concert'
+  'buyTicket': {
+    'en-US': 'Buy your Tickets',
+    'fr-CA': 'Achetez vos billets'
   }
 }
+
+
+//   id: 'buyTicket',
+//   label: [
+//     {
+//       node_locale: 'fr-CA',
+//       text: 'Achetez vos billets'
+//     },
+//     {
+//       node_locale: 'en-US',
+//       text: 'Buy Tickets'
+//     }
+//   ]
+// },
+
 // },{
 //   id: 'artistesInvites',
 //   label: [
@@ -38,18 +53,6 @@ export default {
 //     {
 //       node_locale: 'en-US',
 //       text: 'More Details'
-//     }
-//   ]
-// },{
-//   id: 'buyTicket',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Achetez vos billets'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Buy Tickets'
 //     }
 //   ]
 // },{

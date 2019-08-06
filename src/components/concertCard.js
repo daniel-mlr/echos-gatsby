@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import BuyButton from './buyButton'
 import LocalizedLink from './localizedLink'
 import labels from '../constants/concert'
+import { GoCalendar, GoClock } from 'react-icons/go'
 
 
 const ConcertCard = (props) => {
@@ -12,7 +13,11 @@ const ConcertCard = (props) => {
     weekday: 'long', 
     year: 'numeric', 
     month: 'long', 
-    day: 'numeric' 
+    day: 'numeric',
+  }
+  const timeFormatOptions = {
+    hour: 'numeric',
+    minute: 'numeric'
   }
 
   // translation rendering helper function
@@ -67,20 +72,27 @@ const ConcertCard = (props) => {
                 >{props.buttonText}... </LocalizedLink>
               </div>
               <div className="date">
-                <p>
-                  {t('dateDuConcert')}:&ensp;
-                  <span className="has-text-danger">
-                    <time dateTime={props.node.concertDate}>
-                      {concertDate.toLocaleDateString(
-                        // 'fr-CA', dateFormatOptions
-                        props.node.node_locale, dateFormatOptions
-                      )}
-                    </time>
-                  </span>
-                </p>
+                {/* <p className='has-text-weight-bold'> */}
+                <div className="content">
+
+                  <time dateTime={props.node.concertDate}>
+                    <GoCalendar style={{transform: 'translateY(2px)'}} />
+                    &nbsp;
+                    {concertDate.toLocaleDateString(
+                      props.node.node_locale, dateFormatOptions
+                    )}
+                    &emsp;
+                    <GoClock style={{transform: 'translateY(2px)'}} />
+                    &nbsp;
+                    {concertDate.toLocaleTimeString(
+                      props.node.node_locale, timeFormatOptions
+                    )}
+                  </time>
+                </div>
+                {/* </p> */}
               </div>
               <div className="content">
-                <BuyButton href={props.node.ticketsUrl} />
+                <BuyButton href={props.node.ticketsUrl} label={t('buyTicket')} />
               </div>
             </div>
           </div>

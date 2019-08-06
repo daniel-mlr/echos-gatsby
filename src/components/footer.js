@@ -3,8 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import LocalizedLink from './localizedLink'
 import { FaTwitter, FaFacebook, FaInstagram} from 'react-icons/fa'
 import '../styles/footer.scss'
+import labels from '../constants/footer'
 
-const Footer = () => {
+const Footer = (props) => {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -15,15 +16,19 @@ const Footer = () => {
     }
   }
   `)
+
+  // translation rendering helper function
+  const t = (label) => labels[label][props.langtag]
+
   return (
     <footer className="footer">
       <div className="content has-text-centered has-text-grey-light" style={{fontSize: 'smaller'}}>
         <div className="columns">
           <div className="column is-one-fifth has-text-left">
             <ul className="footermenu">
-              <li><LocalizedLink to="/contact">Contactez-nous</LocalizedLink></li>
-              <li><LocalizedLink to="/contact">Nos répétitions</LocalizedLink></li>
-              <li><LocalizedLink to="/about">À propos</LocalizedLink></li>
+              <li><LocalizedLink to="/contact">{t('contactezNous')} </LocalizedLink></li>
+              <li><LocalizedLink to="/contact">{t('repetitions')}</LocalizedLink></li>
+              <li><LocalizedLink to="/about">{t('aPropos')}</LocalizedLink></li>
             </ul>
             <img
               className=""

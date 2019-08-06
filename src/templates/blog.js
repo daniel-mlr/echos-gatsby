@@ -13,6 +13,8 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
     renderNode: {
       // eslint-disable-next-line react/display-name
       'embedded-asset-block': (node) => {
+        // there is no default language for media, hence we
+        // must restrict editors to only one version of images
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
         return <img alt={alt} src={url}/>
@@ -33,7 +35,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
 
       <section className="section" style={{'paddingTop': 0}}>
         <div className="content">
-          {/* <h1>Nouvelles</h1> */}
+
           <div className={''} >
             <article className={''} >
               <header className="content">
@@ -55,12 +57,10 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                 data.contentfulBlogues.body.json,
                 options)}
               <div className="tags">
-                {/* <Link className="tag is-primary" to={'/blog'}>Liste des nouvelles</Link> */}
                 <LocalizedLink
                   className="tag is-primary"
                   to={'/blog'}
                 >Liste des nouvelles</LocalizedLink>
-                {/* <Link className="tag" to={'/'}>Accueil</Link> */}
                 <LocalizedLink className="tag" to={'/'}>Accueil</LocalizedLink>
               </div>
             </article>

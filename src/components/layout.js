@@ -21,7 +21,7 @@ const Layout = ({children, path, locale, langtag}) => {
         <BurgerMenu path={path} langtag={langtag}/>
         {children}
         
-        <Footer/>
+        <Footer langtag={langtag}/>
       </div>
     </LocaleProvider>
   
