@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import BuyButton from './buyButton'
 import LocalizedLink from './localizedLink'
+import labels from '../constants/concert'
+
 
 const ConcertCard = (props) => {
   const concertDate = new Date(props.node.concertDate)
@@ -12,6 +14,9 @@ const ConcertCard = (props) => {
     month: 'long', 
     day: 'numeric' 
   }
+
+  // translation rendering helper function
+  const t = (label) => labels[label][props.node.node_locale]
 
   return (
     <div className="container concert">
@@ -27,19 +32,25 @@ const ConcertCard = (props) => {
           <div className="content">
             <div className="concert-text ">
               <LocalizedLink to={`/concerts#${props.node.slug}`}>
-                <h4 className="title is-4 artistes">{props.node.concertName}</h4>
+                <h4
+                  className="title is-4 artistes"
+                >{props.node.concertName}</h4>
               </LocalizedLink>
               <div className="content artistes">
                 <p><span
-                  className="has-text-weight-bold">Direction Artistique:&ensp;
+                  className="has-text-weight-bold">
+                  {t('directionArtistique')}:&ensp;
                 </span>{props.node.artisticDirection}</p>
                 <p><span
-                  className="has-text-weight-bold">Pianiste:&ensp;
-                </span> {props.node.pianiste}</p>
+                  className="has-text-weight-bold"
+                >{t('pianiste')}:&ensp;
+                </span>{props.node.pianiste}</p>
                 {
                   (props.node.participation) &&
                   <>
-                    <p className="has-text-weight-bold">Artistes invités</p>
+                    <p
+                      className="has-text-weight-bold"
+                    >{t('artistesInvites')}:&ensp;</p>
                     <ul>{props.node.participation.map(
                       (p, key) => <li key={key}>{p}</li>
                     )}</ul>
@@ -57,11 +68,12 @@ const ConcertCard = (props) => {
               </div>
               <div className="date">
                 <p>
-                  {'Date du concert: '}
+                  {t('dateDuConcert')}:&ensp;
                   <span className="has-text-danger">
                     <time dateTime={props.node.concertDate}>
                       {concertDate.toLocaleDateString(
-                        'fr-CA', dateFormatOptions
+                        // 'fr-CA', dateFormatOptions
+                        props.node.node_locale, dateFormatOptions
                       )}
                     </time>
                   </span>

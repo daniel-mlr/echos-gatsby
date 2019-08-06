@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import LocalizedLink from '../components/localizedLink'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
@@ -20,8 +21,11 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
   }
 
   return (
-    <Layout path={`/blog/${data.contentfulBlogues.slug}`} locale={locale} langtag={langtag}>
-      <Head title={data.contentfulBlogues.titre}/>
+    <Layout
+      path={`/blog/${data.contentfulBlogues.slug}`}
+      locale={locale} langtag={langtag}
+    >
+      <Head title={data.contentfulBlogues.titre} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         // title={data.contentfulBlogues.titre}
@@ -47,10 +51,17 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                   alt={data.contentfulBlogues.previewPicture.description}
                 />
               </div>
-              {documentToReactComponents(data.contentfulBlogues.body.json, options)}
+              {documentToReactComponents(
+                data.contentfulBlogues.body.json,
+                options)}
               <div className="tags">
-                <Link className="tag is-primary" to={'/blog'}>Liste des nouvelles</Link>
-                <Link className="tag" to={'/'}>Accueil</Link>
+                {/* <Link className="tag is-primary" to={'/blog'}>Liste des nouvelles</Link> */}
+                <LocalizedLink
+                  className="tag is-primary"
+                  to={'/blog'}
+                >Liste des nouvelles</LocalizedLink>
+                {/* <Link className="tag" to={'/'}>Accueil</Link> */}
+                <LocalizedLink className="tag" to={'/'}>Accueil</LocalizedLink>
               </div>
             </article>
           </div>

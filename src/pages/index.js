@@ -7,6 +7,12 @@ import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
 
 const IndexPage = ({pageContext: { locale, langtag }, data}) => {
+  // const t = (token, langtag, data) => {
+  //   data.prompts.siteMetadata.prompts.find((token) => {
+  //     return token.id === 'pianiste'
+  //   }).label.find((lang) => lang.node_locale === langtag).text
+  // }
+  // console.log('@@@:', t('pianiste', langtag, data))
 
   return (
     <Layout path="/" locale={locale} langtag={langtag}>
@@ -22,6 +28,7 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
         title={data.meta.edges[0].node.blogName}
         data={data.blog}
         buttonText={data.meta.edges[0].node.readButtonText}
+        langtag={langtag}
       />
     </Layout>
   )

@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link} from 'gatsby'
+import LocalizedLink from './localizedLink'
 
-const ReadMoreButton = ({title}) => {
-  // console.log('title', {title})
+const ReadMoreButton = ({label }) => {
   return (
-    <Link
+    <LocalizedLink
       to={'/blog/'}
       className="button is-primary is-outlined is-rounded"
     >
-      read more blogs
-    </Link>
+      {label}
+    </LocalizedLink>
   )
 }
 

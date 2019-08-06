@@ -1,8 +1,11 @@
 import React from 'react'
 import BlogCard from '../components/blogCard'
 import ReadMoreButton from '../components/readMoreButton'
+import labels from '../constants/blogs'
 
-const BlogGridCard = ({title, buttonText, data}) => {
+const BlogGridCard = ({title, buttonText, langtag, data}) => {
+  // console.log('@@@data:', data)
+  // console.log('langtag:', langtag)
 
   return (
     <section className="section">
@@ -28,8 +31,7 @@ const BlogGridCard = ({title, buttonText, data}) => {
       </div>
       <div className="container" style={{paddingTop: '2rem'}}>
         <ReadMoreButton
-          // title={data.siteMetadata.readMore...}
-          title={'read more news'}
+          label={labels.readMoreButton[langtag]}
         />
       </div>
     </section>
