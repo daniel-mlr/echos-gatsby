@@ -3,8 +3,19 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import Concert from '../components/concert'
 import Hero from '../components/hero'
+import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
+
+  const futureConcerts =  data.concert.edges.filter((edge)=> {
+    return (new Date() <= new Date(edge.node.concertDate))
+  })
+  const formerConcerts =  data.concert.edges.filter((edge)=> {
+    return (new Date() > new Date(edge.node.concertDate))
+  })
+  
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
@@ -12,33 +23,40 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         imgFluid={data.file.childImageSharp.fluid}
         title='Concerts'
       />
+      {/* comming concert page content */}
       <article className="section">
+
+        {/* comming concert page content divider */}
         <div
           className="is-divider"
-          data-content="Nos prochain concert">
-        </div>
+          data-content={ 
+            futureConcerts.length > 1 
+              ? t('nextConcerts') : t('nextConcert')}
+        ></div>
+
         { // print coming concerts
-          data.concert.edges
-            .filter((edge)=> (new Date() <= new Date(edge.node.concertDate)))
-            .reverse()
-            .map((edge, idx) => {
-              return (<Concert key={idx} courant {...edge.node} />)
-            })
+          futureConcerts.reverse().map((edge, idx) => {
+            return (<Concert key={idx} courant langtag {...edge.node} />)
+          })
         }
       </article>
+
+      {/* former concerts page content */}
       <article className="section">
+        
+        {/* former concert page divider */}
         <div
           className="is-divider"
-          data-content="Nos précédents concert">
+          data-content={t('pastConcerts')}>
         </div>
+
         { // print former concerts
-          data.concert.edges
-            .filter((edge) => (new Date() > new Date(edge.node.concertDate)))
-            .map((edge, idx) => {
-              return (<Concert key={idx} {...edge.node} />)
-            })
+          formerConcerts.map((edge, idx) => {
+            return (<Concert key={idx} {...edge.node} />)
+          })
         }
       </article>
+      
     </Layout>
   )
 }

@@ -12,18 +12,8 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
     <Layout path="/" locale={locale} langtag={langtag}>
       <Head title="Home" />
       <Jumbotron />
-      <ConcertGridCard
-        title={data.meta.edges[0].node.concertHeader1}
-        // buttonText={data.meta.edges[0].node.readButtonText}
-        buttonText={data.meta.edges[0].node.readDetail}
-        data={data.concert}
-      />
-      <BlogGridCard
-        title={data.meta.edges[0].node.blogName}
-        data={data.blog}
-        buttonText={data.meta.edges[0].node.readButtonText}
-        langtag={langtag}
-      />
+      <ConcertGridCard data={data.concert} langtag={langtag} />
+      <BlogGridCard data={data.blog} langtag={langtag} />
     </Layout>
   )
 }
@@ -41,16 +31,16 @@ query (
   $langtag: String = "fr-CA"
   #  $today: Date  ## do we have to create this variable in page context?
 ){
-  meta:allContentfulMetadata(filter: {node_locale: { eq: $langtag }} ){
-      edges {
-        node{
-          blogName,
-          concertHeader1,
-          readButtonText
-          readDetail
-        }
-      }
-    },
+  # meta:allContentfulMetadata(filter: {node_locale: { eq: $langtag }} ){
+  #     edges {
+  #       node{
+  #         blogName,
+  #         concertHeader1,
+  #         readButtonText
+  #         readDetail
+  #       }
+  #     }
+  #   },
   blog:allContentfulBlogues(
     filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }
@@ -71,6 +61,7 @@ query (
         }
         summary { summary }
         body { json }
+        node_locale
       }
     }
   }

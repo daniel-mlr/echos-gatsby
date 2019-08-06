@@ -8,6 +8,8 @@ import { GoCalendar, GoClock } from 'react-icons/go'
 
 
 const ConcertCard = (props) => {
+  
+  // date renderings
   const concertDate = new Date(props.node.concertDate)
   const dateFormatOptions = { 
     weekday: 'long', 
@@ -26,6 +28,8 @@ const ConcertCard = (props) => {
   return (
     <div className="container concert">
       <div className="columns">
+
+        {/* left poster picture  */}
         <div className="column">
           <LocalizedLink to={`/concerts#${props.node.slug}`}>
             <Img
@@ -33,24 +37,31 @@ const ConcertCard = (props) => {
               alt={props.node.poster.description} />
           </LocalizedLink>
         </div>
+
+        {/* right column: concert info */}
         <div className="column">
           <div className="content">
+            
             <div className="concert-text ">
+              
               <LocalizedLink to={`/concerts#${props.node.slug}`}>
                 <h4
                   className="title is-4 artistes"
                 >{props.node.concertName}</h4>
               </LocalizedLink>
+              
               <div className="content artistes">
                 <p><span
                   className="has-text-weight-bold">
                   {t('directionArtistique')}:&ensp;
                 </span>{props.node.artisticDirection}</p>
+
                 <p><span
                   className="has-text-weight-bold"
                 >{t('pianiste')}:&ensp;
                 </span>{props.node.pianiste}</p>
-                {
+
+                { /* conditional participation list */
                   (props.node.participation) &&
                   <>
                     <p
@@ -62,19 +73,21 @@ const ConcertCard = (props) => {
                   </>
                 }
               </div>
+              
               <div className="concert-summary">
                 <p>{props.node.summary.summary}</p>
               </div>
+
               <div className="flex-read-more">
                 <LocalizedLink
                   className="button is-primary is-small"
                   to={`/concerts#${props.node.slug}`}
-                >{props.buttonText}... </LocalizedLink>
+                >{t('moreDetails')}... </LocalizedLink>
               </div>
+              
+              {/* concert date */}
               <div className="date">
-                {/* <p className='has-text-weight-bold'> */}
                 <div className="content">
-
                   <time dateTime={props.node.concertDate}>
                     <GoCalendar style={{transform: 'translateY(2px)'}} />
                     &nbsp;
@@ -89,11 +102,13 @@ const ConcertCard = (props) => {
                     )}
                   </time>
                 </div>
-                {/* </p> */}
               </div>
+
+              {/* buy button */}
               <div className="content">
                 <BuyButton href={props.node.ticketsUrl} label={t('buyTicket')} />
               </div>
+
             </div>
           </div>
         </div>

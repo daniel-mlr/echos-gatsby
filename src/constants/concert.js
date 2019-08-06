@@ -14,71 +14,43 @@ export default {
   'buyTicket': {
     'en-US': 'Buy your Tickets',
     'fr-CA': 'Achetez vos billets'
+  },
+  'moreDetails': {
+    'en-US': 'More details',
+    'fr-CA': 'Plus de détails'
+  },
+  'pastConcerts': {
+    'en-US': 'Our Past Concerts',
+    'fr-CA': 'Nos précédents concerts'
+  },
+  'nextConcert': {
+    'en-US': 'Our Comming Concert',
+    'fr-CA': 'Notre prochain concert'
+  },
+  'nextConcerts': {
+    'en-US': 'Our Comming Concerts',
+    'fr-CA': 'Nos prochains concerts'
+  },
+  'backToMain': {
+    'en-US': 'Back to Main Page',
+    'fr-CA': 'Retour à la page d\'accueil'
   }
 }
 
-
-//   id: 'buyTicket',
+// {
+//   id: 'backToMain',
 //   label: [
 //     {
 //       node_locale: 'fr-CA',
-//       text: 'Achetez vos billets'
+//       text: 'Retour à la page d\'accueil'
 //     },
 //     {
 //       node_locale: 'en-US',
-//       text: 'Buy Tickets'
+//       text: 'Back to Main Page'
 //     }
 //   ]
 // },
 
-// },{
-//   id: 'artistesInvites',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Artistes invités'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Guest Performers'
-//     }
-//   ]
-// },{
-//   id: 'moreDetail',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Plus de détails'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'More Details'
-//     }
-//   ]
-// },{
-//   id: 'nextConcert',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Notre prochain concert'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Our Next Concert'
-//     }
-//   ]
-// },{
-//   id: 'nextConcerts',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Nos prochains concerts'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Our Comming Concerts'
-//     }
-//   ]
 // },{
 //   id: 'news',
 //   label: [
@@ -89,54 +61,6 @@ export default {
 //     {
 //       node_locale: 'en-US',
 //       text: 'News'
-//     }
-//   ]
-// },{
-//   id: 'read',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Lire'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Read'
-//     }
-//   ]
-// },{
-//   id: 'readMoreBlogs',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Lire d\'autres nouvelles'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Read More Blogs'
-//     }
-//   ]
-// },{
-//   id: 'formerConcerts',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Nos précédents concerts'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Our Past Concerts'
-//     }
-//   ]
-// },{
-//   id: 'backToMain',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Retour à la page d\'accueil'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Back to Main Page'
 //     }
 //   ]
 // },{

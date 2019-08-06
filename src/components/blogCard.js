@@ -2,9 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import LocalizedLink from './localizedLink'
+import labels from '../constants/blogs'
 
 const BlogCard = (props) => {
   
+  // console.log('props', props)
+  // console.log('labels', labels)
+
   return (
     <div className="card">
       <div className="card-image">
@@ -24,7 +28,7 @@ const BlogCard = (props) => {
           <LocalizedLink
             to={`/blog/${props.slug}`}
             className="button is-primary"
-          >{props.buttonText}...</LocalizedLink>
+          >{labels.read[props.node_locale]}...</LocalizedLink>
 
         </div>
       </div>
