@@ -9,9 +9,10 @@ import Hero from '../components/hero'
 import labels from '../constants/blogs'
 
 const Blog = ({pageContext: { locale, langtag }, data}) => {
-  console.log('@@@@', {langtag}, data)
+
   const options = {
     renderNode: {
+
       // eslint-disable-next-line react/display-name
       'embedded-asset-block': (node) => {
         // there is no default language for media, hence we
@@ -42,13 +43,23 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
 
           <div className={''} >
             <article className={''} >
+
+              {/* navigation */}
+              <div className="tags">
+                <LocalizedLink
+                  className="tag is-primary"
+                  to={'/blog'}
+                >{t('seeAllNews')}</LocalizedLink>
+                <LocalizedLink className="tag" to={'/'}>
+                  {t('goHome')}</LocalizedLink>
+              </div>
+              
               <header className="content">
                 <h2>{data.blog.titre}</h2>
                 <p className="is-italic">
                   {data.blog.publicationDate}
                 </p>
               </header>
-
               {/* blog summary */}
               <div className="box is-italic is-family-secondary">
                 {data.blog.summary.summary}
@@ -63,9 +74,13 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                   alt={data.blog.previewPicture.description}
                 />
               </div>
+              
+              {/* whole blog item */}
               {documentToReactComponents(
                 data.blog.body.json,
                 options)}
+                
+              {/* navigation */}
               <div className="tags">
                 <LocalizedLink
                   className="tag is-primary"
@@ -74,6 +89,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                 <LocalizedLink className="tag" to={'/'}>
                   {t('goHome')}</LocalizedLink>
               </div>
+
             </article>
           </div>
 

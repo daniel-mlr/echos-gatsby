@@ -26,25 +26,33 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
                 <article className="media" key={id} >
                   
                   {/* left side thumbnail */}
-                  <figure className="media-left">
-                    <div className="image is-96x96">
-                      <Img
-                        fixed={edge.node.previewPicture.fixed}
-                        alt={edge.node.previewPicture.description}
-                      />
-                    </div>
-                  </figure>
+                  <LocalizedLink to={`/blog/${edge.node.slug}`}>
+                    <figure className="media-left">
+                      <div className="image is-96x96">
+                        <Img
+                          fixed={edge.node.previewPicture.fixed}
+                          alt={edge.node.previewPicture.description}
+                        />
+                      </div>
+                    </figure>
+                  </LocalizedLink>
                   
                   <div className="media-content">
+                    
                     {/* title  */}
-                    <h3 className="title is-5 is-marginless">{edge.node.titre}</h3>
+                    <LocalizedLink to={`/blog/${edge.node.slug}`}>
+                      <h3 className="title is-5 is-marginless">
+                        {edge.node.titre}</h3>
+                    </LocalizedLink>
+                    
                     {/* date */}
                     <p className="is-italic">{edge.node.publicationDate}</p>
+                    
                     {/* summary */}
                     <p>{edge.node.summary.summary}</p>
                     
-                    <LocalizedLink
-                      to={`/blog/${edge.node.slug}`}
+                    {/* link */}
+                    <LocalizedLink to={`/blog/${edge.node.slug}`}
                     >{labels['readMore'][langtag]}</LocalizedLink>
                   </div>
                 </article>
