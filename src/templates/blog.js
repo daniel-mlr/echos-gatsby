@@ -6,6 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 import Head from '../components/head'
 import Hero from '../components/hero'
+import labels from '../constants/blogs'
 
 const Blog = ({pageContext: { locale, langtag }, data}) => {
   console.log('@@@@', {langtag}, data)
@@ -22,12 +23,15 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
     }
   }
 
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
   return (
     <Layout
-      path={`/blog/${data.contentfulBlogues.slug}`}
+      path={`/blog/${data.blog.slug}`}
       locale={locale} langtag={langtag}
     >
-      <Head title={data.contentfulBlogues.titre} />
+      <Head title={data.blog.titre} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         // title={data.contentfulBlogues.titre}
@@ -39,29 +43,36 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
           <div className={''} >
             <article className={''} >
               <header className="content">
-                <h2>{data.contentfulBlogues.titre}</h2>
+                <h2>{data.blog.titre}</h2>
                 <p className="is-italic">
-                  {data.contentfulBlogues.publicationDate}
+                  {data.blog.publicationDate}
                 </p>
               </header>
+
+              {/* blog summary */}
+              <div className="box is-italic is-family-secondary">
+                {data.blog.summary.summary}
+              </div>
+              
               <div 
                 className="content is-pulled-left"
                 style={{margin: '0 1rem 1rem 0'}}
               >
                 <Img 
-                  fixed={data.contentfulBlogues.previewPicture.fixed}
-                  alt={data.contentfulBlogues.previewPicture.description}
+                  fixed={data.blog.previewPicture.fixed}
+                  alt={data.blog.previewPicture.description}
                 />
               </div>
               {documentToReactComponents(
-                data.contentfulBlogues.body.json,
+                data.blog.body.json,
                 options)}
               <div className="tags">
                 <LocalizedLink
                   className="tag is-primary"
                   to={'/blog'}
-                >Liste des nouvelles</LocalizedLink>
-                <LocalizedLink className="tag" to={'/'}>Accueil</LocalizedLink>
+                >{t('seeAllNews')}</LocalizedLink>
+                <LocalizedLink className="tag" to={'/'}>
+                  {t('goHome')}</LocalizedLink>
               </div>
             </article>
           </div>
@@ -78,7 +89,7 @@ export const query = graphql`
     $langtag: String!  
   ) 
   { 
-    contentfulBlogues(
+    blog:contentfulBlogues(
       slug: {eq: $slug}
       node_locale: {eq: $langtag}
     ) {
@@ -86,10 +97,11 @@ export const query = graphql`
       publicationDate(formatString: "MMMM Do, YYYY")
       slug
       body { json }
+      summary { summary }
       previewPicture {
         title
         description
-        fixed(width: 96, height:96) {
+        fixed(width: 150, height:150) {
           ...GatsbyContentfulFixed
         }
       }
