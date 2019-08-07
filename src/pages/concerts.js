@@ -34,9 +34,13 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
               ? t('nextConcerts') : t('nextConcert')}
         ></div>
 
-        { // print coming concerts
+        { // print coming concerts, date ascending order
           futureConcerts.reverse().map((edge, idx) => {
-            return (<Concert key={idx} courant langtag {...edge.node} />)
+            return (<Concert
+              key={idx}
+              courant
+              langtag
+              {...edge.node} />)
           })
         }
       </article>
@@ -65,7 +69,6 @@ export const query = graphql`
 query ($langtag: String = "fr-CA"){
   concert:allContentfulConcerts (
     filter: {node_locale: { eq: $langtag }}
-    # sort: {fields: concertDate, order: ASC}
     sort: {fields: concertDate, order: DESC}
     ) 
   {
@@ -89,6 +92,9 @@ query ($langtag: String = "fr-CA"){
           }
         }
         slug
+        adultFare
+        studentAndOldAgeFare
+        childFare
         ticketsUrl
         node_locale
       } 

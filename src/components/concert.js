@@ -25,11 +25,13 @@ const Concert = (props) => {
 
   // translation rendering helper function
   const t = (label) => labels[label][props.node_locale]
-
+  
   return (
     <section className="section lastchild" name={props.concertId}>
+      {/* header of the concert, on top of the 2 columns */}
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
+      
       <div className="columns">
         
         {/* left column: picture */}
@@ -59,6 +61,27 @@ const Concert = (props) => {
                 )}</ul>
               </>
             }
+
+            {/* concerts ticket prices */}
+            <div className="content fare">
+              <div className="is-pulled-left">
+                <p><span className="has-text-weight-medium">
+                  {t('adult')}:</span>&nbsp;${
+                  parseInt(props.adultFare).toFixed(2)}</p>
+              </div>
+              <div className="is-pulled-left">
+                <p><span className="has-text-weight-medium">
+                  {t('student')}:</span>&nbsp;
+                ${parseInt(props.studentAndOldAgeFare).toFixed(2)}
+                </p>
+              </div>
+              <div >
+                <p><span className="has-text-weight-medium">
+                  {t('child')}:</span>&nbsp;${
+                  parseInt(props.childFare).toFixed(2)
+                }</p>
+              </div>
+            </div>
 
             {/* concert date */}
             <div className="content">

@@ -71,12 +71,11 @@ query (
       # concertDate: { gte: $today}
     }
     sort: {fields: concertDate, order: ASC}
-    # limit:1
     ) {
     edges {
       node {
         concertName
-        concertDateFormated: concertDate (formatString: "MMMM Do, YYYY")
+        # concertDateFormated: concertDate (formatString: "MMMM Do, YYYY")
         concertDate
         artisticDirection
         pianiste
@@ -85,13 +84,11 @@ query (
         poster { 
           title 
           description
-         # fixed(width: 300, height: 300) {
-         #   ...GatsbyContentfulFixed
-          fluid {
+          fluid (maxWidth: 500) {
             ...GatsbyContentfulFluid
           }
         }
-        prix
+        # prix
         slug
         ticketsUrl
         node_locale

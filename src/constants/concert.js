@@ -19,6 +19,18 @@ export default {
     'en-US': 'More details',
     'fr-CA': 'Plus de détails'
   },
+  'adult': {
+    'en-US': 'Adults',
+    'fr-CA': 'Adultes'
+  },
+  'student': {
+    'en-US': 'Students and Old Ages',
+    'fr-CA': 'Édudiants et ainés'
+  },
+  'child': {
+    'en-US': 'Children',
+    'fr-CA': 'Enfants'
+  },
   'pastConcerts': {
     'en-US': 'Our Past Concerts',
     'fr-CA': 'Nos précédents concerts'
@@ -36,43 +48,3 @@ export default {
     'fr-CA': 'Retour à la page d\'accueil'
   }
 }
-
-// {
-//   id: 'backToMain',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Retour à la page d\'accueil'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Back to Main Page'
-//     }
-//   ]
-// },
-
-// },{
-//   id: 'news',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Nouvelles'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'News'
-//     }
-//   ]
-// },{
-//   id: 'readMore',
-//   label: [
-//     {
-//       node_locale: 'fr-CA',
-//       text: 'Lire plus'
-//     },
-//     {
-//       node_locale: 'en-US',
-//       text: 'Read More'
-//     }
-//   ]
-// },
