@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import Head from '../components/head'
 import Hero from '../components/hero'
 import LocalizedLink from '../components/localizedLink'
+import labels from '../constants/blogs'
 
 
 const BlogPage = ({pageContext: { locale, langtag }, data}) => {
@@ -20,24 +21,43 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
         <div className="container is-desktop">
           {
             data.blog.edges.map((edge, id) => {
-              return (
+              
+              return ( // blog media card
                 <article className="media" key={id} >
-                  <figure className="media-left">
-                    <div className="image is-96x96">
-                      <Img
-                        fixed={edge.node.previewPicture.fixed}
-                        alt={edge.node.previewPicture.description}
-                      />
-                    </div>
-                  </figure>
+                  
+                  {/* left side thumbnail */}
+                  <LocalizedLink to={`/blog/${edge.node.slug}`}>
+                    <figure className="media-left">
+                      <div className="image is-96x96">
+                        <Img
+                          fixed={edge.node.previewPicture.fixed}
+                          alt={edge.node.previewPicture.description}
+                        />
+                      </div>
+                    </figure>
+                  </LocalizedLink>
+                  
                   <div className="media-content">
-                    <h3 className="title is-5 is-marginless">{edge.node.titre}</h3>
+                    
+                    {/* title  */}
+                    <LocalizedLink to={`/blog/${edge.node.slug}`}>
+                      <h3 className="title is-5 is-marginless">
+                        {edge.node.titre}</h3>
+                    </LocalizedLink>
+                    
+                    {/* date */}
                     <p className="is-italic">{edge.node.publicationDate}</p>
-                    <p>{edge.node.summary.summary}</p>                    
-                    <LocalizedLink to={`/blog/${edge.node.slug}`}>Read more</LocalizedLink>                    
+                    
+                    {/* summary */}
+                    <p>{edge.node.summary.summary}</p>
+                    
+                    {/* link */}
+                    <LocalizedLink to={`/blog/${edge.node.slug}`}
+                    >{labels['readMore'][langtag]}</LocalizedLink>
                   </div>
                 </article>
               )
+
             })
           }
         </div>

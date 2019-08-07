@@ -7,7 +7,8 @@ const BuyButton = (props) => {
       href={props.href}
       target="_blank"
       rel="noopener noreferrer">
-      Acheter vos billetes / Buy tickets</a>
+      {/* Acheter vos billetes / Buy tickets</a> */}
+      {props.label}</a>
   )
 }
 BuyButton.propTypes = {

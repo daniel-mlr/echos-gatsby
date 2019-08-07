@@ -1,37 +1,42 @@
 import React from 'react'
 import BlogCard from '../components/blogCard'
 import ReadMoreButton from '../components/readMoreButton'
+import labels from '../constants/blogs'
 
-const BlogGridCard = ({title, buttonText, data}) => {
+const BlogGridCard = ({langtag, data}) => {
 
   return (
     <section className="section">
-      <div className="is-divider" data-content={title}></div>
+
+      <div /* blog section divider */
+        className="is-divider"
+        data-content={labels.news[langtag]}>
+      </div>
+
       <div className="columns">
-        {
+        {/* show 2 entries of blogs if less than laptop, 
+          3 entries from laptop to widescreen 
+          and 4 entries for wide screens */
           data.edges.map((edge, idx) => {
             const column = idx === 2 ? 'column is-hidden-touch'
               : idx === 3 ? 'column is-hidden-until-widescreen'
                 : 'column'
             return (
               <div className={column} key={idx}>
-                <BlogCard
-                  key={idx}
-                  {...edge.node}
-                  buttonText={buttonText}
-                >
-                </BlogCard>
+                <BlogCard key={idx} {...edge.node} />
               </div>
             )
           })
         }
       </div>
+      
+      {/* read more button */}
       <div className="container" style={{paddingTop: '2rem'}}>
         <ReadMoreButton
-          // title={data.siteMetadata.readMore...}
-          title={'read more news'}
+          label={labels.readMoreButton[langtag]}
         />
       </div>
+      
     </section>
   )
 }

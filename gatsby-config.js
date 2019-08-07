@@ -42,7 +42,6 @@ module.exports = {
       {
         id: 3,
         href: '/blog',
-        // text: ['Nouvelles', 'News' ]
         label:[
           {
             node_locale: 'fr-CA',
@@ -53,12 +52,10 @@ module.exports = {
             text: 'News' 
           }
         ]
-
       },
       {
         id: 4,
         href: '/contact',
-        // text: ['Joignez-nous', 'Join us' ]
         label:[
           {
             node_locale: 'fr-CA',
@@ -69,12 +66,10 @@ module.exports = {
             text: 'Join us' 
           }
         ]
-
       },
       {
         id: 5,
         href: '/about',
-        // text: ['La chorale', 'About Us' ]
         label:[
           {
             node_locale: 'fr-CA',
@@ -85,10 +80,9 @@ module.exports = {
             text: 'About us' 
           }
         ]
-
       }
-    
     ],
+
     hero: {
       main: 'Les Échos du Pacifique',
       sub:  'La chorale francophone de Vancouver'
