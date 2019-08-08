@@ -54,7 +54,6 @@ query (
         previewPicture { 
           title 
           description
-          # fluid(maxWidth: 300) {
           fluid(maxWidth: 450) {
             ...GatsbyContentfulFluid
           }

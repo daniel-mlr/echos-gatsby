@@ -86,17 +86,19 @@ const Concert = (props) => {
             {/* concert date */}
             <div className="content">
               <time dateTime={props.concertDate}>
-                <GoCalendar style={{ transform: 'translateY(2px)' }} />
-                &nbsp;
-                {concertDate.toLocaleDateString(
-                  props.node_locale, dateFormatOptions
-                )}
+                <span style={{whiteSpace: 'nowrap'}}>
+                  <GoCalendar style={{ transform: 'translateY(2px)'}} /> {
+                    concertDate.toLocaleDateString(
+                      props.node_locale, dateFormatOptions
+                    )}
+                </span>
                 &emsp;
-                <GoClock style={{ transform: 'translateY(2px)' }} />
-                &nbsp;
-                {concertDate.toLocaleTimeString(
-                  props.node_locale, timeFormatOptions
-                )}
+                <span style={{ whiteSpace: 'nowrap' }}>
+                  <GoClock style={{ transform: 'translateY(2px)' }} /> {
+                    concertDate.toLocaleTimeString(
+                      props.node_locale, timeFormatOptions
+                    )}
+                </span>
               </time>
             </div>
 

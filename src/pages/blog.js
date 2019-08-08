@@ -68,15 +68,15 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
 export const query = graphql`
 query ($langtag: String = "fr-CA"){
-  meta:allContentfulMetadata(filter: {node_locale: { eq: $langtag }} ){
-      edges {
-        node{
-          blogName,
-          concertHeader1,
-          readButtonText
-        }
-      }
-    },
+  # meta:allContentfulMetadata(filter: {node_locale: { eq: $langtag }} ){
+  #     edges {
+  #       node{
+  #         # blogName,
+  #         concertHeader1,
+  #         readButtonText
+  #       }
+  #     }
+  #   },
   blog:allContentfulBlogues(
     filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }

@@ -77,8 +77,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
               
               {/* whole blog item */}
               {documentToReactComponents(
-                data.blog.body.json,
-                options)}
+                data.blog.body.json, options)}
                 
               {/* navigation */}
               <div className="tags">
