@@ -11,7 +11,7 @@ import Hero from '../components/hero'
 const ContactPage = ({pageContext: { locale, langtag }}) => {
   const data = useStaticQuery(graphql`
   query {
-    meta:contentfulMetadata {
+    meta:contentfulMetadata (node_locale: {eq: "fr-CA"}) {
       contactUsAddress1
       contactUsAddress2
       contactUsMainMessage {
@@ -72,7 +72,7 @@ const ContactPage = ({pageContext: { locale, langtag }}) => {
               {/* email */}
               <p style={{whiteSpace: 'nowrap'}}>
                 <GoMail style={{transform: 'translateY(2px)'}}/>
-                &ensp;{data.meta.email}
+                &ensp;<a href={'mailto:' + data.meta.email + '?subject=Site Web Les Échos du Pacifique'}>{data.meta.email}</a>
               </p>
               {/* twitter */}
               <p>
