@@ -41,57 +41,58 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
       <section className="section" style={{'paddingTop': 0}}>
         <div className="content">
 
-          <div className={''} >
-            <article className={''} >
+          <article className={''} >
 
-              {/* navigation */}
-              <div className="tags">
-                <LocalizedLink
-                  className="tag is-primary"
-                  to={'/blog'}
-                >{t('seeAllNews')}</LocalizedLink>
-                <LocalizedLink className="tag" to={'/'}>
-                  {t('goHome')}</LocalizedLink>
-              </div>
+            {/* navigation */}
+            <div className="tags">
+              <LocalizedLink
+                className="tag is-primary"
+                to={'/blog'}
+              >{t('seeAllNews')}</LocalizedLink>
+              <LocalizedLink className="tag" to={'/'}>
+                {t('goHome')}</LocalizedLink>
+            </div>
+            
+            {/* publication date */}
+            <header className="content">
+              <h2>{data.blog.titre}</h2>
+              <p className="is-italic">
+                {data.blog.publicationDate}
+              </p>
+            </header>
+            
+            {/* blog summary */}
+            <div className="box is-italic is-family-secondary">
+              {data.blog.summary.summary}
+            </div>
+            
+            {/* thumbnail image */}
+            <div 
+              className="content is-pulled-left"
+              style={{margin: '0 2rem 2rem 0'}}
+            >
+              <Img
+                fixed={data.blog.previewPicture.fixed}
+                alt={data.blog.previewPicture.description}
+              />
+            </div>
+            
+            {/* whole blog item */}
+            {documentToReactComponents(
+              data.blog.body.json, options)}
               
-              <header className="content">
-                <h2>{data.blog.titre}</h2>
-                <p className="is-italic">
-                  {data.blog.publicationDate}
-                </p>
-              </header>
-              {/* blog summary */}
-              <div className="box is-italic is-family-secondary">
-                {data.blog.summary.summary}
-              </div>
-              
-              <div 
-                className="content is-pulled-left"
-                style={{margin: '0 1rem 1rem 0'}}
-              >
-                <Img 
-                  fixed={data.blog.previewPicture.fixed}
-                  alt={data.blog.previewPicture.description}
-                />
-              </div>
-              
-              {/* whole blog item */}
-              {documentToReactComponents(
-                data.blog.body.json, options)}
-                
-              {/* navigation */}
-              <div className="tags">
-                <LocalizedLink
-                  className="tag is-primary"
-                  to={'/blog'}
-                >{t('seeAllNews')}</LocalizedLink>
-                <LocalizedLink className="tag" to={'/'}>
-                  {t('goHome')}</LocalizedLink>
-              </div>
+            {/* navigation */}
+            <div className="tags">
+              <LocalizedLink
+                className="tag is-primary"
+                to={'/blog'}
+              >{t('seeAllNews')}</LocalizedLink>
+              <LocalizedLink className="tag" to={'/'}>
+                {t('goHome')}</LocalizedLink>
+            </div>
 
-            </article>
-          </div>
-
+          </article>
+        
         </div>
       </section>
     </Layout>
