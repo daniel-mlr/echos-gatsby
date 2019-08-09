@@ -12,21 +12,25 @@ const ConcertGridCard = ({langtag, data}) => {
   const t = (label) => labels[label][langtag]
 
   return (
-    <section className="section">
+    
+    // render divider and concert announces if any
+    futureConcerts.length > 0 &&
+    (
+      <section className="section">
 
-      {/* concert divider */}
-      <div
-        className="is-divider"
-        data-content={
-          futureConcerts.length > 1 ? t('nextConcerts') : t('nextConcert')
-        }>
-      </div>
+        {/* concert divider */}
+        <div
+          className="is-divider"
+          data-content={
+            futureConcerts.length > 1 ? t('nextConcerts') : t('nextConcert')
+          }></div>
 
-      {
-        futureConcerts.map(
-          (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
-      }
-    </section>
+        {
+          futureConcerts.map(
+            (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
+        }
+      </section>
+    )
   )
 }
 
