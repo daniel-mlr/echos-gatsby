@@ -38,7 +38,7 @@ const BurgerMenu = ({path, langtag}) => {
           )
         })}
         <span className="bm-lan-sw">
-          <LangSwitcher path={path}></LangSwitcher>
+          <LangSwitcher path={path} langtag={langtag} />
         </span>
       </Menu>
       <main id="page-wrap">
