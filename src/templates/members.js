@@ -17,6 +17,7 @@ export const queryMembers = graphql`
   }
 `
 const Members = ({pageContext: { locale, langtag }, data}) => {
+
   const options = {
     renderNode: {
       // eslint-disable-next-line react/display-name
@@ -31,8 +32,12 @@ const Members = ({pageContext: { locale, langtag }, data}) => {
 
   // console.log('dans templates members, dans la fonction Members, data ', data)
   return (
-    <Layout path={`/members/${data.contentfulMembres.slug}`} locale={locale} langtag={langtag}>
-      <Head title={data.contentfulMembres.titre}/>
+    <Layout
+      path={`/members/${data.contentfulMembres.slug}`}
+      locale={locale}
+      langtag={langtag}
+    >
+      <Head title={data.contentfulMembres.titre} />
       {/* <Hero
         imgFluid={data.file.childImageSharp.fluid}
         // title={data.contentfulBlogues.titre}
@@ -43,15 +48,25 @@ const Members = ({pageContext: { locale, langtag }, data}) => {
           <div className={''} >
             <article className={''} >
               <div className="tags">
-                <Link className="tag is-primary" to={'/members'}>Liste des articles</Link>
+                <Link
+                  className="tag is-primary"
+                  to={'/members'}>Liste des articles
+                </Link>
                 <Link className="tag" to={'/'}>Accueil</Link>
               </div>
+
               {/* <header>
                 <h2>{data.contentfulMembres.titre}</h2>
               </header> */}
-              {documentToReactComponents(data.contentfulMembres.contenu.json, options)}
+              {documentToReactComponents(
+                data.contentfulMembres.contenu.json, options
+              )}
+
               <div className="tags">
-                <Link className="tag is-primary" to={'/members'}>Liste des articles</Link>
+                <Link
+                  lassName="tag is-primary"
+                  to={'/members'}>Liste des articles
+                </Link>
                 <Link className="tag" to={'/'}>Accueil</Link>
               </div>
             </article>

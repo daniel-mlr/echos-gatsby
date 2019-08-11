@@ -32,18 +32,16 @@ query (
   #  $today: Date  ## do we have to create this variable in page context?
 ){
   annonces:allContentfulAnnonces (
-    filter: {
-      # datePublication: {lte: "2019-10-31" }
-      # dateFinPublication: {gt: "2019-10-31"}
-      node_locale: {eq: $langtag} }
+    filter: {node_locale: {eq: $langtag}}
   ) {
 		edges {
 			node {
-				identifiant 
+				identifiant
 				publishConcurrently
 				node_locale
 				datePublication
-				dateFinPublication
+        dateFinPublication
+        content { json }
 			}
 		}
 	}
