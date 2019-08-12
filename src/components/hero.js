@@ -13,7 +13,7 @@ const Hero = (props) => {
       />
       <div className="hero-body">
         <div className="container">
-          <h2 className="title has-text-white">
+          <h2 className="hero-secondary has-text-white is-family-title is-uppercase">
             {props.title}
           </h2>
         </div>

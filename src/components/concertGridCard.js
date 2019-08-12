@@ -46,27 +46,20 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
       {/* render the future concert section */}
       <section className="section">
 
-        {/* concert divider */}
-        {/* <div
-          className="is-divider"
-          data-content={
-            futureConcerts.length > 1 ? t('nextConcerts') : t('nextConcert')
-          }></div> */}
         <SectionDivider label={futureConcerts.length > 1
           ? t('nextConcerts')
-          : t('nextConcert')}
-        />
+          : t('nextConcert')} />
 
         { // render concerts 
           futureConcerts.map(
             (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
         }
+
       </section>
       </> 
     )
   } else { // there is no future concerts
 
-    console.log('pas de futur concert')
     return (
       <>
         {

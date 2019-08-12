@@ -22,50 +22,35 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     <Layout path="/concerts" locale={locale} langtag={langtag}>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
-        title='Concerts'
+        title='CONCERTS'
       />
       {/* comming concert page content */}
       <article className="section">
 
-        {/* comming concert page content divider */}
-        {/* <div
-          className="is-divider"
-          data-content={ 
-            futureConcerts.length > 1 
-              ? t('nextConcerts') : t('nextConcert')}
-        ></div> */}
         <SectionDivider label={futureConcerts.length > 1
           ? t('nextConcerts')
           : t('nextConcert')}
         />
-        
 
         { // print coming concerts, date ascending order
-          futureConcerts.reverse().map((edge, idx) => {
-            return (<Concert
-              key={idx}
-              courant
-              langtag
-              {...edge.node} />)
-          })
+          futureConcerts.reverse().map((edge, idx) => 
+            <Concert key={idx} courant langtag {...edge.node} />
+          )
         }
+
       </article>
 
       {/* former concerts page content */}
       <article className="section">
         
-        {/* former concert page divider */}
-        {/* <div
-          className="is-divider"
-          data-content={t('pastConcerts')}>
-        </div> */}
         <SectionDivider label={t('pastConcerts')} />
 
         { // print former concerts
-          formerConcerts.map((edge, idx) => {
-            return (<Concert key={idx} {...edge.node} />)
-          })
+          formerConcerts.map((edge, idx) => 
+            <Concert key={idx} {...edge.node} />
+          )
         }
+
       </article>
       
     </Layout>

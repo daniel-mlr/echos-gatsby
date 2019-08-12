@@ -9,11 +9,6 @@ const BlogGridCard = ({langtag, data}) => {
   return (
     <section className="section">
 
-      {/* section divider */}
-      {/* <div 
-        className="is-divider"
-        data-content={labels.news[langtag]}>
-      </div> */}
       <SectionDivider label={labels.news[langtag]} />
 
       <div className="columns">

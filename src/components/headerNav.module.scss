@@ -25,9 +25,11 @@
     // color: $nav-items-color;
     text-align: center;
     // padding: 14px 16px;
-    padding: 0 1vw;
+    // to modify when removing the double label in the language switcher
+    padding: 0 0.9vw;
     text-decoration: none;
     font-size: 17px;
+    font-variant: small-caps;
   }
   
   /* Change the color of links on hover */

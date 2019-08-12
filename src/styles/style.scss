@@ -11,6 +11,9 @@
 //     hero  and jumbotron
 // *****************************
 
+.is-family-title {
+  font-family: $family-title;
+}
 .site-name{
   color: $blue-name !important;
   font-size: 4rem;
@@ -46,7 +49,9 @@
     position: absolute;
     top: 10vh;
 }
-
+.hero-secondary {
+  font-size: 3rem;
+}
 // ************************
 //       concertCard
 // ************************

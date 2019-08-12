@@ -15,7 +15,7 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
       <Head title="Blog"/>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
-        title={'Nouvelles'}
+        title={labels.news[langtag]}
       />
       <section className="section" style={{'paddingTop': 0}}>
         <div className="container is-desktop">
