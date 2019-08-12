@@ -89,6 +89,9 @@ query ($langtag: String = "fr-CA"){
         childFare
         ticketsUrl
         node_locale
+        lieu1
+        lieu2
+        lieuUrl { lieuUrl }
       } 
     }
   }

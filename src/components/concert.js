@@ -6,7 +6,19 @@ import BuyButton from './buyButton'
 import LocalizedLink from './localizedLink'
 import '../styles/concert.scss'
 import labels from '../constants/concert'
-import { GoCalendar, GoClock } from 'react-icons/go'
+import { GoCalendar, GoClock, GoLocation } from 'react-icons/go'
+
+// HOC to wrap link if link not null
+const WithLink = ({ link, className, children }) => (link ?
+  <a
+    href={link}
+    className={className}
+    target="_blank"
+    rel="noopener noreferrer">
+    {children}
+  </a>
+  : children
+)
 
 const Concert = (props) => {
   
@@ -25,6 +37,11 @@ const Concert = (props) => {
 
   // translation rendering helper function
   const t = (label) => labels[label][props.node_locale]
+
+  // prevent error if props.lieuUrl not exist
+  const lieuUrl = props.lieuUrl ? props.lieuUrl.lieuUrl : null
+
+  console.log('props:', props)
   
   return (
     <section className="section lastchild" name={props.concertId}>
@@ -100,6 +117,15 @@ const Concert = (props) => {
                     )}
                 </span>
               </time>
+            </div>
+            
+            {/* concert location */}
+            <div className="content">
+              <GoLocation style={{ transform: 'translateY(2px)' }} />
+              <WithLink link={lieuUrl}>
+                <span style={{ whiteSpace: 'nowrap' }} > {props.lieu1} </span>
+                <span>{props.lieu2}</span>
+              </WithLink>
             </div>
 
             { /* conditional buy button */
