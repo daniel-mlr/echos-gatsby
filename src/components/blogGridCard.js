@@ -1,6 +1,7 @@
 import React from 'react'
 import BlogCard from '../components/blogCard'
 import ReadMoreButton from '../components/readMoreButton'
+import SectionDivider from '../components/sectionDivider'
 import labels from '../constants/blogs'
 
 const BlogGridCard = ({langtag, data}) => {
@@ -8,10 +9,12 @@ const BlogGridCard = ({langtag, data}) => {
   return (
     <section className="section">
 
-      <div /* blog section divider */
+      {/* section divider */}
+      {/* <div 
         className="is-divider"
         data-content={labels.news[langtag]}>
-      </div>
+      </div> */}
+      <SectionDivider label={labels.news[langtag]} />
 
       <div className="columns">
         {/* show 2 entries of blogs if less than laptop, 

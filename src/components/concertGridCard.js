@@ -1,6 +1,7 @@
 import React from 'react'
 import ConcertCard from '../components/concertCard'
 import AnnonceCard from '../components/annonceCard'
+import SectionDivider from '../components/sectionDivider'
 import labels from '../constants/concert'
 
 const ConcertGridCard = ({langtag, concerts, annonces}) => {
@@ -23,10 +24,10 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
-  // if no future concerts, publish all current concurrentAnnouncements
+  // if no future concerts, publish all current and concurrentAnnouncements
   // (i.e.: all announcements starting before or at current date 
   //   and ending after current date)
-  // render divider and concert announces if any
+  // Render divider and concert announces if any
 
   if ( futureConcerts.length ) { // there are some concert comming
 
@@ -46,11 +47,15 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
       <section className="section">
 
         {/* concert divider */}
-        <div
+        {/* <div
           className="is-divider"
           data-content={
             futureConcerts.length > 1 ? t('nextConcerts') : t('nextConcert')
-          }></div>
+          }></div> */}
+        <SectionDivider label={futureConcerts.length > 1
+          ? t('nextConcerts')
+          : t('nextConcert')}
+        />
 
         { // render concerts 
           futureConcerts.map(

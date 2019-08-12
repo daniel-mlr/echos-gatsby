@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import SectionDivider from '../components/sectionDivider'
 import Concert from '../components/concert'
 import Hero from '../components/hero'
 import labels from '../constants/concert'
@@ -27,12 +28,17 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
       <article className="section">
 
         {/* comming concert page content divider */}
-        <div
+        {/* <div
           className="is-divider"
           data-content={ 
             futureConcerts.length > 1 
               ? t('nextConcerts') : t('nextConcert')}
-        ></div>
+        ></div> */}
+        <SectionDivider label={futureConcerts.length > 1
+          ? t('nextConcerts')
+          : t('nextConcert')}
+        />
+        
 
         { // print coming concerts, date ascending order
           futureConcerts.reverse().map((edge, idx) => {
@@ -49,10 +55,11 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
       <article className="section">
         
         {/* former concert page divider */}
-        <div
+        {/* <div
           className="is-divider"
           data-content={t('pastConcerts')}>
-        </div>
+        </div> */}
+        <SectionDivider label={t('pastConcerts')} />
 
         { // print former concerts
           formerConcerts.map((edge, idx) => {
