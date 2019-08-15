@@ -4,12 +4,14 @@
 $primary: #dc4619;
 $secondary: #ED9A00;
 $warning: #eca000;
+$notification: #368D34;
 $blue-name: #005f9d;
 $link: #0B93C9;
+// $danger: à déterminer 
 
 // brand fonts
 $family-primary: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$family-secondary: "Open Sans", "Nunito Sans" , "PT Sans", "Source Sans Pro", "Lato", "Monserrat", BlinkMacSystemFont, -apple-system, "Arial Black", sans-serif;
+$family-secondary: "Open Sans", "Nunito Sans", "PT Sans", "Source Sans Pro", "Lato", "Monserrat", BlinkMacSystemFont, -apple-system, "Arial Black", sans-serif;
 $family-title: "Tenor Sans";
 
 // dividers
@@ -29,6 +31,5 @@ $headerbackgroundcolor: rgb(255, 255, 255);
 $footer-background-color: hsl(0, 0%, 21%);
 $box-padding: 1.25rem 2.5rem;
 $box-background-color: hsl(0, 0%, 92%);
-$box-color: hsl(0, 0%, 36%)
-// tests
+$box-color: hsl(0, 0%, 36%) // tests
 // $background: grey;

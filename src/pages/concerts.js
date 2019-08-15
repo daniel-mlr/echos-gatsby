@@ -103,7 +103,6 @@ query ($langtag: String = "fr-CA"){
       }
     }
   }
-
 }
 `
 

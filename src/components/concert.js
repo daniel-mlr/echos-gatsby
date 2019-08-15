@@ -41,7 +41,7 @@ const Concert = (props) => {
   // prevent error if props.lieuUrl not exist
   const lieuUrl = props.lieuUrl ? props.lieuUrl.lieuUrl : null
 
-  console.log('props:', props)
+  // console.log('props:', props)
   
   return (
     <section className="section lastchild" name={props.concertId}>
