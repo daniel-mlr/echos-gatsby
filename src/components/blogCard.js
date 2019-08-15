@@ -42,4 +42,5 @@ BlogCard.propTypes = {
   slug: PropTypes.string,
   imgFluid: PropTypes.object
 }
+
 export default BlogCard

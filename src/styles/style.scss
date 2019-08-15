@@ -52,6 +52,27 @@
 .hero-secondary {
   font-size: 3rem;
 }
+
+// *****************************
+//     header 
+// *****************************
+
+.header {
+  background-color: $headerbackgroundcolor;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+.logo {
+  width:200px;
+  color: white;
+  margin-left: 2vw;
+}
+
+
 // ************************
 //       concertCard
 // ************************

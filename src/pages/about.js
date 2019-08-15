@@ -9,7 +9,7 @@ import Head from '../components/head'
 
 const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
-  // flatten edges by removing the node layer, to obtain array of objects
+  // flatten edges by removing the node layer, to obtain an array of objects
   const dataMap = data.about.edges.map((edge) => edge.node)
   
   // transform an array of objects into an object with keynames
@@ -20,12 +20,8 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
       return obj
     }, {})
   
-  // // all the tiles content, each identified by their tileName
+  // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
-
-  // console.log('data:', data.about.edges)
-  // console.log('dataMap:', dataMap)
-  // console.log('tiles:', tiles)
 
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
@@ -39,6 +35,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
               <h2 className="title">{tiles.theChoir.title}</h2>
               <h3 className="subtitle">{tiles.theChoir.sousTitre}</h3>
               {documentToReactComponents(tiles.theChoir.corps.json)}
+              
             </article>
           </div>
         </div>

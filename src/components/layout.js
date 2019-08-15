@@ -13,7 +13,7 @@ const {
 } = React.createContext()
 
 const Layout = ({children, path, locale, langtag}) => {
-  // console.log('locale layout',locale)
+
   return (    
     <LocaleProvider value={locale}>
       
@@ -23,8 +23,8 @@ const Layout = ({children, path, locale, langtag}) => {
         
         <Footer langtag={langtag}/>
       </div>
+
     </LocaleProvider>
-  
   )
 }
 
