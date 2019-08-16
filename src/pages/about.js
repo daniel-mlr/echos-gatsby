@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import Head from '../components/head'
+import AboutTile from '../components/aboutTile'
+
 // import LocalizedLink from '../components/localizedLink'
 // import labels from '../constants/blogs'
 
@@ -30,13 +30,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
         
         <div className="tile is-ancestor">
           <div className="tile is-parent">
-            <article className="tile is-child notification has-background-grey-lighter">
-
-              <h2 className="title">{tiles.theChoir.title}</h2>
-              <h3 className="subtitle">{tiles.theChoir.sousTitre}</h3>
-              {documentToReactComponents(tiles.theChoir.corps.json)}
-              
-            </article>
+            <AboutTile 
+              className="tile is-child notification has-background-grey-lighter"
+              {...tiles.theChoir}
+            />
           </div>
         </div>
 
@@ -44,45 +41,34 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
           <div className="tile is-vertical is-8">
             <div className="tile">
               <div className="tile is-parent is-vertical">
-                <article className="tile is-child notification is-primary">
-                  <h2 className="title">{tiles.rehearsals.title}</h2>
-                  <h3 className="subtitle">{tiles.rehearsals.sousTitre}</h3> 
-                  {documentToReactComponents(tiles.rehearsals.corps.json)}
-                </article>
-                <article className="tile is-child notification is-warning">
-                  <h2 className="title">...tiles</h2>
-                  <h3 className="subtitle">Bottom tile</h3>
-                </article>
+                <AboutTile 
+                  className="tile is-child notification is-primary"
+                  {...tiles.rehearsals}
+                />
+                <AboutTile
+                  className="tile is-child notification is-warning"
+                  {...tiles.example2}
+                />
               </div>
               <div className="tile is-parent">
-                <article className="tile is-child notification is-info">
-                  <h2 className="title">{tiles.theDirector.title} </h2>
-                  <h3 className="subtitle">{tiles.theDirector.sousTitre} </h3>
-                  <figure className="image">
-                    <Img fluid={tiles.theDirector.image.fluid} alt={tiles.theDirector.image.description} />
-                  </figure>
-                  <div className="content">
-                    {documentToReactComponents(tiles.theDirector.corps.json)}
-                  </div>
-                </article>
+                <AboutTile
+                  className="tile is-child notification is-info"
+                  {...tiles.theDirector}
+                />
               </div>
             </div>
             <div className="tile is-parent">
-              <article className="tile is-child notification is-danger">
-                <h2 className="title">Wide tile</h2>
-                <h3 className="subtitle">Aligned with the right tile</h3>
-                <div className="content"> contenu</div>
-              </article>
+              <AboutTile
+                className="tile is-child notification is-danger"
+                {...tiles.example1}
+              />
             </div>
           </div>
           <div className="tile is-parent">
-            <article className="tile is-child notification is-success">
-              <div className="content">
-                <h2 className="title">{tiles.history.title}</h2>
-                <h3 className="subtitle">{tiles.history.sousTitre} </h3>
-                {documentToReactComponents(tiles.history.corps.json)}
-              </div>
-            </article>
+            <AboutTile
+              className="tile is-child notification is-success"
+              {...tiles.history}
+            />
           </div>
         </div>
 
