@@ -9,12 +9,13 @@ import labels from '../constants/concert'
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
   const futureConcerts =  data.concert.edges.filter((edge)=> {
-    return (new Date() <= new Date(edge.node.concertDate))
+    return (new Date() <= new Date(edge.node.concertDate)
+    & new Date(edge.node.announcementDate) < new Date())
   })
   const formerConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() > new Date(edge.node.concertDate))
   })
-  
+
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
@@ -25,20 +26,24 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         title='CONCERTS'
       />
       {/* comming concert page content */}
-      <article className="section">
+      {/* if any  */}
+      {
+        !!futureConcerts.length && 
+        <article className="section">
 
-        <SectionDivider label={futureConcerts.length > 1
-          ? t('nextConcerts')
-          : t('nextConcert')}
-        />
+          <SectionDivider label={futureConcerts.length > 1
+            ? t('nextConcerts')
+            : t('nextConcert')}
+          />
 
-        { // print coming concerts, date ascending order
-          futureConcerts.reverse().map((edge, idx) => 
-            <Concert key={idx} courant langtag {...edge.node} />
-          )
-        }
+          { // print coming concerts, date ascending order
+            futureConcerts.reverse().map((edge, idx) => 
+              <Concert key={idx} courant langtag {...edge.node} />
+            )
+          }
 
-      </article>
+        </article>
+      }
 
       {/* former concerts page content */}
       <article className="section">

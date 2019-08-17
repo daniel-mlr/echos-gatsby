@@ -42,6 +42,13 @@ query (
 				datePublication
         dateFinPublication
         content { json }
+        image {
+          title
+          description
+          fixed(width: 128) {
+            ...GatsbyContentfulFixed
+          }
+        }
 			}
 		}
 	}
@@ -80,6 +87,7 @@ query (
         concertName
         # concertDateFormated: concertDate (formatString: "MMMM Do, YYYY")
         concertDate
+        announcementDate
         artisticDirection
         pianiste
         participation

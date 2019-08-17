@@ -7,7 +7,8 @@ import labels from '../constants/concert'
 const ConcertGridCard = ({langtag, concerts, annonces}) => {
 
   const futureConcerts = concerts.edges.filter((edge) => {
-    return(new Date(edge.node.concertDate) >= new Date())
+    return (new Date(edge.node.concertDate) >= new Date()
+    & new Date(edge.node.announcementDate) < new Date())
   })
 
   const currentAnnouncements = annonces.edges.filter((edge) => {

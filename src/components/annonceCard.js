@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Img from 'gatsby-image'
 
 const AnnonceCard = (props => {
   // console.log('props dans annonceCard', props)
@@ -34,8 +35,23 @@ const AnnonceCard = (props => {
   }
   
   return (
-    <div className="content">
-      {documentToReactComponents(props.content.json, options)}
+    <div className="box">
+      <article className="media">
+        <div className="media-left is-hidden-mobile">
+          {
+            props.image && 
+            <figure className="image is-128x128">
+              {/* <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/> */}
+              <Img fixed={props.image.fixed}
+                alt={props.image.description} />
+            </figure>
+          }
+        </div>
+        <div className="content media-content">
+          {documentToReactComponents(props.content.json, options)}
+        </div>
+
+      </article>
     </div>
   )
 })
