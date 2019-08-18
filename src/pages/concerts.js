@@ -25,8 +25,7 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         imgFluid={data.file.childImageSharp.fluid}
         title='CONCERTS'
       />
-      {/* comming concert page content */}
-      {/* if any  */}
+      {/* comming concert page content, if any */}
       {
         !!futureConcerts.length && 
         <article className="section">

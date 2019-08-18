@@ -94,8 +94,10 @@ const Concert = (props) => {
               </div>
               <div >
                 <p><span className="has-text-weight-medium">
-                  {t('child')}:</span>&nbsp;${
-                  parseInt(props.childFare).toFixed(2)
+                  {t('child')}:</span>&nbsp;{
+                  props.childFare 
+                    ? '$' + parseInt(props.childFare).toFixed(2)
+                    : t('free')
                 }</p>
               </div>
             </div>

@@ -46,5 +46,9 @@ export default {
   'backToMain': {
     'en-US': 'Back to Main Page',
     'fr-CA': 'Retour à la page d\'accueil'
+  },
+  'free': {
+    'en-US': 'Free',
+    'fr-CA': 'Gratuit'
   }
 }
