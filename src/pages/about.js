@@ -64,7 +64,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
               />
             </div>
           </div>
-          <div className="tile is-parent">
+          <div className="tile is-parent content">
             <AboutTile
               className="tile is-child notification is-success"
               {...tiles.history}

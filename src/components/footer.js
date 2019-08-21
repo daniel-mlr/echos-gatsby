@@ -33,9 +33,6 @@ const Footer = (props) => {
             <img
               className=""
               style={{width: '80px'}}
-              // src='https://res.cloudinary.com/danielmeilleurimg/1image/upload/v1562662528/echos/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
-              // src='https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
-              // src='https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_200/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
               src='https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,w_80/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
               alt='logo'
             />

@@ -1,6 +1,7 @@
 <p align="center">
   <a href="http://lesechosdupacifique.info">
-    <img alt="Les Échos Logo" src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662437/echos/Les_Echos_du_Pacifique_logo_illustration_color_800x800-16.png" width="60" />
+    <!-- <img alt="Les Échos Logo" src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1562662437/echos/Les_Echos_du_Pacifique_logo_illustration_color_800x800-16.png" width="60" /> -->
+    <img alt="Les Échos Logo" src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1565391864/echos/logo/Les_Echos_du_Pacifique_logo_color_1200x800-13.png" width="60" />
   </a>
 </p>
 <h1 align="center">
