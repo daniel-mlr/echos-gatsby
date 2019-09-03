@@ -22,6 +22,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
+  console.log('tiles:', tiles)
 
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
@@ -47,21 +48,21 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
                 />
                 <AboutTile
                   className="tile is-child notification is-warning"
-                  {...tiles.example2}
+                  {...tiles.theAssistant}
                 />
               </div>
-              <div className="tile is-parent">
+              <div className="tile is-parent is-vertical">
                 <AboutTile
                   className="tile is-child notification is-info"
                   {...tiles.theDirector}
                 />
+                <AboutTile
+                  className="tile is-child notification is-danger"
+                  {...tiles.bioMarla}
+                />
               </div>
             </div>
             <div className="tile is-parent">
-              <AboutTile
-                className="tile is-child notification is-danger"
-                {...tiles.example1}
-              />
             </div>
           </div>
           <div className="tile is-parent content">
