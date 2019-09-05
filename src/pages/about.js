@@ -11,6 +11,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
   // flatten edges by removing the node layer, to obtain an array of objects
   const dataMap = data.about.edges.map((edge) => edge.node)
+  // console.log('data.about.edges:', data.about.edges)
   
   // transform an array of objects into an object with keynames
   // corresponding to the string in keyField property of each objects
@@ -22,6 +23,13 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
+
+  // adding locale to tiles elements (not needed with LocalisedLink)
+  // Object.keys(tiles).forEach(key => {
+  //   let value = tiles[key]
+  //   value.locale = locale === 'en' ? locale : ''
+  // })
+
   console.log('tiles:', tiles)
 
   return (
@@ -63,6 +71,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
               </div>
             </div>
             <div className="tile is-parent">
+                <AboutTile
+                  className="tile is-child notification is-danger"
+                  {...tiles.bioMarla}
+                />
             </div>
           </div>
           <div className="tile is-parent content">
@@ -106,6 +118,8 @@ query ($langtag: String!) {
         corps {
           json
         }
+        linkAddress
+        linkText
       }
     }
   }

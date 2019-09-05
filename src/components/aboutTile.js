@@ -1,11 +1,11 @@
 import React from 'react'
+import LocalizedLink from '../components/localizedLink'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
 
-// linux
-
 const AboutTile = (props) => {
+  // console.log('props dans aboutTile:', props)
 
   return (
     <article className={props.className}>
@@ -23,7 +23,15 @@ const AboutTile = (props) => {
             />
         </figure>
       }
+      
       {documentToReactComponents(props.corps.json)}
+
+      {
+        props.linkAddress &&
+        <LocalizedLink to={props.linkAddress}>
+          {props.linkText}
+        </LocalizedLink>
+      }
     </article>
   )
 }
