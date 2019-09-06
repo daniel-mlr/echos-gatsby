@@ -31,6 +31,7 @@ const BlogGridCard = ({langtag, data}) => {
       {/* read more button */}
       <div className="container" style={{paddingTop: '2rem'}}>
         <ReadMoreButton
+          to="/blog/"
           label={labels.readMoreButton[langtag]}
         />
       </div>
