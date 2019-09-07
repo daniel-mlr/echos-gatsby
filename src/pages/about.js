@@ -2,10 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
+import Hero from '../components/hero'
 import AboutTile from '../components/aboutTile'
-
-// import LocalizedLink from '../components/localizedLink'
-// import labels from '../constants/blogs'
+import labels from '../constants/about'
 
 const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
@@ -35,6 +34,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
       <Head title="About"/>
+      <Hero
+        imgFluid={data.file.childImageSharp.fluid}
+        title={labels.about[langtag]}
+      />
       <section className="section" style={{'paddingTop': 0}} >
         
         <div className="tile is-ancestor">
@@ -120,6 +123,13 @@ query ($langtag: String!) {
         }
         linkAddress
         linkText
+      }
+    }
+  }
+  file(name: {eq: "Choir_groupshot_1920X592"}) {
+    childImageSharp {
+      fluid(quality: 90, maxWidth: 1366) {
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
