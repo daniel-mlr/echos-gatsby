@@ -3,15 +3,14 @@ import LocalizedLink from '../components/localizedLink'
 import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
-import ReadMoreButton from '../components/readMoreButton'
 
 const AboutTile = (props) => {
-  // console.log('props dans aboutTile:', props)
 
   return (
     <article className={props.className}>
       <h2 className="title">{props.title}</h2>
       <h3 className="subtitle">{props.sousTitre}</h3>
+
       { // tile image
         props.image && 
         <figure 
@@ -25,7 +24,9 @@ const AboutTile = (props) => {
         </figure>
       }
       
-      {documentToReactComponents(props.corps.json)}
+      { // body text
+        documentToReactComponents(props.corps.json)
+      }
 
       { // tile page link
         props.linkAddress &&
@@ -33,10 +34,7 @@ const AboutTile = (props) => {
           to={props.linkAddress}
           className="button is-white is-outlined is-rounded"
           style={{margin: "1.5rem 0 0 0"}}
-        >
-          {props.linkText}
-        </LocalizedLink>
-          // <ReadMoreButton to={props.linkAddress} label={props.linkText}/>
+        >{props.linkText}</LocalizedLink>
       }
     </article>
   )

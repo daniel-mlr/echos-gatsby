@@ -66,14 +66,14 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
                 />
                 <AboutTile
                   className="tile is-child notification is-danger"
-                  {...tiles.bioMarla}
+                  {...tiles.extraitsSonores}
                 />
               </div>
             </div>
             <div className="tile is-parent">
                 <AboutTile
-                  className="tile is-child notification is-danger"
-                  {...tiles.bioMarla}
+                  className="tile is-child notification is-primary"
+                  {...tiles.repertoire}
                 />
             </div>
           </div>
