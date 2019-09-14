@@ -76,23 +76,18 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
             <div className="tile is-parent">
                 <AboutTile
                   className="tile is-child notification is-primary"
-                  {...tiles.repertoire}
+                  {...tiles.collaboration}
                 />
             </div>
           </div>
-          <div className="tile is-parent content">
+          <div className="tile is-parent">
             <AboutTile
-              className="tile is-child notification is-success"
+              className="tile is-child notification content is-success"
               {...tiles.history}
             />
           </div>
         </div>
 
-        <p>
-        </p>
-      
-        <div className="column"></div>
-      
       </section>
     </Layout>
   )

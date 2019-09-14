@@ -33,7 +33,7 @@ const AboutTile = (props) => {
         <LocalizedLink 
           to={props.linkAddress}
           className="button is-white is-outlined is-rounded"
-          style={{margin: "1.5rem 0 0 0"}}
+          style={{margin: "1.5rem 0 0 0", height: "auto", whiteSpace: "normal"}}
         >{props.linkText}</LocalizedLink>
       }
     </article>
