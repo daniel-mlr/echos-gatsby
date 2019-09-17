@@ -42,12 +42,24 @@
   position: relative;
   overflow: hidden;
 }
-.hero-background.is-transparent {
-  opacity: 0.6;
-}
+// .hero-background.is-transparent {
+//   opacity: 0.6;
+// }
+
 .hero-body {
     position: absolute;
-    top: 10vh;
+    // top: 10vh;
+    padding: 1.5rem;
+    .container.semi-transparent-light {
+      background-color: rgba(255, 255, 255, .5);
+      // opacity: 0.5;
+      border-radius: 15px;
+      padding: 1.5rem;
+    }
+    .container.semi-transparent-dark {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
 }
 .hero-secondary {
   font-size: 3rem;

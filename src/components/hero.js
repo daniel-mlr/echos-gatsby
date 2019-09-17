@@ -12,7 +12,7 @@ const Hero = (props) => {
         }}
       />
       <div className="hero-body">
-        <div className="container">
+        <div className="container semi-transparent-dark">
           <h2 className="hero-secondary has-text-white is-family-title is-uppercase">
             {props.title}
           </h2>
@@ -21,4 +21,5 @@ const Hero = (props) => {
     </section>
   )
 }
+
 export default Hero
