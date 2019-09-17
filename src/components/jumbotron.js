@@ -10,8 +10,9 @@ const Jumbotron = () => {
           hero { main, sub}
         }
       }
-      file(name: {eq: "nom_femme-crop-1920x1200"}) {
+      # file(name: {eq: "nom_femme-crop-1920x1200"}) {
       # file(name: {eq: "Echo_Choir_1920x1200_flop"}) {
+      file(name: {eq: "Marla_1920x1200"}) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -32,7 +33,7 @@ const Jumbotron = () => {
         }}
       />
       <div className="hero-body">
-        <div className="container">
+        <div className="container semi-transparent-light">
           <h1 className="site-name">LES ÉCHOS<br />DU PACIFIQUE</h1>
           <h2 className="subtitle site-subname">
             La chorale francophone <br/>
