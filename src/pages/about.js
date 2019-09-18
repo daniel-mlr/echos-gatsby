@@ -62,7 +62,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
                   {...tiles.theAssistant}
                 />
                 <AboutTile
-                  className="tile is-child notification is-warning"
+                  className="tile is-child notification is-primary"
                   {...tiles.collaboration}
                 />
               </div>
