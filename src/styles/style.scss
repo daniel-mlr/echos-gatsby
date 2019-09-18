@@ -47,19 +47,20 @@
 // }
 
 .hero-body {
-    position: absolute;
-    // top: 10vh;
+  position: absolute;
+  .container {
+    border-radius: 10px;
+  }
+  // page principale
+  .container.semi-transparent-light {
+    background-color: rgba(255, 255, 255, .5);
     padding: 1.5rem;
-    .container.semi-transparent-light {
-      background-color: rgba(255, 255, 255, .5);
-      // opacity: 0.5;
-      border-radius: 15px;
-      padding: 1.5rem;
-    }
-    .container.semi-transparent-dark {
-      background-color: rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-    }
+  }
+  // pages secondaires
+  .container.semi-transparent-dark {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 1rem;
+  }
 }
 .hero-secondary {
   font-size: 3rem;

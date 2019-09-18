@@ -61,6 +61,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
                   className="tile is-child notification is-warning"
                   {...tiles.theAssistant}
                 />
+                <AboutTile
+                  className="tile is-child notification is-warning"
+                  {...tiles.collaboration}
+                />
               </div>
               <div className="tile is-parent is-vertical">
                 <AboutTile
@@ -69,16 +73,16 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
                 />
                 <AboutTile
                   className="tile is-child notification is-danger"
-                  {...tiles.extraitsSonores}
+                  {...tiles.thePianist}
                 />
               </div>
             </div>
-            <div className="tile is-parent">
+            {/* <div className="tile is-parent">
                 <AboutTile
                   className="tile is-child notification is-primary"
                   {...tiles.collaboration}
                 />
-            </div>
+            </div> */}
           </div>
           <div className="tile is-parent">
             <AboutTile

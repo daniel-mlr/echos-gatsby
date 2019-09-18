@@ -8,7 +8,7 @@ import { GoCalendar, GoClock } from 'react-icons/go'
 
 
 const ConcertCard = (props) => {
-  
+
   // date renderings
   const concertDate = new Date(props.node.concertDate)
   const dateFormatOptions = { 
@@ -19,7 +19,7 @@ const ConcertCard = (props) => {
   }
   const timeFormatOptions = {
     hour: 'numeric',
-    minute: 'numeric'
+    minute: 'numeric',
   }
 
   // translation rendering helper function
@@ -102,6 +102,12 @@ const ConcertCard = (props) => {
                     )}
                   </time>
                 </div>
+                {// warning wrong time zone
+                  Intl.DateTimeFormat().resolvedOptions().timeZone !== "America/Vancouver" && 
+                    <p className="has-text-warning">
+                      Warning: set your time zone to 'America/Vancouver' to see the proper time
+                    </p>
+                }
               </div>
 
               {/* buy button */}
