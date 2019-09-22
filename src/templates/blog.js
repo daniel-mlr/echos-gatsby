@@ -122,7 +122,8 @@ export const query = graphql`
         }
       }
     }
-    file(name: {eq: "noel_tricities-1920x592"}) {
+    # file(name: {eq: "noel_tricities-1920x592"}) {
+    file(name: {eq: "Choir_groupshot-2"}) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1366) {
           ...GatsbyImageSharpFluid_withWebp

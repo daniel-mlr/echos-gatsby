@@ -26,7 +26,6 @@ const BurgerMenu = ({path, langtag}) => {
         outerContainerId={'gatsby-focus-wrapper'} 
         right >
         {data.site.siteMetadata.menu.map(link => {
-          
           return (
             <Link
               key={link.id}
@@ -41,9 +40,11 @@ const BurgerMenu = ({path, langtag}) => {
           <LangSwitcher path={path} langtag={langtag} />
         </span>
       </Menu>
+
       <main id="page-wrap">
         <Header path={path} langtag={langtag} />
       </main>
+
     </div> 
   )
 }
