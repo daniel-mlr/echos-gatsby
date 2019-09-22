@@ -1,7 +1,9 @@
 import React from 'react'
 import Menu from 'react-burger-menu/lib/menus/slide'
 import Header from './header'
-import {Link, graphql, useStaticQuery } from 'gatsby'
+import LocalizedLink from './localizedLink'
+// import {Link, graphql, useStaticQuery } from 'gatsby'
+import {graphql, useStaticQuery } from 'gatsby'
 import LangSwitcher from './langSwitcher'
 
 const BurgerMenu = ({path, langtag}) => {  
@@ -27,13 +29,21 @@ const BurgerMenu = ({path, langtag}) => {
         right >
         {data.site.siteMetadata.menu.map(link => {
           return (
-            <Link
+            // <Link
+            //   key={link.id}
+            //   to={link.href}
+            //   activeClassName="bm-menu-item-active"
+            // >
+            //   {link.label.filter(key => key.node_locale === langtag )[0].text} 
+            // </Link>
+            <LocalizedLink
               key={link.id}
               to={link.href}
               activeClassName="bm-menu-item-active"
             >
               {link.label.filter(key => key.node_locale === langtag )[0].text} 
-            </Link>
+            </LocalizedLink>
+
           )
         })}
         <span className="bm-lan-sw">
