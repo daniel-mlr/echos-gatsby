@@ -19,7 +19,7 @@ const Header = ({path, langtag}) => {
 
       {/* language switcher */}
       <span className="is-hidden-mobile">
-        <LangSwitcher path={path}></LangSwitcher>
+        <LangSwitcher path={path} langtag={langtag} />
       </span>
       
     </header>

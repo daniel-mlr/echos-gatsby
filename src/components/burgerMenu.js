@@ -29,13 +29,6 @@ const BurgerMenu = ({path, langtag}) => {
         right >
         {data.site.siteMetadata.menu.map(link => {
           return (
-            // <Link
-            //   key={link.id}
-            //   to={link.href}
-            //   activeClassName="bm-menu-item-active"
-            // >
-            //   {link.label.filter(key => key.node_locale === langtag )[0].text} 
-            // </Link>
             <LocalizedLink
               key={link.id}
               to={link.href}

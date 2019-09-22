@@ -1,9 +1,13 @@
 .lang {
-  color: gray;
+  color: #dc4619;
   padding: 0 0.5vw;
   font-size: smaller;
+  &:hover {
+    color: #dc4619;
+    font-weight: bold;
+  }
 }
 
-.lang-container span:first-child a {
-  border-right: solid 1px gray;
-}
+// .lang-container span:first-child a {
+//   border-right: solid 1px gray;
+// }
