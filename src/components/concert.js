@@ -30,7 +30,7 @@ const Concert = (props) => {
   const [hr, min] = time.split(':')
 
   // const concertDate = new Date(props.concertDate)
-  const concertDate = new Date(yr, mnt, day, hr, min)
+  const concertDate = new Date(yr, mnt - 1, day, hr, min)
 
   const dateFormatOptions = { 
     weekday: 'long', 
