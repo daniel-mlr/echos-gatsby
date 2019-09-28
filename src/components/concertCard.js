@@ -12,10 +12,17 @@ const ConcertCard = (props) => {
   // date renderings
   // --------------
   // 
-  const concertDateGMT = new Date(props.node.concertDate + 'Z')
-  // console.log('props.node.concertdate:', props.node.concertDate, '\nconcertDate:', concertDate)
-  // console.log('time zone offset:', concertDateGMT.getTimezoneOffset())
-  const concertDate = new Date(concertDateGMT.valueOf() + concertDateGMT.getTimezoneOffset() * 60 * 1000)
+  // const concertDateGMT = new Date(props.node.concertDate + 'Z')
+  // console.log('props.node.concertdate:', props.node.concertDate, '\nconcertDateGMT:', concertDateGMT)
+  // // console.log('time zone offset:', concertDateGMT.getTimezoneOffset())
+  // const concertDate = new Date(concertDateGMT.valueOf() + concertDateGMT.getTimezoneOffset() * 60 * 1000)
+
+  const [date, time] = props.node.concertDate.split('T')
+  const [yr, mnt, day] = date.split('-')
+  const [hr, min] = time.split(':')
+
+  const concertDate = new Date(yr, mnt, day, hr, min)
+
   const dateFormatOptions = { 
     weekday: 'long', 
     year: 'numeric', 
