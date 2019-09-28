@@ -23,7 +23,15 @@ const WithLink = ({ link, className, children }) => (link ?
 const Concert = (props) => {
   
   // date renderings
-  const concertDate = new Date(props.concertDate)
+  // ---------------
+
+  const [date, time] = props.concertDate.split('T')
+  const [yr, mnt, day] = date.split('-')
+  const [hr, min] = time.split(':')
+
+  // const concertDate = new Date(props.concertDate)
+  const concertDate = new Date(yr, mnt, day, hr, min)
+
   const dateFormatOptions = { 
     weekday: 'long', 
     year: 'numeric', 
