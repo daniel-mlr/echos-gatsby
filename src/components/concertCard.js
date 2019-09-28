@@ -10,7 +10,12 @@ import { GoCalendar, GoClock } from 'react-icons/go'
 const ConcertCard = (props) => {
 
   // date renderings
-  const concertDate = new Date(props.node.concertDate)
+  // --------------
+  // 
+  const concertDateGMT = new Date(props.node.concertDate + 'Z')
+  // console.log('props.node.concertdate:', props.node.concertDate, '\nconcertDate:', concertDate)
+  // console.log('time zone offset:', concertDateGMT.getTimezoneOffset())
+  const concertDate = new Date(concertDateGMT.valueOf() + concertDateGMT.getTimezoneOffset() * 60 * 1000)
   const dateFormatOptions = { 
     weekday: 'long', 
     year: 'numeric', 

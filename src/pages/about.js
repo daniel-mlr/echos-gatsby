@@ -10,7 +10,6 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
   // flatten edges by removing the node layer, to obtain an array of objects
   const dataMap = data.about.edges.map((edge) => edge.node)
-  // console.log('data.about.edges:', data.about.edges)
   
   // transform an array of objects into an object with keynames
   // corresponding to the string in keyField property of each objects

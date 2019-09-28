@@ -36,11 +36,11 @@ export default {
     'fr-CA': 'Nos précédents concerts'
   },
   'nextConcert': {
-    'en-US': 'Upcomming Concert',
+    'en-US': 'Upcoming Concert',
     'fr-CA': 'Notre prochain concert'
   },
   'nextConcerts': {
-    'en-US': 'Our Comming Concerts',
+    'en-US': 'Upcoming Concerts',
     'fr-CA': 'Nos prochains concerts'
   },
   'backToMain': {
