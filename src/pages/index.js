@@ -5,12 +5,17 @@ import Jumbotron from '../components/jumbotron'
 import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
+import labels from '../constants/misc'
 
 const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
   return (
     <Layout path="/" locale={locale} langtag={langtag}>
-      <Head title="Home" />
+      {/* <Head title="Home" /> */}
+      <Head title={t('homePage')} />
       <Jumbotron />
       <ConcertGridCard concerts={data.concert} annonces={data.annonces} langtag={langtag} />
       <BlogGridCard data={data.blog} langtag={langtag} />

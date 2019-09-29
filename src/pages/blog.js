@@ -12,7 +12,7 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/blog" locale={locale} langtag={langtag}>
-      <Head title="Blog"/>
+      <Head title={labels.news[langtag]}/>
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.news[langtag]}

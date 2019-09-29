@@ -7,4 +7,8 @@ export default {
     'en-US': 'No content here',
     'fr-CA': 'Pas de contenu ici'
   },
+  'homePage': {
+    'en-US': 'Home',
+    'fr-CA': 'Accueil'
+  },
 }
