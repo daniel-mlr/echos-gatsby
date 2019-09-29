@@ -24,8 +24,8 @@ export default {
     'fr-CA': 'Adultes'
   },
   'student': {
-    'en-US': 'Students and Old Ages',
-    'fr-CA': 'Édudiants et ainés'
+    'en-US': 'Students and Seniors',
+    'fr-CA': 'Édudiants et aînés'
   },
   'child': {
     'en-US': 'Children',
