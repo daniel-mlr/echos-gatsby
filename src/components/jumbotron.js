@@ -34,7 +34,7 @@ const Jumbotron = () => {
       />
       <div className="hero-body">
         <div className="container semi-transparent-light">
-          <h1 className="site-name">LES ÉCHOS<br />DU PACIFIQUE</h1>
+          <h1 className="site-name">LES ÉCHOS<br /><span id="site-name2">DU PACIFIQUE</span></h1>
           <h2 className="subtitle site-subname">
             La chorale francophone <br/>
             du <span className="site-vancouver">Grand Vancouver</span>
