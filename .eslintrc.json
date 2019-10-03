@@ -9,7 +9,8 @@
     "plugin:react/recommended",
     "gatsby-standard"
     ],
-"parser": "babel-eslint",
+
+  "parser": "babel-eslint",
 
   "parserOptions": {
     "ecmaFeatures": {

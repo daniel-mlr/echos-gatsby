@@ -95,24 +95,24 @@ module.exports = {
 
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './src/images/favicon.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false
-        }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-favicon',
+    //   options: {
+    //     logo: './src/images/favicon.png',
+    //     injectHTML: true,
+    //     icons: {
+    //       android: true,
+    //       appleIcon: true,
+    //       appleStartup: true,
+    //       coast: false,
+    //       favicons: true,
+    //       firefox: true,
+    //       twitter: false,
+    //       yandex: false,
+    //       windows: false
+    //     }
+    //   }
+    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -168,7 +168,11 @@ module.exports = {
           'iframe-container iframe'
         ], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        ignore: [ 'style.scss', 'langSwitcher.module.scss'], // Ignore files/folders
+        ignore: [ 
+          'style.scss',
+          'langSwitcher.module.scss',
+          'react-responsive-carousel/lib/styles/carousel.min.css'
+        ], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       }
     }

@@ -18,9 +18,9 @@
     "@types/react-burger-menu": "^2.2.5",
     "bulma": "^0.7.5",
     "bulma-divider": "^0.2.0",
+    "eslint-plugin-flowtype": "^4.3.0",
     "gatsby": "^2.7.5",
     "gatsby-image": "^2.1.4",
-    "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-manifest": "^2.2.1",
     "gatsby-plugin-purgecss": "^4.0.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -39,13 +39,16 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
+    "react-responsive-carousel": "^3.1.50",
     "typeface-open-sans": "0.0.75",
     "typeface-roboto": "0.0.75",
     "typeface-tenor-sans": "0.0.71"
   },
   "devDependencies": {
     "env-cmd": "^9.0.2",
+    "eslint": "^6.5.1",
     "eslint-config-gatsby-standard": "^2.2.0",
+    "eslint-plugin-react": "^7.15.1",
     "prettier": "^1.17.1"
   },
   "repository": {
