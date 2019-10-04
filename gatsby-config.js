@@ -95,24 +95,6 @@ module.exports = {
 
   plugins: [
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-plugin-favicon',
-    //   options: {
-    //     logo: './src/images/favicon.png',
-    //     injectHTML: true,
-    //     icons: {
-    //       android: true,
-    //       appleIcon: true,
-    //       appleStartup: true,
-    //       coast: false,
-    //       favicons: true,
-    //       firefox: true,
-    //       twitter: false,
-    //       yandex: false,
-    //       windows: false
-    //     }
-    //   }
-    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -129,6 +111,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#fff',
         display: 'standalone',
+        icon: 'src/images/favicon.png'
       },
     },
     'gatsby-plugin-sass',
