@@ -7,6 +7,10 @@ export default {
     'en-US': 'Rehearsals',
     'fr-CA': 'Nos répétitions'
   },
+  'home': {
+    'en-US': 'Home',
+    'fr-CA': 'Accueil'
+  },
   'aPropos': {
     'en-US': 'About us',
     'fr-CA': 'À propos'

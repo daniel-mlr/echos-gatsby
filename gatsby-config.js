@@ -59,7 +59,7 @@ module.exports = {
         label:[
           {
             node_locale: 'fr-CA',
-            text: 'Joignez-nous'
+            text: 'Rejoignez-nous'
           },
           {
             node_locale: 'en-US',

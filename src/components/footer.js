@@ -30,12 +30,14 @@ const Footer = (props) => {
               <li><LocalizedLink to="/contact">{t('repetitions')}</LocalizedLink></li>
               <li><LocalizedLink to="/about">{t('aPropos')}</LocalizedLink></li>
             </ul>
-            <img
-              className=""
-              style={{width: '80px'}}
-              src='https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,w_80/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
-              alt='logo'
-            />
+            <LocalizedLink to="/">
+              <img
+                className=""
+                style={{width: '80px'}}
+                src='https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,w_80/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
+                alt='logo'
+              />
+            </LocalizedLink>
           </div>
           <div className="column" style={{
             display: 'flex',
@@ -47,7 +49,7 @@ const Footer = (props) => {
                 href="https://twitter.com/ChoeurLesEchos">
                 <FaTwitter className="icon is-large" />
               </a>
-              <a style={{ color: 'inherit', padding: '0 20px' }} href="#">
+              <a style={{ color: 'inherit', padding: '0 20px' }} href="https://www.facebook.com/Les-Échos-du-Pacifique-216683941792717/">
                 <FaFacebook className="icon is-large" />
               </a>
               <a style={{ color: 'inherit', padding: '0 20px' }} href="#">
@@ -62,7 +64,8 @@ const Footer = (props) => {
             </div>
           </div>
           <div className="column is-one-fifth">
-            <p className="fmlink" ><LocalizedLink to="/members">Membres</LocalizedLink></p>
+            {/* <p className="fmlink" ><LocalizedLink to="/members">Membres</LocalizedLink></p> */}
+            <p className="fmlink" >Membres</p>
           </div>
         </div>
       </div>
