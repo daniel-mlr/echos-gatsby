@@ -30,7 +30,7 @@ const Footer = (props) => {
               <li><LocalizedLink to="/contact">{t('repetitions')}</LocalizedLink></li>
               <li><LocalizedLink to="/about">{t('aPropos')}</LocalizedLink></li>
             </ul>
-            <LocalizedLink to="/">
+            <LocalizedLink to="#">
               <img
                 className=""
                 style={{width: '80px'}}

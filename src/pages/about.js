@@ -22,14 +22,6 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
 
-  // adding locale to tiles elements (not needed with LocalisedLink)
-  // Object.keys(tiles).forEach(key => {
-  //   let value = tiles[key]
-  //   value.locale = locale === 'en' ? locale : ''
-  // })
-
-  console.log('tiles:', tiles)
-
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
       {/* <Head title="About"/> */}
