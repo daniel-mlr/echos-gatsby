@@ -16,19 +16,37 @@ const Jumbotron = () => {
           }
         }
       }
-      allFile(
+      # allFile(
+      #   filter: { relativeDirectory: { eq: "images/carousel" } }
+      #   sort: { fields: base }
+      # ) {
+      #   edges {
+      #     node {
+      #       id
+      #       name
+      #       childImageSharp {
+      #         fluid(quality: 90, maxWidth: 1920) {
+      #           ...GatsbyImageSharpFluid_withWebp
+      #         }
+      #       }
+      #     }
+      #   }
+      # }
+      assets: allContentfulAsset 
+      (
         filter: {
-          relativeDirectory: { eq: "images/carousel" }
+          title: {regex: "/^Carousel/"}
+          node_locale: {eq: "en-US"}
         }
-      ) {
+        sort: {fields: title}
+      )
+      {
         edges {
           node {
             id
-            name
-            childImageSharp {
-              fluid(quality: 90, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+            file { url }
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -47,14 +65,17 @@ const Jumbotron = () => {
     emulateTouch: false,
   }
 
+  console.log('@@@data:', data)
   return (
     <section className="hero is-full-height has-background">
       
       <Carousel {...carouselOptions}>
-        {data.allFile.edges.map(edge => (
+        {/* {data.allFile.edges.map(edge => ( */}
+        {data.assets.edges.map(edge => (
           <Img
             key={edge.node.id}
-            fluid={edge.node.childImageSharp.fluid}
+            // fluid={edge.node.childImageSharp.fluid}
+            fluid={edge.node.fluid}
             className="hero-background"
             imgStyle={{
               objectPosition: "top",

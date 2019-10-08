@@ -6,9 +6,6 @@ import labels from '../constants/blogs'
 
 const BlogCard = (props) => {
   
-  // console.log('props', props)
-  // console.log('labels', labels)
-
   return (
     <div className="card">
       <div className="card-image">

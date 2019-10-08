@@ -10,6 +10,9 @@ module.exports = {
   siteMetadata: {
     title: 'Les Échos du Pacifique',
     author: 'Daniel Meilleur',
+    description: "Les Échos du Pacifique, la chorale francophone du grand Vancouver",
+    url: "http://lesechosdupacifique.info",
+    twitterUsername: "@ChoeurLesEchos",
     menu:[
       {
         id: 1,
