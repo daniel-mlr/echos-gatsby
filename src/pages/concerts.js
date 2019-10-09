@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import SectionDivider from '../components/sectionDivider'
 import Concert from '../components/concert'
@@ -22,7 +23,8 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
-      <Head title="Concerts" />
+      {/* <Head title="Concerts" /> */}
+      <SEO title="Concerts" />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title='CONCERTS'

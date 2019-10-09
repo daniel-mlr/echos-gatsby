@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Head from '../components/head'
-// import Style from './contact.module.scss'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import { FaTwitter } from 'react-icons/fa'
 import { GoMail, GoLocation} from 'react-icons/go'
 import Hero from '../components/hero'
@@ -25,7 +25,8 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/contact" locale={locale} langtag={langtag}>
-      <Head title="Contact" />
+      {/* <Head title="Contact" /> */}
+      <SEO title="Contact" />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={'Contacts'}

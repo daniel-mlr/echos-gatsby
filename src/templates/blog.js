@@ -4,7 +4,8 @@ import LocalizedLink from '../components/localizedLink'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Hero from '../components/hero'
 import labels from '../constants/blogs'
 
@@ -32,7 +33,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
       path={`/blog/${data.blog.slug}`}
       locale={locale} langtag={langtag}
     >
-      <Head title={data.blog.titre} />
+      <SEO title={data.blog.titre} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         // title={data.contentfulBlogues.titre}

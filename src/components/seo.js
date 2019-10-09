@@ -49,6 +49,7 @@ const SEO = ({ description, meta, image: metaImage, title, locale }) => {
         return (
           <Helmet 
             htmlAttributes={{lang: locale}}
+            title={title}
             meta={metaItems.concat(metaCards).concat(meta)}
           />
         )}

@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Hero from '../components/hero'
 import AboutTile from '../components/aboutTile'
 import labels from '../constants/about'
@@ -24,8 +25,8 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
-      {/* <Head title="About"/> */}
-      <Head title={labels.about[langtag]}/>
+      {/* <Head title={labels.about[langtag]}/> */}
+      <SEO title={labels.about[langtag]} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.about[langtag]}

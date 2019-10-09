@@ -2,7 +2,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Hero from '../components/hero'
 import LocalizedLink from '../components/localizedLink'
 import labels from '../constants/blogs'
@@ -12,7 +13,8 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/blog" locale={locale} langtag={langtag}>
-      <Head title={labels.news[langtag]}/>
+      {/* <Head title={labels.news[langtag]}/> */}
+      <SEO title={labels.news[langtag]} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.news[langtag]}
