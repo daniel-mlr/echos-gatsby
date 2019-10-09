@@ -1,5 +1,6 @@
 import React from 'react'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Jumbotron from '../components/jumbotron'
 import ConcertGridCard from '../components/concertGridCard'
@@ -15,7 +16,8 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
   return (
     <Layout path="/" locale={locale} langtag={langtag}>
       {/* <Head title="Home" /> */}
-      <Head title={t('homePage')} />
+      {/* <Head title={t('homePage')} /> */}
+      <SEO title={t('homePage')} />
       <Jumbotron />
       <ConcertGridCard concerts={data.concert} annonces={data.annonces} langtag={langtag} />
       <BlogGridCard data={data.blog} langtag={langtag} />
