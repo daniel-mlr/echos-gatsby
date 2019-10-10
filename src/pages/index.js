@@ -15,11 +15,9 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/" locale={locale} langtag={langtag}>
-      {/* <Head title="Home" /> */}
-      {/* <Head title={t('homePage')} /> */}
       <SEO 
-        title={t('homePage')}
-        meta={[ {name: 'title', content: 'Les Échos du Pacifique - Annonces, concerts, dernières nouvelles'} ]}
+        title={t('seoHomeTitle').concat(' | Les Échos')}
+        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
       <Jumbotron />
       <ConcertGridCard concerts={data.concert} annonces={data.annonces} langtag={langtag} />

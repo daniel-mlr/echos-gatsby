@@ -22,11 +22,18 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
+  
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
 
   return (
     <Layout path="/about" locale={locale} langtag={langtag}>
       {/* <Head title={labels.about[langtag]}/> */}
-      <SEO title={labels.about[langtag]} />
+      <SEO 
+        // title={labels.about[langtag]}
+        title={t('seoAboutTitle').concat(' | Les Échos')}
+        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
+      />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.about[langtag]}

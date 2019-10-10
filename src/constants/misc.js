@@ -11,4 +11,13 @@ export default {
     'en-US': 'Home',
     'fr-CA': 'Accueil'
   },
+  'seoHomeTitle': {
+    'en-US': 'Concerts, Announcements, Last News',
+    'fr-CA': 'Concerts, annonces, dernières nouvelles'
+  },
+  'seoMetaTitleContent': {
+    'en-US': 'Concerts, Announcements, Last News',
+    'fr-CA': 'Concerts, annonces, dernières nouvelles'
+  }
+
 }

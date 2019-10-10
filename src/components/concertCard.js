@@ -11,11 +11,6 @@ const ConcertCard = (props) => {
 
   // date renderings
   // --------------
-  // 
-  // const concertDateGMT = new Date(props.node.concertDate + 'Z')
-  // console.log('props.node.concertdate:', props.node.concertDate, '\nconcertDateGMT:', concertDateGMT)
-  // // console.log('time zone offset:', concertDateGMT.getTimezoneOffset())
-  // const concertDate = new Date(concertDateGMT.valueOf() + concertDateGMT.getTimezoneOffset() * 60 * 1000)
 
   const [date, time] = props.node.concertDate.split('T')
   const [yr, mnt, day] = date.split('-')

@@ -50,5 +50,13 @@ export default {
   'free': {
     'en-US': 'Free',
     'fr-CA': 'Gratuit'
+  },
+  'seoConcertsTitle': {
+    'en-US': 'Upcomming Concerts',
+    'fr-CA': 'Prochains Concerts'
+  },
+  'seoMetaTitleContent': {
+    'en-US': 'Upcoming and Recent Concerts',
+    'fr-CA': 'Concerts futurs et récents'
   }
 }

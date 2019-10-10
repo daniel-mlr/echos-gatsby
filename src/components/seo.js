@@ -45,7 +45,8 @@ const SEO = ({ description, meta, image: metaImage, title, locale }) => {
             { name: 'twitter:card', content: 'summary_large_image' }
           ]
         : [ { name: 'twitter:card', content: 'summary' } ]
-
+        
+        // console.log('@@title:', title)
         return (
           <Helmet 
             htmlAttributes={{lang: locale}}

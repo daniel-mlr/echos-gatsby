@@ -23,8 +23,13 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
-      {/* <Head title="Concerts" /> */}
-      <SEO title="Concerts" />
+      
+      <SEO 
+        // title="Concerts"
+        title={t('seoConcertsTitle').concat(' | Les Échos')}
+        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
+      />
+
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title='CONCERTS'

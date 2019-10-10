@@ -11,10 +11,18 @@ import labels from '../constants/blogs'
 
 const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
   return (
     <Layout path="/blog" locale={locale} langtag={langtag}>
-      {/* <Head title={labels.news[langtag]}/> */}
-      <SEO title={labels.news[langtag]} />
+      
+      <SEO
+        // title={labels.news[langtag]}
+        title={t('seoNewsTitle').concat(' | Les Échos')}
+        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
+      />
+      
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.news[langtag]}
