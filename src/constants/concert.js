@@ -58,5 +58,10 @@ export default {
   'seoMetaTitleContent': {
     'en-US': 'Upcoming and Recent Concerts',
     'fr-CA': 'Concerts futurs et récents'
-  }
+  },
+  'keywords': {
+    'en-US': 'upcomming concerts,past concerts,tickets',
+    'fr-CA': 'prochains concerts,précédents concerts,tickets'
+  },
+
 }

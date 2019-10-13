@@ -31,7 +31,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
       {/* <Head title={labels.about[langtag]}/> */}
       <SEO 
         // title={labels.about[langtag]}
-        title={t('seoAboutTitle').concat(' | Les Échos')}
+        title={t('seoAboutTitle').concat(' | Les Échos du Pacifique')}
         meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
       <Hero

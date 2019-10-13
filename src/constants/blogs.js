@@ -30,5 +30,10 @@ export default {
   'seoMetaTitleContent': {
     'en-US': 'News, Blogs, Biographies',
     'fr-CA': 'Nouvelles, biographies, blogues'
-  }
+  },
+  'keywords': {
+    'en-US': 'choir news, choir directors, grant',
+    'fr-CA': 'direction artistique, nouvelles, historique'
+  },
+
 }

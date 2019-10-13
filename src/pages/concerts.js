@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-// import Head from '../components/head'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import SectionDivider from '../components/sectionDivider'
@@ -10,10 +9,12 @@ import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
+  // future concerts to be rendered on top of section of concert page
   const futureConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() <= new Date(edge.node.concertDate)
     & new Date(edge.node.announcementDate) < new Date())
   })
+  // former concerts to be rendered in the section after future concerts
   const formerConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() > new Date(edge.node.concertDate))
   })
@@ -21,14 +22,29 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
+  // title tag in HEAD
+  const title = t('seoConcertsTitle').concat(' | Les Échos du Pacifique')
+
+  // additional meta on top of those defined by default in SEO component
+  const meta = [ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]
+
+  // if the next immediate future concert have a seoDescription, use it. 
+  // Otherwise, use the site description in the site metadata (see inside SEO component)
+  const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
+  ? futureConcerts[0].node.seoDescription.seoDescription
+  : null
+  // const description = null
+  // use keywords from data or from constant file 
+  const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
+  ? futureConcerts[0].node.seoKeywords 
+  : t('seoMetaKeywords').split(',')
+
+  // console.log('@@@ meta:', meta)
+
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
       
-      <SEO 
-        // title="Concerts"
-        title={t('seoConcertsTitle').concat(' | Les Échos')}
-        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
-      />
+      <SEO title={title} meta={meta} description={description} keywords={keywords} />
 
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
@@ -105,6 +121,8 @@ query ($langtag: String = "fr-CA"){
         lieu1
         lieu2
         lieuUrl { lieuUrl }
+        seoKeywords
+        seoDescription { seoDescription }
       } 
     }
   }

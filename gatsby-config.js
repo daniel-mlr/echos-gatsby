@@ -11,7 +11,7 @@ module.exports = {
     title: 'Les Échos du Pacifique',
     author: 'Daniel Meilleur',
     description: "Les Échos du Pacifique, la chorale francophone du grand Vancouver. Répertoire de chansons en français, ancien français, anglais, latin et autres langues",
-    keywords: ['Choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
+    keywords: ['concerts', 'choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
     siteUrl: "http://lesechosdupacifique.info",
     twitterUsername: "@ChoeurLesEchos",
     menu:[

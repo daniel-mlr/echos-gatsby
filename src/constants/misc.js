@@ -18,6 +18,9 @@ export default {
   'seoMetaTitleContent': {
     'en-US': 'Concerts, Announcements, Last News',
     'fr-CA': 'Concerts, annonces, dernières nouvelles'
+  },
+  'keywords': {
+    'en-US': ['Choir', 'French', 'Songs'],
+    'fr-CA': ['Chorale', 'Francophone', 'Chansons']
   }
-
 }

@@ -19,7 +19,7 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
       
       <SEO
         // title={labels.news[langtag]}
-        title={t('seoNewsTitle').concat(' | Les Échos')}
+        title={t('seoNewsTitle').concat(' | Les Échos du Pacifique')}
         meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
       

@@ -4,9 +4,10 @@ import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // import Head from '../components/head'
 import SEO from '../components/seo'
-import { FaTwitter } from 'react-icons/fa'
+import { FaTwitter, FaFacebook } from 'react-icons/fa'
 import { GoMail, GoLocation} from 'react-icons/go'
 import Hero from '../components/hero'
+import labels from '../constants/contact'
 
 const ContactPage = ({pageContext: { locale, langtag }, data}) => {
 
@@ -23,10 +24,16 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
     }
   }
 
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
   return (
     <Layout path="/contact" locale={locale} langtag={langtag}>
       {/* <Head title="Contact" /> */}
-      <SEO title="Contact" />
+      <SEO 
+        title={t('seoContactTitle').concat(' | Les Échos du Pacifique')}
+        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
+      />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={'Contacts'}
@@ -59,6 +66,15 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
               href="https://twitter.com/ChoeurLesEchos"
               rel="noopener noreferrer"
               target="_blank">ChoeurLesEchos</a>
+          </p>
+          {/* Facebook */}
+          <p>
+            <FaFacebook style={{ transform: 'translateY(1px)' }} />
+            &ensp;
+            <a
+              href="https://www.facebook.com/Les-Échos-du-Pacifique-216683941792717/"
+              rel="noopener noreferrer"
+              target="_blank">Les Échos du Pacifique</a>
           </p>
 
           {/* google map */}
