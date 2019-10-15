@@ -33,18 +33,17 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
   const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
   ? futureConcerts[0].node.seoDescription.seoDescription
   : null
-  // const description = null
+
   // use keywords from data or from constant file 
   const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
   ? futureConcerts[0].node.seoKeywords 
-  : t('seoMetaKeywords').split(',')
-
-  // console.log('@@@ meta:', meta)
+  : t('seoMetaKeywords').split(',').map( i => i.trim())
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
       
       <SEO title={title} meta={meta} description={description} keywords={keywords} />
+      {/* <SEO props={{title, meta, description, keywords}} /> */}
 
       <Hero
         imgFluid={data.file.childImageSharp.fluid}

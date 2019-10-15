@@ -48,7 +48,7 @@ const SEO = ({ description, keywords, meta, image: metaImage, title, locale }) =
           ]
         : [ { name: 'twitter:card', content: 'summary' } ]
         
-        // console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
+        console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
         return (
           <Helmet 
             htmlAttributes={{lang: locale}}
