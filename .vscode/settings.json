@@ -35,7 +35,8 @@
   "workbench.colorTheme": "Monokai Pro",
   "terminal.integrated.fontFamily": "DejaVu Sans Mono, PowerlineSymbols",
   "files.watcherExclude": {
-    "**/.cache": true
+    "**/.cache/*/**": true,
+    "**/public/*/**": true
   },
   "terminal.integrated.fontSize": 12
 }
