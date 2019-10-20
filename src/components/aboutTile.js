@@ -15,12 +15,12 @@ const AboutTile = (props) => {
         props.image && 
         <figure 
           className="image"
-          style={{padding: "0 0 1.5rem 0"}}
+          style={{padding: '0 0 1.5rem 0'}}
         >
           <Img 
             fluid={props.image.fluid} 
             alt={props.image.description} 
-            />
+          />
         </figure>
       }
       
@@ -33,7 +33,7 @@ const AboutTile = (props) => {
         <LocalizedLink 
           to={props.linkAddress}
           className="button is-white is-outlined is-rounded"
-          style={{margin: "1.5rem 0 0 0", height: "auto", whiteSpace: "normal"}}
+          style={{margin: '1.5rem 0 0 0', height: 'auto', whiteSpace: 'normal'}}
         >{props.linkText}</LocalizedLink>
       }
     </article>

@@ -10,17 +10,17 @@ const LangSwitcher = ({path, langtag}) => {
     <span>
       {
         Object.keys(locales)
-        .filter(key => locales[key].locale !== langtag)
-        .map(key => (
-          <span key={locales[key].locale}>
-            <Link
-              to={locales[key].default ? path : `/${locales[key].path}${path}`}
-              className={localStyles.lang}
-            >
-              {locales[key].label}
-            </Link>
-          </span>
-        ))
+          .filter(key => locales[key].locale !== langtag)
+          .map(key => (
+            <span key={locales[key].locale}>
+              <Link
+                to={locales[key].default ? path : `/${locales[key].path}${path}`}
+                className={localStyles.lang}
+              >
+                {locales[key].label}
+              </Link>
+            </span>
+          ))
       }
 
     </span>

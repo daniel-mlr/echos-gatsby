@@ -34,29 +34,29 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
 
     return (
       <> 
-      { /* if there are any concurrent announcements, print them */
-        (!!concurrentAnnouncements.length) && (
-          <section className="section" id="concurrent">
-            { concurrentAnnouncements.map(
-              (edge, idx) => <AnnonceCard key={idx} {...edge.node} />
-            )}
-          </section>
-        )
-      }
-
-      {/* render the future concert section */}
-      <section className="section">
-
-        <SectionDivider label={futureConcerts.length > 1
-          ? t('nextConcerts')
-          : t('nextConcert')} />
-
-        { // render concerts 
-          futureConcerts.map(
-            (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
+        { /* if there are any concurrent announcements, print them */
+          (!!concurrentAnnouncements.length) && (
+            <section className="section" id="concurrent">
+              { concurrentAnnouncements.map(
+                (edge, idx) => <AnnonceCard key={idx} {...edge.node} />
+              )}
+            </section>
+          )
         }
 
-      </section>
+        {/* render the future concert section */}
+        <section className="section">
+
+          <SectionDivider label={futureConcerts.length > 1
+            ? t('nextConcerts')
+            : t('nextConcert')} />
+
+          { // render concerts 
+            futureConcerts.map(
+              (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
+          }
+
+        </section>
       </> 
     )
   } else { // there is no future concerts
