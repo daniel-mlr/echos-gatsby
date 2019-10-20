@@ -33,9 +33,10 @@
   "html.format.indentHandlebars": true,
   "emmet.triggerExpansionOnTab": true,
   "workbench.colorTheme": "Monokai Pro",
-  "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
+  "terminal.integrated.fontFamily": "DejaVu Sans Mono, PowerlineSymbols",
   "terminal.integrated.fontSize": 12,
   "files.watcherExclude": {
-    "**/.cache/**": true
-  }
+    "**/.cache/*/**": true,
+    "**/public/*/**": true
+  },
 }
