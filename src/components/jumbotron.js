@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {Carousel} from 'react-responsive-carousel'
 
 const Jumbotron = () => {
@@ -28,6 +28,8 @@ const Jumbotron = () => {
         edges {
           node {
             id
+            title
+            description
             file { url }
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyContentfulFluid_withWebp
@@ -58,9 +60,9 @@ const Jumbotron = () => {
             key={edge.node.id}
             fluid={edge.node.fluid}
             className="hero-background"
-            imgStyle={{
-              objectPosition: "top",
-            }}
+            imgStyle={{ objectPosition: 'top', }}
+            alt={edge.node.description}
+            title={edge.node.title}
           />
         ))}
       </Carousel>
@@ -74,7 +76,7 @@ const Jumbotron = () => {
           </h1>
           <h2 className="subtitle site-subname">
             La chorale francophone <br />
-            du{" "}
+            du{' '}
             <span className="site-vancouver">
               Grand Vancouver
             </span>

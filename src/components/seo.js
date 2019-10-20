@@ -29,26 +29,26 @@ const SEO = ({ description, keywords, meta, image: metaImage, title, locale }) =
           : null
 
         const metaItems = [
-          { name: "description", content: metaDescription},
+          { name: 'description', content: metaDescription},
           // { name: "keywords", content: data.site.siteMetadata.keywords.join(',') },
-          { name: "keywords", content: metaKeywords.join(',') },
-          { property: "og:title", content: title },
-          { property: "og:description", content: description },
-          { name: "twitter:creator", content: data.site.siteMetadata.author },
-          { name: "twitter:title", content: title },
-          { name: "twitter:description", content: metaDescription },
+          { name: 'keywords', content: metaKeywords.join(',') },
+          { property: 'og:title', content: title },
+          { property: 'og:description', content: description },
+          { name: 'twitter:creator', content: data.site.siteMetadata.author },
+          { name: 'twitter:title', content: title },
+          { name: 'twitter:description', content: metaDescription },
         ]
 
         const metaCards = metaImage 
-        ? [
+          ? [
             { property: 'og:image', content: image },
             { property: 'og:image:width', content: metaImage.width },
             { property: 'og:image:height', content: metaImage.height },
             { name: 'twitter:card', content: 'summary_large_image' }
           ]
-        : [ { name: 'twitter:card', content: 'summary' } ]
+          : [{ name: 'twitter:card', content: 'summary' }]
         
-        console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
+        // console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
         return (
           <Helmet 
             htmlAttributes={{lang: locale}}

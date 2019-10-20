@@ -31,13 +31,13 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
   // if the next immediate future concert have a seoDescription, use it. 
   // Otherwise, use the site description in the site metadata (see inside SEO component)
   const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
-  ? futureConcerts[0].node.seoDescription.seoDescription
-  : null
+    ? futureConcerts[0].node.seoDescription.seoDescription
+    : null
 
   // use keywords from data or from constant file 
   const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
-  ? futureConcerts[0].node.seoKeywords 
-  : t('seoMetaKeywords').split(',').map( i => i.trim())
+    ? futureConcerts[0].node.seoKeywords
+    : t('seoMetaKeywords').split(',').map(i => i.trim())
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>

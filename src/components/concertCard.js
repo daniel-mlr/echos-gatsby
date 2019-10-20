@@ -52,9 +52,9 @@ const ConcertCard = (props) => {
             <div className="concert-text ">
               
               <LocalizedLink to={`/concerts#${props.node.slug}`}>
-                <h4
+                <h3
                   className="title is-4 artistes"
-                >{props.node.concertName}</h4>
+                >{props.node.concertName}</h3>
               </LocalizedLink>
               
               <div className="content artistes">

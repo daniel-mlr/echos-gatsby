@@ -36,7 +36,11 @@
   "terminal.integrated.fontFamily": "DejaVu Sans Mono, PowerlineSymbols",
   "terminal.integrated.fontSize": 12,
   "files.watcherExclude": {
-    "**/.cache/*/**": true,
-    "**/public/*/**": true
+    "**/.git/objects/**": true,
+    "**/.cache/**": true,
+    "**/public/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true
+
   },
 }
