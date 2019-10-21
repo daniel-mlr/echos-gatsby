@@ -1,5 +1,3 @@
-/* globals module __dirname process */
-
 /**
  * Configure your Gatsby site with this file.
  *
@@ -9,11 +7,11 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Les Échos du Pacifique',
-    author: 'Daniel Meilleur',
-    description: "Les Échos du Pacifique, la chorale francophone du grand Vancouver. Répertoire de chansons en français, ancien français, anglais, latin et autres langues",
-    keywords: ['concerts', 'choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
-    siteUrl: "http://lesechosdupacifique.info",
-    twitterUsername: "@ChoeurLesEchos",
+    author: 'Les Échos du Pacifique',
+    description: 'Les Échos du Pacifique, la chorale francophone du grand Vancouver. Répertoire de chansons en français, ancien français, anglais, latin et autres langues',
+    // keywords: ['concerts', 'choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
+    siteUrl: 'http://lesechosdupacifique.info',
+    twitterUsername: '@ChoeurLesEchos',
     menu:[
       {
         id: 1,

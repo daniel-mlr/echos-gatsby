@@ -1,5 +1,3 @@
-/* globals module */
-
 const locales = require('./src/constants/locales')
 
 const path = require('path')

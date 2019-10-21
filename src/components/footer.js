@@ -11,7 +11,7 @@ const Footer = (props) => {
     site {
       siteMetadata {
         title
-        author
+        # author
       }
     }
   }
@@ -60,7 +60,8 @@ const Footer = (props) => {
               <p className="content pt-20">
                 Copyright by {data.site.siteMetadata.title} © 2019
               </p>
-              <p>Web design: {data.site.siteMetadata.author}</p>
+              {/* <p>Web design: {data.site.siteMetadata.author}</p> */}
+              <p>Web design: Daniel Meilleur</p>
             </div>
           </div>
           <div className="column is-one-fifth">

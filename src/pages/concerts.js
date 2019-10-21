@@ -35,15 +35,15 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     : null
 
   // use keywords from data or from constant file 
-  const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
-    ? futureConcerts[0].node.seoKeywords
-    : t('seoMetaKeywords').split(',').map(i => i.trim())
+  // const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
+  //   ? futureConcerts[0].node.seoKeywords
+  //   : t('seoMetaKeywords').split(',').map(i => i.trim())
 
   return (
     <Layout path="/concerts" locale={locale} langtag={langtag}>
       
-      <SEO title={title} meta={meta} description={description} keywords={keywords} />
-      {/* <SEO props={{title, meta, description, keywords}} /> */}
+      {/* <SEO title={title} meta={meta} description={description} keywords={keywords} /> */}
+      <SEO title={title} meta={meta} description={description} creator="Les Échos du Pacifique"/>
 
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
@@ -120,7 +120,7 @@ query ($langtag: String = "fr-CA"){
         lieu1
         lieu2
         lieuUrl { lieuUrl }
-        seoKeywords
+        # seoKeywords
         seoDescription { seoDescription }
       } 
     }
