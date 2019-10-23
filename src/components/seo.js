@@ -6,17 +6,16 @@ import { StaticQuery, graphql } from 'gatsby'
 // Based on Dustin Schau's SEO with Gatsby
 // https://blog.dustinschau.com/search-engine-optimization-with-gatsby
 
-// const SEO = ({ description, keywords, meta, image: metaImage, title, locale }) => {
-const SEO = ({ description, meta, image: metaImage, title, locale }) => {
+const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
   return (
     <StaticQuery 
       query={graphql`
         {
           site {
             siteMetadata {
+              title
               author
               description
-              # keywords
               siteUrl
             }
           }
@@ -32,9 +31,9 @@ const SEO = ({ description, meta, image: metaImage, title, locale }) => {
 
         const metaItems = [
           { name: 'description', content: metaDescription},
-          // { name: "keywords", content: data.site.siteMetadata.keywords.join(',') },
-          // { name: 'keywords', content: metaKeywords.join(',') },
           { property: 'og:title', content: title },
+          { property: 'og:url', content: data.site.siteMetadata.siteUrl + `${path}` },
+          { property: 'og:site_name', content: data.site.siteMetadata.title },
           { property: 'og:description', content: description },
           { name: 'twitter:creator', content: data.site.siteMetadata.author },
           { name: 'twitter:title', content: title },

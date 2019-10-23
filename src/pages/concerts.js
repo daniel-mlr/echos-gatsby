@@ -9,6 +9,8 @@ import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
+  const path = '/concerts'
+  
   // future concerts to be rendered on top of section of concert page
   const futureConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() <= new Date(edge.node.concertDate)
@@ -26,7 +28,11 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
   const title = t('seoConcertsTitle').concat(' | Les Échos du Pacifique')
 
   // additional meta on top of those defined by default in SEO component
-  const meta = [ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]
+  const meta = [ 
+    {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')},
+    {name: 'og:type', content: 'website'},
+    {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,q_73,w_1200/v1560459372/echos/tenors-sopranos3-crop-1920x1200.jpg'}
+  ]
 
   // if the next immediate future concert have a seoDescription, use it. 
   // Otherwise, use the site description in the site metadata (see inside SEO component)
@@ -34,16 +40,17 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     ? futureConcerts[0].node.seoDescription.seoDescription
     : null
 
-  // use keywords from data or from constant file 
-  // const keywords = typeof futureConcerts[0] !== 'undefined' && !!futureConcerts[0].node.seoKeywords.length
-  //   ? futureConcerts[0].node.seoKeywords
-  //   : t('seoMetaKeywords').split(',').map(i => i.trim())
-
   return (
-    <Layout path="/concerts" locale={locale} langtag={langtag}>
+    <Layout path={path} locale={locale} langtag={langtag}>
       
-      {/* <SEO title={title} meta={meta} description={description} keywords={keywords} /> */}
-      <SEO title={title} meta={meta} description={description} creator="Les Échos du Pacifique"/>
+      <SEO
+        title={title}
+        meta={meta}
+        description={description}
+        creator="Les Échos du Pacifique"
+        locale={locale}
+        path={path}
+      />
 
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
@@ -120,7 +127,6 @@ query ($langtag: String = "fr-CA"){
         lieu1
         lieu2
         lieuUrl { lieuUrl }
-        # seoKeywords
         seoDescription { seoDescription }
       } 
     }

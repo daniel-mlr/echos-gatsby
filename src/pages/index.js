@@ -7,6 +7,7 @@ import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
 import labels from '../constants/misc'
+// import { Location } from '@reach/router'
 
 const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 

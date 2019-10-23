@@ -141,6 +141,13 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'http://lesechosdupacifique.info',
+        stripQueryString: true,
+      },
+    }
     // {
     //   resolve: 'gatsby-plugin-purgecss',
     //   options: {

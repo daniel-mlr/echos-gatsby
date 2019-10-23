@@ -1,6 +1,6 @@
 {
   "editor.fontSize": 14,
-  "editor.fontFamily": "'Liberation for Powerline', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'Liberation Mono', Consolas, 'Courier New', monospace",
   "material-icon-theme.activeIconPack": "react",
   "vim.useSystemClipboard": true,
   "vim.insertModeKeyBindings": [
