@@ -11,6 +11,9 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
   const path = '/concerts'
   
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
   // future concerts to be rendered on top of section of concert page
   const futureConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() <= new Date(edge.node.concertDate)
@@ -21,36 +24,52 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     return (new Date() > new Date(edge.node.concertDate))
   })
 
-  // translation rendering helper function
-  const t = (label) => labels[label][langtag]
+  const seoData = {
+    title: t('seoConcertsTitle').concat(' | Les Échos du Pacifique'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,w_1200/v1560459372/echos/hero/tenors-sopranos3.jpg' }
+    ],
+    description: typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
+      ? futureConcerts[0].node.seoDescription.seoDescription
+      : null,
+    locale,
+    path
+  }
 
+  const layoutData = {path, locale, langtag}
+  
   // title tag in HEAD
-  const title = t('seoConcertsTitle').concat(' | Les Échos du Pacifique')
+  // const title = t('seoConcertsTitle').concat(' | Les Échos du Pacifique')
 
-  // additional meta on top of those defined by default in SEO component
-  const meta = [ 
-    {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')},
-    {name: 'og:type', content: 'website'},
-    {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,q_73,w_1200/v1560459372/echos/tenors-sopranos3-crop-1920x1200.jpg'}
-  ]
+  // // additional meta on top of those defined by default in SEO component
+  // const meta = [ 
+  //   {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')},
+  //   {name: 'og:type', content: 'website'},
+  //   // {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,q_73,w_1200/v1560459372/echos/tenors-sopranos3-crop-1920x1200.jpg'}
+  //   {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,w_1200/v1560459372/echos/hero/tenors-sopranos3.jpg'}
+  // ]
 
-  // if the next immediate future concert have a seoDescription, use it. 
-  // Otherwise, use the site description in the site metadata (see inside SEO component)
-  const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
-    ? futureConcerts[0].node.seoDescription.seoDescription
-    : null
+  // // if the next immediate future concert have a seoDescription, use it. 
+  // // Otherwise, use the site description in the site metadata (see inside SEO component)
+  // const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
+  //   ? futureConcerts[0].node.seoDescription.seoDescription
+  //   : null
 
   return (
-    <Layout path={path} locale={locale} langtag={langtag}>
+    // <Layout path={path} locale={locale} langtag={langtag}>
+    <Layout {...layoutData}>
       
-      <SEO
+      {/* <SEO
         title={title}
         meta={meta}
         description={description}
         creator="Les Échos du Pacifique"
         locale={locale}
         path={path}
-      />
+      /> */}
+      <SEO {...seoData} />
 
       <Hero
         imgFluid={data.file.childImageSharp.fluid}

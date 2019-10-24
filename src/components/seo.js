@@ -34,7 +34,7 @@ const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
           { property: 'og:title', content: title },
           { property: 'og:url', content: data.site.siteMetadata.siteUrl + `${path}` },
           { property: 'og:site_name', content: data.site.siteMetadata.title },
-          { property: 'og:description', content: description },
+          { property: 'og:description', content: metaDescription },
           { name: 'twitter:creator', content: data.site.siteMetadata.author },
           { name: 'twitter:title', content: title },
           { name: 'twitter:description', content: metaDescription },
@@ -49,7 +49,7 @@ const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
           ]
           : [{ name: 'twitter:card', content: 'summary' }]
         
-        console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
+        // console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
         return (
           <Helmet 
             htmlAttributes={{lang: locale}}
