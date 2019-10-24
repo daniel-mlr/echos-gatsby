@@ -11,16 +11,33 @@ import labels from '../constants/blogs'
 
 const BlogPage = ({pageContext: { locale, langtag }, data}) => {
 
+  const path = '/blog'
+
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
+
+  const seoData = {
+    title: t('seoNewsTitle').concat(' | Les Échos du Pacifique'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571906764/echos/hero/groupe_de_face.jpg' }
+    ],
+    description: t('seoDescription'),
+    // description: typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
+    //   ? futureConcerts[0].node.seoDescription.seoDescription
+    // : null,
+    locale,
+    path
+  }
 
   return (
     <Layout path="/blog" locale={locale} langtag={langtag}>
       
-      <SEO
+      <SEO {...seoData}
         // title={labels.news[langtag]}
-        title={t('seoNewsTitle').concat(' | Les Échos du Pacifique')}
-        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
+        // title={t('seoNewsTitle').concat(' | Les Échos du Pacifique')}
+        // meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
       
       <Hero
@@ -51,8 +68,8 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
                     
                     {/* title  */}
                     <LocalizedLink to={`/blog/${edge.node.slug}`}>
-                      <h3 className="title is-5 is-marginless">
-                        {edge.node.titre}</h3>
+                      <h2 className="title is-5 is-marginless">
+                        {edge.node.titre}</h2>
                     </LocalizedLink>
                     
                     {/* date */}

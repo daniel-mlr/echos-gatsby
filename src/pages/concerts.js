@@ -40,35 +40,10 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
   const layoutData = {path, locale, langtag}
   
-  // title tag in HEAD
-  // const title = t('seoConcertsTitle').concat(' | Les Échos du Pacifique')
-
-  // // additional meta on top of those defined by default in SEO component
-  // const meta = [ 
-  //   {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')},
-  //   {name: 'og:type', content: 'website'},
-  //   // {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,q_73,w_1200/v1560459372/echos/tenors-sopranos3-crop-1920x1200.jpg'}
-  //   {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,w_1200/v1560459372/echos/hero/tenors-sopranos3.jpg'}
-  // ]
-
-  // // if the next immediate future concert have a seoDescription, use it. 
-  // // Otherwise, use the site description in the site metadata (see inside SEO component)
-  // const description = typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
-  //   ? futureConcerts[0].node.seoDescription.seoDescription
-  //   : null
-
   return (
     // <Layout path={path} locale={locale} langtag={langtag}>
     <Layout {...layoutData}>
       
-      {/* <SEO
-        title={title}
-        meta={meta}
-        description={description}
-        creator="Les Échos du Pacifique"
-        locale={locale}
-        path={path}
-      /> */}
       <SEO {...seoData} />
 
       <Hero

@@ -35,5 +35,9 @@ export default {
     'en-US': 'choir news, choir directors, grant',
     'fr-CA': 'direction artistique, nouvelles, historique'
   },
+  'seoDescription': {
+    'en-US': 'Follow current news about Les Échos du Pacifique activities.',
+    'fr-CA': 'Suivez les dernières nouvelles concernant Les Échos du Pacifique.',
+  },
 
 }
