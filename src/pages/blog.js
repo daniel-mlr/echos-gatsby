@@ -31,8 +31,11 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
     path
   }
 
+  const layoutData = {path, locale, langtag}
+
   return (
-    <Layout path="/blog" locale={locale} langtag={langtag}>
+    // <Layout path={path} locale={locale} langtag={langtag}>
+    <Layout {...layoutData} >
       
       <SEO {...seoData}
         // title={labels.news[langtag]}
@@ -58,6 +61,7 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
                       <div className="image is-96x96">
                         <Img
                           fixed={edge.node.previewPicture.fixed}
+                          title={edge.node.previewPicture.title}
                           alt={edge.node.previewPicture.description}
                         />
                       </div>

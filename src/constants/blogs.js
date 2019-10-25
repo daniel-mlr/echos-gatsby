@@ -39,5 +39,9 @@ export default {
     'en-US': 'Follow current news about Les Échos du Pacifique activities.',
     'fr-CA': 'Suivez les dernières nouvelles concernant Les Échos du Pacifique.',
   },
+  'heroImgAlt': {
+    'en-US': 'All singers grouped, sitting and standing, looking at each other.',
+    'fr-CA': 'Tous les chanteurs, assis et debouts, se regardant les uns les autres.'
+  },
 
 }

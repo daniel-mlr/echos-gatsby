@@ -31,7 +31,7 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
     <Layout path="/contact" locale={locale} langtag={langtag}>
       {/* <Head title="Contact" /> */}
       <SEO 
-        title={t('seoContactTitle').concat(' | Les Échos du Pacifique')}
+        title={t('contact').concat(' | Les Échos du Pacifique')}
         meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
       <Hero

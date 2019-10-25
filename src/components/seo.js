@@ -66,14 +66,16 @@ SEO.defaultProps = { meta: []}
 
 SEO.propTypes = {
   description: PropTypes.string,
-  keywords: PropTypes.array,
+  // keywords: PropTypes.array,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
   }),
   meta: PropTypes.array,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  locale: PropTypes.string,
+  path: PropTypes.string,
 }
 
 export default SEO
