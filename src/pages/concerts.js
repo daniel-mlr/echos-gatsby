@@ -8,8 +8,6 @@ import Hero from '../components/hero'
 import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
-
-  const path = '/concerts'
   
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
@@ -24,6 +22,8 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     return (new Date() > new Date(edge.node.concertDate))
   })
 
+  // data to be passed down to components
+  const path = '/concerts'
   const seoData = {
     title: t('seoConcertsTitle').concat(' | Les Échos du Pacifique'),
     meta: [
@@ -37,19 +37,16 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     locale,
     path
   }
-
   const layoutData = {path, locale, langtag}
   
   return (
-    // <Layout path={path} locale={locale} langtag={langtag}>
     <Layout {...layoutData}>
-      
       <SEO {...seoData} />
-
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title='CONCERTS'
       />
+      
       {/* comming concert page content, if any */}
       {
         !!futureConcerts.length && 

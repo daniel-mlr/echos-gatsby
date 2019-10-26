@@ -13,16 +13,9 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
+
+  // data to be passed down to components
   const path = '/'
-
-  // const meta = [ 
-  //   {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')},
-  //   {name: 'og:type', content: 'website'},
-  //   {name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571885432/echos/hero/og_img_main.jpg'}
-  // ]
-
-  // const description = ''
-  
   const seoData = {
     title: t('seoHomeTitle').concat(' | Les Échos'),
     meta: [
@@ -34,16 +27,11 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
     locale,
     path
   }
+  const layoutData = {path, locale, langtag}
 
   return (
-    <Layout path={path} locale={locale} langtag={langtag}>
-      {/* <SEO 
-        title={t('seoHomeTitle').concat(' | Les Échos')}
-        meta={meta}
-        description={description}
-        locale={locale}
-        path={path}
-      /> */}
+    // <Layout path={path} locale={locale} langtag={langtag}>
+    <Layout {...layoutData} >
       <SEO {...seoData} />
       <Jumbotron />
       <ConcertGridCard concerts={data.concert} annonces={data.annonces} langtag={langtag} />
