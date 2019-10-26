@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 // import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 // TODO: create  a login form to access data on this page
 const Members = ({pageContext: { locale, langtag }}) => {
@@ -24,6 +25,11 @@ const Members = ({pageContext: { locale, langtag }}) => {
 
   return (
     <Layout path="/members" locale={locale} langtag={langtag}>
+      {/* <Helmet title="test title" meta={[{name: 'robots', content: 'noindex,nofollow'}]} /> */}
+      <Helmet>
+        <title>Section Membres</title>
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       <section className="section">
         <h3 className="title is-size-3">Informations pour les membres</h3>
         <ul>

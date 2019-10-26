@@ -1,21 +1,38 @@
 import React from 'react'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Jumbotron from '../components/jumbotron'
 import ConcertGridCard from '../components/concertGridCard'
 import BlogGridCard from '../components/blogGridCard'
 import { graphql } from 'gatsby'
 import labels from '../constants/misc'
+// import { Location } from '@reach/router'
 
 const IndexPage = ({pageContext: { locale, langtag }, data}) => {
 
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
+  // data to be passed down to components
+  const path = '/'
+  const seoData = {
+    title: t('seoHomeTitle').concat(' | Les Échos'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571885432/echos/hero/og_img_main.jpg' }
+    ],
+    description: '',
+    locale,
+    path
+  }
+  const layoutData = {path, locale, langtag}
+
   return (
-    <Layout path="/" locale={locale} langtag={langtag}>
-      {/* <Head title="Home" /> */}
-      <Head title={t('homePage')} />
+    // <Layout path={path} locale={locale} langtag={langtag}>
+    <Layout {...layoutData} >
+      <SEO {...seoData} />
       <Jumbotron />
       <ConcertGridCard concerts={data.concert} annonces={data.annonces} langtag={langtag} />
       <BlogGridCard data={data.blog} langtag={langtag} />

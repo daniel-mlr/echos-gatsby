@@ -9,8 +9,11 @@ const BlogCard = (props) => {
   return (
     <div className="card">
       <div className="card-image">
-        <Img fluid={props.previewPicture.fluid}
-          alt={props.previewPicture.description} />
+        <Img
+          fluid={props.previewPicture.fluid}
+          alt={props.previewPicture.description}
+          title={props.previewPicture.title}
+        />
       </div> 
 
       <div className="card-content">

@@ -1,6 +1,6 @@
 {
   "editor.fontSize": 14,
-  "editor.fontFamily": "'Liberation for Powerline', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'Liberation Mono', Consolas, 'Courier New', monospace",
   "material-icon-theme.activeIconPack": "react",
   "vim.useSystemClipboard": true,
   "vim.insertModeKeyBindings": [
@@ -34,9 +34,13 @@
   "emmet.triggerExpansionOnTab": true,
   "workbench.colorTheme": "Monokai Pro",
   "terminal.integrated.fontFamily": "DejaVu Sans Mono, PowerlineSymbols",
+  "terminal.integrated.fontSize": 12,
   "files.watcherExclude": {
-    "**/.cache/*/**": true,
-    "**/public/*/**": true
+    "**/.git/objects/**": true,
+    "**/.cache/**": true,
+    "**/public/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true
+
   },
-  "terminal.integrated.fontSize": 12
 }

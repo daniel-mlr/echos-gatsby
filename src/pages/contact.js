@@ -2,10 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Head from '../components/head'
-import { FaTwitter } from 'react-icons/fa'
+// import Head from '../components/head'
+import SEO from '../components/seo'
+import { FaTwitter, FaFacebook } from 'react-icons/fa'
 import { GoMail, GoLocation} from 'react-icons/go'
 import Hero from '../components/hero'
+import labels from '../constants/contact'
 
 const ContactPage = ({pageContext: { locale, langtag }, data}) => {
 
@@ -22,11 +24,30 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
     }
   }
 
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
+  // data to be passed to components
+  const path = '/contact'
+  const seoData = {
+    title: t('contact').concat(' | Les Échos du Pacifique'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571988978/echos/hero/og_echos_blog.jpg' }
+    ],
+    description: t('seoDescription'),
+    locale,
+    path
+  }
+  const layoutData = {path, locale, langtag}
+
   return (
-    <Layout path="/contact" locale={locale} langtag={langtag}>
-      <Head title="Contact" />
+    <Layout {...layoutData} >
+      <SEO {...seoData} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt={t('heroAlt')}
         title={'Contacts'}
       />
       <section className="section" style={{paddingTop:'1rem'}} >
@@ -57,6 +78,15 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
               href="https://twitter.com/ChoeurLesEchos"
               rel="noopener noreferrer"
               target="_blank">ChoeurLesEchos</a>
+          </p>
+          {/* Facebook */}
+          <p>
+            <FaFacebook style={{ transform: 'translateY(1px)' }} />
+            &ensp;
+            <a
+              href="https://www.facebook.com/Les-Échos-du-Pacifique-216683941792717/"
+              rel="noopener noreferrer"
+              target="_blank">Les Échos du Pacifique</a>
           </p>
 
           {/* google map */}

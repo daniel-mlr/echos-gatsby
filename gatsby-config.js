@@ -7,9 +7,12 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Les Échos du Pacifique',
-    author: 'Daniel Meilleur',
-    description: 'Les Échos du Pacifique, la chorale francophone du grand Vancouver',
-    url: 'http://lesechosdupacifique.info',
+
+    author: 'Les Échos du Pacifique',
+    description: 'Les Échos du Pacifique, la chorale francophone du grand Vancouver. Répertoire de chansons en français, ancien français, anglais, latin et autres langues',
+    // keywords: ['concerts', 'choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
+    siteUrl: 'http://lesechosdupacifique.info',
+
     twitterUsername: '@ChoeurLesEchos',
     menu:[
       {
@@ -140,6 +143,13 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'http://lesechosdupacifique.info',
+        stripQueryString: true,
+      },
+    }
     // {
     //   resolve: 'gatsby-plugin-purgecss',
     //   options: {

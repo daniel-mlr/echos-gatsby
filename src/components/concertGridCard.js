@@ -33,11 +33,11 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
   if ( futureConcerts.length ) { // there are some concert comming
 
     return (
-      <> 
+      <>
         { /* if there are any concurrent announcements, print them */
           (!!concurrentAnnouncements.length) && (
             <section className="section" id="concurrent">
-              { concurrentAnnouncements.map(
+              {concurrentAnnouncements.map(
                 (edge, idx) => <AnnonceCard key={idx} {...edge.node} />
               )}
             </section>

@@ -4,11 +4,14 @@ import LocalizedLink from '../components/localizedLink'
 import Layout from '../components/layout'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Img from 'gatsby-image'
-import Head from '../components/head'
+import SEO from '../components/seo'
 import Hero from '../components/hero'
 import labels from '../constants/blogs'
 
 const Blog = ({pageContext: { locale, langtag }, data}) => {
+
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
 
   const options = {
     renderNode: {
@@ -24,17 +27,32 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
     }
   }
 
-  // translation rendering helper function
-  const t = (label) => labels[label][langtag]
+  const path=`/blog/${data.blog.slug}`
+
+  const seoData = {
+    title: data.blog.titre.concat(' | Les Échos du Pacifique'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571988978/echos/hero/og_echos_blog.jpg' }
+    ],
+    description: data.blog.seoDescription,
+    locale,
+    path
+  }
+
 
   return (
     <Layout
       path={`/blog/${data.blog.slug}`}
       locale={locale} langtag={langtag}
     >
-      <Head title={data.blog.titre} />
+      {/* <SEO title={data.blog.titre} /> */}
+      <SEO {...seoData} />
+
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt={t('heroImgAlt')}
         // title={data.contentfulBlogues.titre}
       />
 
@@ -55,7 +73,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
             
             {/* publication date */}
             <header className="content">
-              <h2>{data.blog.titre}</h2>
+              <h1 className="is-size-3">{data.blog.titre}</h1>
               <p className="is-italic">
                 {data.blog.publicationDate}
               </p>
@@ -121,6 +139,7 @@ export const query = graphql`
           ...GatsbyContentfulFixed
         }
       }
+      seoDescription
     }
     # file(name: {eq: "noel_tricities-1920x592"}) {
     file(name: {eq: "Choir_groupshot-2"}) {

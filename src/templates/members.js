@@ -3,7 +3,9 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 // import PropTypes from 'prop-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Head from '../components/head'
+// import Head from '../components/head'
+// import SEO from '../components/seo'
+import Helmet from 'react-helmet'
 // import Hero from '../components/hero'
 
 export const queryMembers = graphql`
@@ -37,7 +39,16 @@ const Members = ({pageContext: { locale, langtag }, data}) => {
       locale={locale}
       langtag={langtag}
     >
-      <Head title={data.contentfulMembres.titre} />
+      {/* <Head title={data.contentfulMembres.titre} /> */}
+      {/* <SEO title={data.contentfulMembres.titre} /> */}
+      {/* <Helmet
+        title={data.contentfulMembres.titre}
+        meta={{name: 'robots', content: 'noindex,nofollow'}}
+      /> */}
+      <Helmet>
+        <title>{data.contentfulMembres.titre}</title>
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       {/* <Hero
         imgFluid={data.file.childImageSharp.fluid}
         // title={data.contentfulBlogues.titre}

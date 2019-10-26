@@ -20,7 +20,6 @@ const Layout = ({children, path, locale, langtag}) => {
       <div className="container">
         <BurgerMenu path={path} langtag={langtag}/>
         {children}
-        
         <Footer langtag={langtag}/>
       </div>
 

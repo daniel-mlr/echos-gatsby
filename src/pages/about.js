@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Head from '../components/head'
+// import Head from '../components/head'
+import SEO from '../components/seo'
 import Hero from '../components/hero'
 import AboutTile from '../components/aboutTile'
 import labels from '../constants/about'
@@ -21,13 +22,32 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
+  
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
+
+  // data to be passed to components
+  const path = '/about'
+  const seoData = {
+    title: t('seoAboutTitle'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571988978/echos/hero/og_echos_blog.jpg' }
+    ],
+    description: t('seoDescription'),
+    locale,
+    path
+  }
+  const layoutData = {path, locale, langtag}
 
   return (
-    <Layout path="/about" locale={locale} langtag={langtag}>
-      {/* <Head title="About"/> */}
-      <Head title={labels.about[langtag]}/>
+    // <Layout path="/about" locale={locale} langtag={langtag}>
+    <Layout {...layoutData} >
+      <SEO  {...seoData} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt=""
         title={labels.about[langtag]}
       />
       <section className="section" style={{'paddingTop': 0}} >

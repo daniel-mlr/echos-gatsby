@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Head from '../components/head'
+import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import SectionDivider from '../components/sectionDivider'
 import Concert from '../components/concert'
@@ -8,25 +8,46 @@ import Hero from '../components/hero'
 import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
+  
+  // translation rendering helper function
+  const t = (label) => labels[label][langtag]
 
+  // future concerts to be rendered on top of section of concert page
   const futureConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() <= new Date(edge.node.concertDate)
     & new Date(edge.node.announcementDate) < new Date())
   })
+  // former concerts to be rendered in the section after future concerts
   const formerConcerts =  data.concert.edges.filter((edge)=> {
     return (new Date() > new Date(edge.node.concertDate))
   })
 
-  // translation rendering helper function
-  const t = (label) => labels[label][langtag]
-
+  // data to be passed down to components
+  const path = '/concerts'
+  const seoData = {
+    title: t('seoConcertsTitle').concat(' | Les Échos du Pacifique'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,h_630,w_1200/v1560459372/echos/hero/tenors-sopranos3.jpg' }
+    ],
+    description: typeof futureConcerts[0] !== 'undefined' && futureConcerts[0].node.seoDescription
+      ? futureConcerts[0].node.seoDescription.seoDescription
+      : null,
+    locale,
+    path
+  }
+  const layoutData = {path, locale, langtag}
+  
   return (
-    <Layout path="/concerts" locale={locale} langtag={langtag}>
-      <Head title="Concerts" />
+    <Layout {...layoutData}>
+      <SEO {...seoData} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt=""
         title='CONCERTS'
       />
+      
       {/* comming concert page content, if any */}
       {
         !!futureConcerts.length && 
@@ -98,6 +119,7 @@ query ($langtag: String = "fr-CA"){
         lieu1
         lieu2
         lieuUrl { lieuUrl }
+        seoDescription { seoDescription }
       } 
     }
   }

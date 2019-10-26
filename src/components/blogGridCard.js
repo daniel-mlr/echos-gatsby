@@ -12,9 +12,9 @@ const BlogGridCard = ({langtag, data}) => {
       <SectionDivider label={labels.news[langtag]} />
 
       <div className="columns">
-        {/* show 2 entries of blogs if less than laptop, 
-          3 entries from laptop to widescreen 
-          and 4 entries for wide screens */
+        {/* show 2 entries of blogs if viewport is less than laptop, 
+          3 entries from laptop to widescreen and
+          4 entries for wide screens */
           data.edges.map((edge, idx) => {
             const column = idx === 2 ? 'column is-hidden-touch'
               : idx === 3 ? 'column is-hidden-until-widescreen'

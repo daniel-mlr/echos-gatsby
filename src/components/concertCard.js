@@ -11,11 +11,6 @@ const ConcertCard = (props) => {
 
   // date renderings
   // --------------
-  // 
-  // const concertDateGMT = new Date(props.node.concertDate + 'Z')
-  // console.log('props.node.concertdate:', props.node.concertDate, '\nconcertDateGMT:', concertDateGMT)
-  // // console.log('time zone offset:', concertDateGMT.getTimezoneOffset())
-  // const concertDate = new Date(concertDateGMT.valueOf() + concertDateGMT.getTimezoneOffset() * 60 * 1000)
 
   const [date, time] = props.node.concertDate.split('T')
   const [yr, mnt, day] = date.split('-')
@@ -57,9 +52,9 @@ const ConcertCard = (props) => {
             <div className="concert-text ">
               
               <LocalizedLink to={`/concerts#${props.node.slug}`}>
-                <h4
+                <h3
                   className="title is-4 artistes"
-                >{props.node.concertName}</h4>
+                >{props.node.concertName}</h3>
               </LocalizedLink>
               
               <div className="content artistes">

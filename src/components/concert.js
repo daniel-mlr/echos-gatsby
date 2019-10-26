@@ -49,8 +49,6 @@ const Concert = (props) => {
   // prevent error if props.lieuUrl not exist
   const lieuUrl = props.lieuUrl ? props.lieuUrl.lieuUrl : null
 
-  // console.log('props:', props)
-  
   return (
     <section className="section lastchild" name={props.concertId}>
       {/* header of the concert, on top of the 2 columns */}
@@ -61,7 +59,11 @@ const Concert = (props) => {
         
         {/* left column: picture */}
         <div className="column is-one-third" style={{ maxWidth: '400px' }}>
-          <Img fluid={props.poster.fluid} alt={props.poster.description} />
+          <Img
+            fluid={props.poster.fluid}
+            title={props.poster.title}
+            alt={props.poster.description}
+          />
         </div>
         
         {/* right column: concert info */}
@@ -157,6 +159,7 @@ const Concert = (props) => {
         {documentToReactComponents( props.description.json)}
       </div>
       
+      {/* buy button: only show for comming concerts */}
       {props.courant && <BuyButton
         href={props.ticketsUrl} label={t('buyTicket')} />}
         

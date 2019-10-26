@@ -11,7 +11,7 @@ const Footer = (props) => {
     site {
       siteMetadata {
         title
-        author
+        # author
       }
     }
   }
@@ -34,6 +34,7 @@ const Footer = (props) => {
               <img
                 className=""
                 style={{width: '80px'}}
+                title="Les Échos du Pacifique"
                 src='https://res.cloudinary.com/danielmeilleurimg/image/upload/c_scale,w_80/v1562662528/echos/logo/Les_Echos_du_Pacifique_illustration_white_800x800-18.png'
                 alt='logo'
               />
@@ -45,22 +46,29 @@ const Footer = (props) => {
             alignSelf: 'flex-end'
           }}>
             <div style={{display: 'flex', alignSelf: 'center'}} >
-              <a style={{color: 'inherit', padding: '0 20px'}}
-                href="https://twitter.com/ChoeurLesEchos">
-                <FaTwitter className="icon is-large" />
+              <a 
+                style={{ color: 'inherit', padding: '0 20px' }}
+                href="https://twitter.com/ChoeurLesEchos"
+              >
+                <FaTwitter className="icon is-large" title="twitter" />
               </a>
-              <a style={{ color: 'inherit', padding: '0 20px' }} href="https://www.facebook.com/Les-Échos-du-Pacifique-216683941792717/">
-                <FaFacebook className="icon is-large" />
+              <a
+                style={{ color: 'inherit', padding: '0 20px' }}
+                href="https://www.facebook.com/Les-Échos-du-Pacifique-216683941792717/"
+              >
+                <FaFacebook className="icon is-large" title="facebook" />
               </a>
               <a style={{ color: 'inherit', padding: '0 20px' }} href="#">
-                <FaInstagram className="icon is-large" />
+                <FaInstagram className="icon is-large" title="instagram" />
               </a>
             </div>
             <div >
               <p className="content pt-20">
                 Copyright by {data.site.siteMetadata.title} © 2019
               </p>
-              <p>Web design: {data.site.siteMetadata.author}</p>
+              <p>
+                Web design: <a href="http://dmeilleur.com">Daniel Meilleur</a>
+              </p>
             </div>
           </div>
           <div className="column is-one-fifth">

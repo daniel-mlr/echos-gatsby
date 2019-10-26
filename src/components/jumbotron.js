@@ -28,6 +28,8 @@ const Jumbotron = () => {
         edges {
           node {
             id
+            title
+            description
             file { url }
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyContentfulFluid_withWebp
@@ -49,21 +51,18 @@ const Jumbotron = () => {
     emulateTouch: false,
   }
 
-  console.log('@@@data:', data)
   return (
     <section className="hero is-full-height has-background">
       
       <Carousel {...carouselOptions}>
-        {/* {data.allFile.edges.map(edge => ( */}
         {data.assets.edges.map(edge => (
           <Img
             key={edge.node.id}
-            // fluid={edge.node.childImageSharp.fluid}
             fluid={edge.node.fluid}
             className="hero-background"
-            imgStyle={{
-              objectPosition: 'top',
-            }}
+            imgStyle={{ objectPosition: 'top', }}
+            alt={edge.node.description}
+            title={edge.node.title}
           />
         ))}
       </Carousel>
