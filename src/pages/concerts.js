@@ -53,9 +53,10 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         !!futureConcerts.length && 
         <article className="section">
 
-          <SectionDivider label={futureConcerts.length > 1
-            ? t('nextConcerts')
-            : t('nextConcert')}
+          <SectionDivider
+            label={futureConcerts.length > 1
+              ? t('nextConcerts')
+              : t('nextConcert')}
           />
 
           { // print coming concerts, date ascending order

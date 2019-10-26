@@ -53,7 +53,8 @@ query (
 ){
   annonces:allContentfulAnnonces (
     filter: {node_locale: {eq: $langtag}}
-  ) {
+  )
+  {
 		edges {
 			node {
 				identifiant
@@ -76,7 +77,8 @@ query (
     filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }
     limit: 4
-  ) {
+  )
+  {
     edges {
       node {
         titre
