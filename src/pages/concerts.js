@@ -44,6 +44,7 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
       <SEO {...seoData} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt=""
         title='CONCERTS'
       />
       

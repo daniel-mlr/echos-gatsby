@@ -9,7 +9,8 @@ const AboutTile = (props) => {
   return (
     <article className={props.className}>
       <h2 className="title">{props.title}</h2>
-      <h3 className="subtitle">{props.sousTitre}</h3>
+      { props.sousTitre && 
+      <h3 className="subtitle">{props.sousTitre}</h3>}
 
       { // tile image
         props.image && 

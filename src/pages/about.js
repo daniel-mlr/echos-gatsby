@@ -26,16 +26,28 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
+  // data to be passed to components
+  const path = '/about'
+  const seoData = {
+    title: t('seoAboutTitle'),
+    meta: [
+      { name: 'title', content: t('seoMetaTitleContent') },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:image', content: 'https://res.cloudinary.com/danielmeilleurimg/image/upload/v1571988978/echos/hero/og_echos_blog.jpg' }
+    ],
+    description: t('seoDescription'),
+    locale,
+    path
+  }
+  const layoutData = {path, locale, langtag}
+
   return (
-    <Layout path="/about" locale={locale} langtag={langtag}>
-      {/* <Head title={labels.about[langtag]}/> */}
-      <SEO 
-        // title={labels.about[langtag]}
-        title={t('seoAboutTitle').concat(' | Les Échos du Pacifique')}
-        meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
-      />
+    // <Layout path="/about" locale={locale} langtag={langtag}>
+    <Layout {...layoutData} >
+      <SEO  {...seoData} />
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
+        alt=""
         title={labels.about[langtag]}
       />
       <section className="section" style={{'paddingTop': 0}} >
