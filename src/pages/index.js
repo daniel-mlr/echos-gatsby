@@ -1,5 +1,4 @@
 import React from 'react'
-// import Head from '../components/head'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Jumbotron from '../components/jumbotron'
@@ -30,7 +29,6 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
   const layoutData = {path, locale, langtag}
 
   return (
-    // <Layout path={path} locale={locale} langtag={langtag}>
     <Layout {...layoutData} >
       <SEO {...seoData} />
       <Jumbotron />
