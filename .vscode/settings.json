@@ -34,7 +34,6 @@
   "emmet.triggerExpansionOnTab": true,
   "workbench.colorTheme": "One Monokai",
   "terminal.integrated.fontFamily": "DejaVu Sans Mono, PowerlineSymbols",
-  "terminal.integrated.fontSize": 12,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.cache/**": true,
