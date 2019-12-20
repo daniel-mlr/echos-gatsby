@@ -19,8 +19,9 @@
     "@types/react-burger-menu": "^2.2.5",
     "bulma": "^0.7.5",
     "bulma-divider": "^0.2.0",
-    "eslint-plugin-flowtype": "^4.3.0",
-    "gatsby": "^2.7.5",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "gatsby": "^2.18.15",
     "gatsby-image": "^2.1.4",
     "gatsby-plugin-canonical-urls": "^2.1.13",
     "gatsby-plugin-manifest": "^2.2.1",
@@ -46,7 +47,7 @@
   },
   "devDependencies": {
     "env-cmd": "^9.0.2",
-    "eslint": "^6.5.1",
+    "eslint": "^5.16.0",
     "eslint-config-gatsby-standard": "^2.2.0",
     "eslint-plugin-react": "^7.15.1",
     "prettier": "^1.17.1"
