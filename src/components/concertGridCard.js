@@ -64,7 +64,7 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
     return (
       <>
         {
-          currentAnnouncements && (
+          (!!currentAnnouncements.length) && (
             <section className="section">
               {
                 currentAnnouncements.map(
