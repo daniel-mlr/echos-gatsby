@@ -11,7 +11,7 @@ module.exports = {
     author: 'Les Échos du Pacifique',
     description: 'Les Échos du Pacifique, la chorale francophone du grand Vancouver. Répertoire de chansons en français, ancien français, anglais, latin et autres langues',
     // keywords: ['concerts', 'choeur', 'Vancouver', 'musique', 'voix', 'chansons'],
-    siteUrl: 'http://lesechosdupacifique.info',
+    siteUrl: 'https://lesechosdupacifique.info',
 
     twitterUsername: '@ChoeurLesEchos',
     menu:[
@@ -91,10 +91,10 @@ module.exports = {
       main: 'Les Échos du Pacifique',
       sub:  'La chorale francophone de Vancouver'
     },
-    address1: '1200 avenue Cartier,',
-    address2: 'Coquitlam, C.-B. V3K 2C3',
-    phone: '1-234-567-8900',
-    readMore: 'Lire...'
+    // address1: '1200 avenue Cartier,',
+    // address2: 'Coquitlam, C.-B. V3K 2C3',
+    // phone: '1-234-567-8900',
+    // readMore: 'Lire...'
   },
 
   plugins: [
@@ -146,29 +146,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'http://lesechosdupacifique.info',
+        siteUrl: 'https://lesechosdupacifique.info',
         stripQueryString: true,
       },
     }
-    // {
-    //   resolve: 'gatsby-plugin-purgecss',
-    //   options: {
-    //     printRejected: true, // Print removed selectors and processed file names
-    //     // develop: true, // Enable while using `gatsby develop`
-    //     // tailwind: true, // Enable tailwindcss support
-    //     whitelist: [
-    //       'main-container', 'img-container', 'img-container img', 'article-container',
-    //       'content-container', 'content-container p', 'iframe-container',
-    //       'iframe-container iframe'
-    //     ], // Don't remove this selector
-    //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-    //     ignore: [ 
-    //       'style.scss',
-    //       'langSwitcher.module.scss',
-    //       'react-responsive-carousel/lib/styles/carousel.min.css'
-    //     ], // Ignore files/folders
-    //     // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-    //   }
-    // }
   ]
 }

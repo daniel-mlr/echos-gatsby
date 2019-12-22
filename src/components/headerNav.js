@@ -19,7 +19,6 @@ const HeaderNav = (params) => {
     <nav className={headerStyles.navigation}>
       <div className={headerStyles.topnav}>
         {data.site.siteMetadata.menu.map(link => {
-       
           return (
             <LocalizedLink
               to={link.href}
