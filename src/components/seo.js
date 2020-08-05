@@ -8,7 +8,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
   return (
-    <StaticQuery 
+    <StaticQuery
       query={graphql`
         {
           site {
@@ -40,7 +40,7 @@ const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
           { name: 'twitter:description', content: metaDescription },
         ]
 
-        const metaCards = metaImage 
+        const metaCards = metaImage
           ? [
             { property: 'og:image', content: image },
             { property: 'og:image:width', content: metaImage.width },
@@ -48,10 +48,10 @@ const SEO = ({ description, meta, image: metaImage, title, locale, path}) => {
             { name: 'twitter:card', content: 'summary_large_image' }
           ]
           : [{ name: 'twitter:card', content: 'summary' }]
-        
+
         // console.log('@@allmeta:', metaItems.concat(metaCards).concat(meta))
         return (
-          <Helmet 
+          <Helmet
             htmlAttributes={{lang: locale}}
             title={title}
             meta={metaItems.concat(metaCards).concat(meta)}

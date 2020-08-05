@@ -1,8 +1,7 @@
 /**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ * Configuration file
  */
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -25,7 +24,7 @@ module.exports = {
           },
           {
             node_locale: 'en-US',
-            text: 'Home' 
+            text: 'Home'
           }
         ]
       } ,
@@ -39,7 +38,7 @@ module.exports = {
           },
           {
             node_locale: 'en-US',
-            text: 'Concerts' 
+            text: 'Concerts'
           }
         ]
       },
@@ -53,7 +52,7 @@ module.exports = {
           },
           {
             node_locale: 'en-US',
-            text: 'News' 
+            text: 'News'
           }
         ]
       },
@@ -67,7 +66,7 @@ module.exports = {
           },
           {
             node_locale: 'en-US',
-            text: 'Join us' 
+            text: 'Join us'
           }
         ]
       },
@@ -81,7 +80,7 @@ module.exports = {
           },
           {
             node_locale: 'en-US',
-            text: 'About us' 
+            text: 'About us'
           }
         ]
       }
@@ -162,7 +161,7 @@ module.exports = {
     //       'iframe-container iframe'
     //     ], // Don't remove this selector
     //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-    //     ignore: [ 
+    //     ignore: [
     //       'style.scss',
     //       'langSwitcher.module.scss',
     //       'react-responsive-carousel/lib/styles/carousel.min.css'
