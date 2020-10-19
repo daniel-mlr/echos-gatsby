@@ -28,7 +28,7 @@
     "gatsby-plugin-sass": "^2.1.26",
     "gatsby-plugin-sharp": "^2.3.9",
     "gatsby-remark-images": "^3.1.38",
-    "gatsby-source-contentful": "^2.1.71",
+    "gatsby-source-contentful": "^2.3.55",
     "gatsby-source-filesystem": "^2.1.42",
     "gatsby-transformer-sharp": "^2.3.9",
     "graphql": "^14.5.8",
@@ -45,12 +45,13 @@
   },
   "devDependencies": {
     "env-cmd": "^9.0.2",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-gatsby-standard": "^2.2.0",
-    "eslint-config-react-app": "^5.1.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-flowtype": "^4.5.2",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-react": "^7.21.4",
+    "npm-check": "^5.9.2",
     "prettier": "^1.19.1"
   },
   "repository": {
