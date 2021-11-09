@@ -12,12 +12,16 @@
 
 .is-family-title {
   font-family: $family-title;
+  // suggestion from lighthouse
+  font-display: swap;
 }
 .site-name{
   color: $blue-name !important;
   font-size: 4rem;
   font-family: $family-title;
   line-height: 1.125;
+  // suggestion from lighthouse
+  font-display: swap;
 }
 .site-subname {
   font-size: 2rem;
