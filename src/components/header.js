@@ -5,7 +5,7 @@ import LangSwitcher from './langSwitcher'
 
 
 const Header = ({path, langtag}) => {
- 
+
   return (
     <header className="header">
       <LocalizedLink to="/">
@@ -21,7 +21,6 @@ const Header = ({path, langtag}) => {
       <span className="is-hidden-mobile">
         <LangSwitcher path={path} langtag={langtag} />
       </span>
-      
     </header>
   )
 }

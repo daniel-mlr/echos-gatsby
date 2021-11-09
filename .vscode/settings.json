@@ -27,8 +27,8 @@
       "commands": [ ":nohl", ]
     },
   ],
-  "debug.console.fontSize": 12,
-  "markdown.preview.fontSize": 12,
+  "debug.console.fontSize": 13,
+  "markdown.preview.fontSize": 13,
   "editor.tabSize": 2,
   "html.format.indentHandlebars": true,
   "emmet.triggerExpansionOnTab": true,
