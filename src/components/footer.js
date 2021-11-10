@@ -76,6 +76,38 @@ const Footer = (props) => {
             <p className="fmlink" >Membres</p>
           </div>
         </div>
+        <div className="columns is-centered">
+          <div className="column is-three-quarters">
+            <hr style={{height: '.1px'}}></hr>
+            <div className="content">
+              <p className="has-text-warning is-size-7">
+We acknowledge that Les Échos du Pacifique operates and makes music together on
+the traditional, ancestral, and unceded territory of the kʷikʷəƛ̓əm (Kwikwetlem)
+First Nation. We thank the kʷikʷəƛ̓əm who, continue to live on these lands and
+care for them, along with the waters and all that is above and below. We seek to
+journey with them in the spirit of reconciliation.
+              </p>
+            </div>
+            <hr style={{height: '.1px'}}></hr>
+          </div>
+        </div>
+        <div className="columns is-centered">
+          <div className="column is-one-third">
+            <p className="is-size-7">
+              We gratefully acknowledge the financial support of the Province of British Columbia.
+            </p>
+            <img src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1636521930/echos/divers/BC-CB_logo_bilingue.png">
+            </img>
+          </div>
+          <div className="column is-one-third">
+            <p className="is-size-7">
+              We gratefully acknowledge the financial support of the Province of British Columbia.
+            </p>
+            <img src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1636521930/echos/divers/Coquitlam_city_grant_logo.png">
+            </img>
+          </div>
+        </div>
+
       </div>
     </footer>
   )
