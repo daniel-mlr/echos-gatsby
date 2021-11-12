@@ -81,11 +81,7 @@ const Footer = (props) => {
             <hr style={{height: '.1px'}}></hr>
             <div className="content">
               <p className="has-text-secondary is-size-7">
-We acknowledge that Les Échos du Pacifique operates and makes music together on
-the traditional, ancestral, and unceded territory of the kʷikʷəƛ̓əm (Kwikwetlem)
-First Nation. We thank the kʷikʷəƛ̓əm who, continue to live on these lands and
-care for them, along with the waters and all that is above and below. We seek to
-journey with them in the spirit of reconciliation.
+                {t('ancestralTerritory')}
               </p>
             </div>
             <hr style={{height: '.1px'}}></hr>
@@ -94,14 +90,14 @@ journey with them in the spirit of reconciliation.
         <div className="columns is-centered">
           <div className="column is-one-third">
             <p className="is-size-7">
-              We gratefully acknowledge the financial support of the Province of British Columbia.
+              {t('reconnaissanceBC')}
             </p>
             <img src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1636687582/echos/divers/BC-logo.jpg">
             </img>
           </div>
           <div className="column is-one-third">
             <p className="is-size-7">
-              We gratefully acknowledge the financial support of the Province of British Columbia.
+              {t('reconnaissanceCoquitlam')}
             </p>
             <img src="https://res.cloudinary.com/danielmeilleurimg/image/upload/v1636688603/echos/divers/CoquitlamLogo.jpg">
             </img>
