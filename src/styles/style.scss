@@ -309,3 +309,6 @@ $positions: ('top','left','bottom','right');
 .container { 
   max-width: 1366px;
  }
+ .has-text-secondary {
+   color: $secondary;
+ }
