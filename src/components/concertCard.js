@@ -110,7 +110,7 @@ const ConcertCard = (props) => {
                   </time>
                 </div>
                 {// warning wrong time zone
-                  Intl.DateTimeFormat().resolvedOptions().timeZone !== "America/Vancouver" && 
+                  Intl.DateTimeFormat().resolvedOptions().timeZone !== 'America/Vancouver' && 
                     <p className="has-text-warning">
                       Warning: set your time zone to 'America/Vancouver' to see the proper time
                     </p>

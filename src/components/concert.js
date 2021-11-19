@@ -96,12 +96,17 @@ const Concert = (props) => {
                   {t('adult')}:</span>&nbsp;${
                   parseInt(props.adultFare).toFixed(2)}</p>
               </div>
-              <div className="is-pulled-left">
-                <p><span className="has-text-weight-medium">
-                  {t('student')}:</span>&nbsp;
-                ${parseInt(props.studentAndOldAgeFare).toFixed(2)}
-                </p>
-              </div>
+              {/* print if student and old age fare */
+                (props.studentAndOldAgeFare) &&
+                <>
+                  <div className="is-pulled-left">
+                    <p><span className="has-text-weight-medium">
+                      {t('student')}:</span>&nbsp;
+                    ${parseInt(props.studentAndOldAgeFare).toFixed(2)}
+                    </p>
+                  </div>
+                </>
+              }
               <div >
                 <p><span className="has-text-weight-medium">
                   {t('child')}:</span>&nbsp;{

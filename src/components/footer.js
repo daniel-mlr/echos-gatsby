@@ -64,7 +64,7 @@ const Footer = (props) => {
             </div>
             <div >
               <p className="content pt-20">
-                Copyright by {data.site.siteMetadata.title} © 2019
+                Copyright by {data.site.siteMetadata.title} © 2021
               </p>
               <p>
                 Web design: <a href="http://dmeilleur.com">Daniel Meilleur</a>
