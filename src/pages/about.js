@@ -7,6 +7,8 @@ import Hero from '../components/hero'
 import AboutTile from '../components/aboutTile'
 import labels from '../constants/about'
 
+// dummy change to test github cred
+
 const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
   // flatten edges by removing the node layer, to obtain an array of objects
