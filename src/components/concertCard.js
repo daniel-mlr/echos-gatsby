@@ -18,10 +18,10 @@ const ConcertCard = (props) => {
 
   const concertDate = new Date(yr, mnt - 1, day, hr, min)
 
-  const dateFormatOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
+  const dateFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
     day: 'numeric',
   }
   const timeFormatOptions = {
@@ -48,15 +48,15 @@ const ConcertCard = (props) => {
         {/* right column: concert info */}
         <div className="column">
           <div className="content">
-            
+
             <div className="concert-text ">
-              
+
               <LocalizedLink to={`/concerts#${props.node.slug}`}>
                 <h3
                   className="title is-4 artistes"
                 >{props.node.concertName}</h3>
               </LocalizedLink>
-              
+
               <div className="content artistes">
                 <p><span
                   className="has-text-weight-bold">
@@ -80,7 +80,7 @@ const ConcertCard = (props) => {
                   </>
                 }
               </div>
-              
+
               <div className="concert-summary">
                 <p>{props.node.summary.summary}</p>
               </div>
@@ -91,7 +91,7 @@ const ConcertCard = (props) => {
                   to={`/concerts#${props.node.slug}`}
                 >{t('moreDetails')}... </LocalizedLink>
               </div>
-              
+
               {/* concert date */}
               <div className="date">
                 <div className="content">
@@ -110,7 +110,7 @@ const ConcertCard = (props) => {
                   </time>
                 </div>
                 {// warning wrong time zone
-                  Intl.DateTimeFormat().resolvedOptions().timeZone !== 'America/Vancouver' && 
+                  Intl.DateTimeFormat().resolvedOptions().timeZone !== 'America/Vancouver' &&
                     <p className="has-text-warning">
                       Warning: set your time zone to 'America/Vancouver' to see the proper time
                     </p>

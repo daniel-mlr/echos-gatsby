@@ -70,7 +70,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
               <LocalizedLink className="tag" to={'/'}>
                 {t('goHome')}</LocalizedLink>
             </div>
-            
+
             {/* publication date */}
             <header className="content">
               <h1 className="is-size-3">{data.blog.titre}</h1>
@@ -78,14 +78,14 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                 {data.blog.publicationDate}
               </p>
             </header>
-            
+
             {/* blog summary */}
             <div className="box is-italic is-family-secondary">
               {data.blog.summary.summary}
             </div>
-            
+
             {/* thumbnail image */}
-            <div 
+            <div
               className="content is-pulled-left"
               style={{margin: '0 2rem 2rem 0'}}
             >
@@ -94,11 +94,11 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
                 alt={data.blog.previewPicture.description}
               />
             </div>
-            
+
             {/* whole blog item */}
             {documentToReactComponents(
               data.blog.body.json, options)}
-              
+
             {/* navigation */}
             <div className="tags">
               <LocalizedLink
@@ -110,7 +110,7 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
             </div>
 
           </article>
-        
+
         </div>
       </section>
     </Layout>
@@ -118,11 +118,11 @@ const Blog = ({pageContext: { locale, langtag }, data}) => {
 }
 
 export const query = graphql`
-  query ( 
+  query (
     $slug: String!
-    $langtag: String!  
-  ) 
-  { 
+    $langtag: String!
+  )
+  {
     blog:contentfulBlogues(
       slug: {eq: $slug}
       node_locale: {eq: $langtag}

@@ -14,9 +14,9 @@ const {
 
 const Layout = ({children, path, locale, langtag}) => {
 
-  return (    
+  return (
     <LocaleProvider value={locale}>
-      
+
       <div className="container">
         <BurgerMenu path={path} langtag={langtag}/>
         {children}

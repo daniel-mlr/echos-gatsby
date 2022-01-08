@@ -21,7 +21,7 @@ const WithLink = ({ link, className, children }) => (link ?
 )
 
 const Concert = (props) => {
-  
+
   // date renderings
   // ---------------
 
@@ -32,10 +32,10 @@ const Concert = (props) => {
   // const concertDate = new Date(props.concertDate)
   const concertDate = new Date(yr, mnt - 1, day, hr, min)
 
-  const dateFormatOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
+  const dateFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
     day: 'numeric',
   }
   const timeFormatOptions = {
@@ -54,9 +54,9 @@ const Concert = (props) => {
       {/* header of the concert, on top of the 2 columns */}
       <h2 className="title">{props.concertName}</h2>
       <h3 className="subtitle">{props.subtitle}</h3>
-      
+
       <div className="columns">
-        
+
         {/* left column: picture */}
         <div className="column is-one-third" style={{ maxWidth: '400px' }}>
           <Img
@@ -65,15 +65,15 @@ const Concert = (props) => {
             alt={props.poster.description}
           />
         </div>
-        
+
         {/* right column: concert info */}
         <div className="column">
           <div className="content">
-            
+
             <p><span className="has-text-weight-bold">
               {t('directionArtistique')}:&ensp;
             </span>{props.artisticDirection}</p>
-            
+
             <p><span className="has-text-weight-bold">
               {t('pianiste')}:&ensp;
             </span> {props.pianiste}</p>
@@ -110,7 +110,7 @@ const Concert = (props) => {
               <div >
                 <p><span className="has-text-weight-medium">
                   {t('child')}:</span>&nbsp;{
-                  props.childFare 
+                  props.childFare
                     ? '$' + parseInt(props.childFare).toFixed(2)
                     : t('free')
                 }</p>
@@ -135,7 +135,7 @@ const Concert = (props) => {
                 </span>
               </time>
             </div>
-            
+
             {/* concert location */}
             <div className="content">
               <GoLocation style={{ transform: 'translateY(2px)' }} />
@@ -158,22 +158,22 @@ const Concert = (props) => {
       <div className="box is-italic is-family-secondary">
         {props.summary.summary}
       </div>
-      
+
       {/* concert full description */}
       <div className="content">
         {documentToReactComponents( props.description.json)}
       </div>
-      
+
       {/* buy button: only show for comming concerts */}
       {props.courant && <BuyButton
         href={props.ticketsUrl} label={t('buyTicket')} />}
-        
+
       <div className="content" style={{ paddingTop: '1.5rem' }}>
         <LocalizedLink to="/">{t('backToMain')}</LocalizedLink>
       </div>
     </section>
   )}
-  
+
 Concert.propTypes = {
   name: PropTypes.string,
 }

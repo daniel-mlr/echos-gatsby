@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SectionDivider = (props) => ( 
+const SectionDivider = (props) => (
   <div
     className="is-divider"
     data-content={props.label}>

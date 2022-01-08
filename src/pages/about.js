@@ -12,7 +12,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
 
   // flatten edges by removing the node layer, to obtain an array of objects
   const dataMap = data.about.edges.map((edge) => edge.node)
-  
+
   // transform an array of objects into an object with keynames
   // corresponding to the string in keyField property of each objects
   const arrayToObject = (arr, keyField) =>
@@ -20,10 +20,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
       obj[item[keyField]] = item
       return obj
     }, {})
-  
+
   // all the tiles content, each identified by their tileName
   const tiles = arrayToObject(dataMap, 'tileName')
-  
+
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
@@ -52,10 +52,10 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
         title={labels.about[langtag]}
       />
       <section className="section" style={{'paddingTop': 0}} >
-        
+
         <div className="tile is-ancestor">
           <div className="tile is-parent">
-            <AboutTile 
+            <AboutTile
               className="tile is-child notification has-background-grey-lighter"
               {...tiles.theChoir}
             />
@@ -66,7 +66,7 @@ const AboutPage = ({pageContext: { locale, langtag }, data }) => {
           <div className="tile is-vertical is-8">
             <div className="tile">
               <div className="tile is-parent is-vertical">
-                <AboutTile 
+                <AboutTile
                   className="tile is-child notification is-primary"
                   {...tiles.rehearsals}
                 />
@@ -122,8 +122,8 @@ query ($langtag: String!) {
       node {
         tileName
         title
-			  sousTitre
-			  image {
+        sousTitre
+        image {
           title
           description
           fluid(maxWidth: 500) {

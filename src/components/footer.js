@@ -46,7 +46,7 @@ const Footer = (props) => {
             alignSelf: 'flex-end'
           }}>
             <div style={{display: 'flex', alignSelf: 'center'}} >
-              <a 
+              <a
                 style={{ color: 'inherit', padding: '0 20px' }}
                 href="https://twitter.com/ChoeurLesEchos"
               >

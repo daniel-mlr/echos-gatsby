@@ -18,8 +18,8 @@ const AnnonceCard = (props => {
         return <img alt={alt} src={url}/>
       },
 
-      // to do: find the propeer way to handle hyperlinks 
-      // meanwhile I disable hyperlink 
+      // to do: find the propeer way to handle hyperlinks
+      // meanwhile I disable hyperlink
 
       // // eslint-disable-next-line react/display-name
       // 'entry-hyperlink': (node, children) => {
@@ -33,13 +33,13 @@ const AnnonceCard = (props => {
       // }
     }
   }
-  
+
   return (
     <div className="box">
       <article className="media">
         <div className="media-left is-hidden-mobile">
           {
-            props.image && 
+            props.image &&
             <figure className="image is-128x128">
               {/* <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image"/> */}
               <Img fixed={props.image.fixed}

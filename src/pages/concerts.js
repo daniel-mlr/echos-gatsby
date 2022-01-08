@@ -8,7 +8,7 @@ import Hero from '../components/hero'
 import labels from '../constants/concert'
 
 const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
-  
+
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
@@ -38,7 +38,7 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
     path
   }
   const layoutData = {path, locale, langtag}
-  
+
   return (
     <Layout {...layoutData}>
       <SEO {...seoData} />
@@ -47,10 +47,10 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
         alt=""
         title='CONCERTS'
       />
-      
+
       {/* comming concert page content, if any */}
       {
-        !!futureConcerts.length && 
+        !!futureConcerts.length &&
         <article className="section">
 
           <SectionDivider
@@ -60,7 +60,7 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
           />
 
           { // print coming concerts, date ascending order
-            futureConcerts.reverse().map((edge, idx) => 
+            futureConcerts.reverse().map((edge, idx) =>
               <Concert key={idx} courant langtag {...edge.node} />
             )
           }
@@ -70,17 +70,17 @@ const ConcertsPage = ({pageContext: { locale, langtag }, data}) => {
 
       {/* former concerts page content */}
       <article className="section">
-        
+
         <SectionDivider label={t('pastConcerts')} />
 
         { // print former concerts
-          formerConcerts.map((edge, idx) => 
+          formerConcerts.map((edge, idx) =>
             <Concert key={idx} {...edge.node} />
           )
         }
 
       </article>
-      
+
     </Layout>
   )
 }
@@ -90,7 +90,7 @@ query ($langtag: String = "fr-CA"){
   concert:allContentfulConcerts (
     filter: {node_locale: { eq: $langtag }}
     sort: {fields: concertDate, order: DESC}
-    ) 
+    )
   {
     edges {
       node {
@@ -121,10 +121,10 @@ query ($langtag: String = "fr-CA"){
         lieu2
         lieuUrl { lieuUrl }
         seoDescription { seoDescription }
-      } 
+      }
     }
   }
-  
+
   file(name: {eq: "tenors-sopranos3_1920x592"}) {
     childImageSharp {
       fluid(quality: 90, maxWidth: 1366) {
@@ -134,5 +134,4 @@ query ($langtag: String = "fr-CA"){
   }
 }
 `
-
 export default ConcertsPage

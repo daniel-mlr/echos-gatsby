@@ -35,13 +35,13 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
   return (
     // <Layout path={path} locale={locale} langtag={langtag}>
     <Layout {...layoutData} >
-      
+
       <SEO {...seoData}
         // title={labels.news[langtag]}
         // title={t('seoNewsTitle').concat(' | Les Échos du Pacifique')}
         // meta={[ {name: 'title', content: t('seoMetaTitleContent').concat(' | Les Échos')} ]}
       />
-      
+
       <Hero
         imgFluid={data.file.childImageSharp.fluid}
         title={labels.news[langtag]}
@@ -50,10 +50,10 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
         <div className="container is-desktop">
           {
             data.blog.edges.map((edge, id) => {
-              
+
               return ( // blog media card
                 <article className="media" key={id} >
-                  
+
                   {/* left side thumbnail */}
                   <LocalizedLink to={`/blog/${edge.node.slug}`}>
                     <figure className="media-left">
@@ -66,21 +66,21 @@ const BlogPage = ({pageContext: { locale, langtag }, data}) => {
                       </div>
                     </figure>
                   </LocalizedLink>
-                  
+
                   <div className="media-content">
-                    
+
                     {/* title  */}
                     <LocalizedLink to={`/blog/${edge.node.slug}`}>
                       <h2 className="title is-5 is-marginless">
                         {edge.node.titre}</h2>
                     </LocalizedLink>
-                    
+
                     {/* date */}
                     <p className="is-italic">{edge.node.publicationDate}</p>
-                    
+
                     {/* summary */}
                     <p>{edge.node.summary.summary}</p>
-                    
+
                     {/* link */}
                     <LocalizedLink to={`/blog/${edge.node.slug}`}
                     >{labels['readMore'][langtag]}</LocalizedLink>

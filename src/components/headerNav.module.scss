@@ -20,7 +20,7 @@
   text-align: right;
   flex-grow: 8;
   /* Style the links inside the navigation bar */
-  a {    
+  a {
     display: inline-block;
     // color: $nav-items-color;
     text-align: center;
@@ -31,15 +31,15 @@
     font-size: 17px;
     font-variant: small-caps;
   }
-  
+
   /* Change the color of links on hover */
-  a:hover {    
+  a:hover {
     // color: $primary-color;
     color: $secondary;
     // color: $nav-items-color-hover;
   }
   /* Add an active class to highlight the current page */
-  a.active {    
+  a.active {
     color:$secondary;
     font-weight: bolder;
   }

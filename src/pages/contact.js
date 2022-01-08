@@ -50,9 +50,9 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
         title={'Contacts'}
       />
       <section className="section" style={{paddingTop:'1rem'}} >
-       
+
         <div className="content">
-         
+
           {/* message format libre */}
           {documentToReactComponents(
             data.meta.contactUsMainMessage.json,
@@ -60,7 +60,7 @@ const ContactPage = ({pageContext: { locale, langtag }, data}) => {
 
           {/* adresse */}
           <p className="is-italic" >
-            <GoLocation />&ensp; 
+            <GoLocation />&ensp;
             <span>{data.meta.contactUsAddress1}&ensp;</span>
             <span>{data.meta.contactUsAddress2}</span>
           </p>

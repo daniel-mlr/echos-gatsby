@@ -13,7 +13,7 @@ const Hero = (props) => {
         }}
       />
       {
-        props.title && 
+        props.title &&
         <div className="hero-body">
           <div className="container semi-transparent-dark">
             <h1 className="hero-secondary has-text-white is-family-title is-uppercase">

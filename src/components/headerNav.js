@@ -4,7 +4,7 @@ import headerStyles from './headerNav.module.scss'
 import LocalizedLink from './localizedLink'
 
 const HeaderNav = (params) => {
-  
+
   const data = useStaticQuery(graphql`
     query {
       site {

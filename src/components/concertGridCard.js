@@ -12,7 +12,7 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
   })
 
   const currentAnnouncements = annonces.edges.filter((edge) => {
-    return (new Date(edge.node.datePublication) <= new Date() 
+    return (new Date(edge.node.datePublication) <= new Date()
     & new Date(edge.node.dateFinPublication) > new Date()
     )
   })
@@ -21,12 +21,12 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
   const concurrentAnnouncements = currentAnnouncements.filter((edge) => {
     return edge.node.publishConcurrently
   })
-  
+
   // translation rendering helper function
   const t = (label) => labels[label][langtag]
 
   // if no future concerts, publish all current and concurrentAnnouncements
-  // (i.e.: all announcements starting before or at current date 
+  // (i.e.: all announcements starting before or at current date
   //   and ending after current date)
   // Render divider and concert announces if any
 
@@ -51,13 +51,13 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
             ? t('nextConcerts')
             : t('nextConcert')} />
 
-          { // render concerts 
+          { // render concerts
             futureConcerts.map(
               (edge, idx) => <ConcertCard node={edge.node} key={idx} />)
           }
 
         </section>
-      </> 
+      </>
     )
   } else { // there is no future concerts
 
@@ -77,6 +77,6 @@ const ConcertGridCard = ({langtag, concerts, annonces}) => {
       </>
     )
   }
-} 
+}
 
 export default ConcertGridCard

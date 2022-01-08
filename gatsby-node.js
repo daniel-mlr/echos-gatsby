@@ -19,11 +19,11 @@ module.exports.createPages = async ({ graphql, actions }) => {
           node { slug }
         }
       }
-    } 
+    }
   `)
   res.data.blogs.edges.forEach( (edge) => {
     Object.keys(locales).map(lang => {
-      
+
       const blogPath = `/blog/${edge.node.slug}`
       const localizedPath = locales[lang].default
         ? blogPath
@@ -40,10 +40,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
       })
     })
   })
-  
+
   res.data.members.edges.forEach( (edge) => {
     Object.keys(locales).map(lang => {
-      
+
       const membersPath = `/members/${edge.node.slug}`
       const localizedPath = locales[lang].default
         ? membersPath
@@ -69,7 +69,7 @@ exports.onCreatePage = ({ page, actions }) => {
     deletePage(page)
 
     Object.keys(locales).map(lang => {
-      
+
       const localizedPath = locales[lang].default
         ? page.path
         : locales[lang].path + page.path

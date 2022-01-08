@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {Carousel} from 'react-responsive-carousel'
 
 const Jumbotron = () => {
-  
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -16,7 +16,7 @@ const Jumbotron = () => {
           }
         }
       }
-      assets: allContentfulAsset 
+      assets: allContentfulAsset
       (
         filter: {
           title: {regex: "/^Carousel/"}
@@ -53,7 +53,7 @@ const Jumbotron = () => {
 
   return (
     <section className="hero is-full-height has-background">
-      
+
       <Carousel {...carouselOptions}>
         {data.assets.edges.map(edge => (
           <Img
@@ -66,7 +66,7 @@ const Jumbotron = () => {
           />
         ))}
       </Carousel>
-    
+
       <div className="hero-body">
         <div className="container semi-transparent-light">
           <h1 className="site-name">

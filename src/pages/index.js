@@ -38,13 +38,13 @@ const IndexPage = ({pageContext: { locale, langtag }, data}) => {
   )
 }
 
-// rules: 
+// rules:
 // only future date concerts must appear in home page
-// if there are: they must be listed in ascending order 
+// if there are: they must be listed in ascending order
 // (first happening listed first)
 
 // const today = new Date()  // seemingly, variables to be used in query cannot be defined here
-// so I am filtering the concerts by date in javascript 
+// so I am filtering the concerts by date in javascript
 
 export const query = graphql`
 query (
@@ -55,12 +55,12 @@ query (
     filter: {node_locale: {eq: $langtag}}
   )
   {
-		edges {
-			node {
-				identifiant
-				publishConcurrently
-				node_locale
-				datePublication
+    edges {
+      node {
+        identifiant
+        publishConcurrently
+        node_locale
+        datePublication
         dateFinPublication
         content { json }
         image {
@@ -70,9 +70,9 @@ query (
             ...GatsbyContentfulFixed
           }
         }
-			}
-		}
-	}
+      }
+    }
+  }
   blog:allContentfulBlogues(
     filter: {node_locale: { eq: $langtag }}
     sort: { fields: publicationDate, order: DESC }
@@ -84,8 +84,8 @@ query (
         titre
         publicationDate(formatString: "MMM Do, YYYY")
         slug
-        previewPicture { 
-          title 
+        previewPicture {
+          title
           description
           fluid(maxWidth: 450) {
             ...GatsbyContentfulFluid
@@ -114,8 +114,8 @@ query (
         pianiste
         participation
         summary { summary }
-        poster { 
-          title 
+        poster {
+          title
           description
           fluid (maxWidth: 500) {
             ...GatsbyContentfulFluid

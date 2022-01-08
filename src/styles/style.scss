@@ -70,7 +70,7 @@
 }
 
 // *****************************
-//     header 
+//     header
 // *****************************
 
 .header {
@@ -173,7 +173,7 @@
 // ***********************************
 
 @media screen and (min-width: 1367px) {
-  // when screen is over 1366px we no logner 
+  // when screen is over 1366px we no longer
   // grow columns paddings and margins left-right
   .section {
     padding: nth($section-padding, 1) 0;
@@ -198,7 +198,7 @@
 }
 
 @media screen and (max-width: 1215px) {
-  // laptop 
+  // laptop
   .site-name {
     font-size: 3.4em;
   }
@@ -275,7 +275,7 @@
 
 
 // ****************************************
-//           utilities generations 
+//           utilities generations
 // ****************************************
 // //To add margin or padding.
 // // <div class="mt-10">This div has top margin 10px</div>
@@ -306,7 +306,7 @@ $positions: ('top','left','bottom','right');
 .is-divider[data-content]::after, .is-divider-vertical[data-content]::after {
   margin: -0.5em 0 0 0;
 }
-.container { 
+.container {
   max-width: 1366px;
  }
  .has-text-secondary {

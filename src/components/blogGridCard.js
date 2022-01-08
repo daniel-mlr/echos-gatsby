@@ -12,7 +12,7 @@ const BlogGridCard = ({langtag, data}) => {
       <SectionDivider label={labels.news[langtag]} />
 
       <div className="columns">
-        {/* show 2 entries of blogs if viewport is less than laptop, 
+        {/* show 2 entries of blogs if viewport is less than laptop,
           3 entries from laptop to widescreen and
           4 entries for wide screens */
           data.edges.map((edge, idx) => {
@@ -27,7 +27,7 @@ const BlogGridCard = ({langtag, data}) => {
           })
         }
       </div>
-      
+
       {/* read more button */}
       <div className="container" style={{paddingTop: '2rem'}}>
         <ReadMoreButton
@@ -35,7 +35,7 @@ const BlogGridCard = ({langtag, data}) => {
           label={labels.readMoreButton[langtag]}
         />
       </div>
-      
+
     </section>
   )
 }

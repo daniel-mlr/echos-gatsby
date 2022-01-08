@@ -5,7 +5,7 @@ import LocalizedLink from './localizedLink'
 import labels from '../constants/blogs'
 
 const BlogCard = (props) => {
-  
+
   return (
     <div className="card">
       <div className="card-image">
@@ -14,7 +14,7 @@ const BlogCard = (props) => {
           alt={props.previewPicture.description}
           title={props.previewPicture.title}
         />
-      </div> 
+      </div>
 
       <div className="card-content">
         <h3 className="title is-4 blog-card-title" >{props.titre}</h3>
@@ -34,7 +34,7 @@ const BlogCard = (props) => {
       </div>
     </div>
   )}
-  
+
 BlogCard.propTypes = {
   name: PropTypes.string,
   date: PropTypes.string,
