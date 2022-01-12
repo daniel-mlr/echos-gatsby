@@ -58,7 +58,9 @@ const Footer = (props) => {
               >
                 <FaFacebook className="icon is-large" title="facebook" />
               </a>
-              <a style={{ color: 'inherit', padding: '0 20px' }} href="#">
+              <a style={{ color: 'inherit', padding: '0 20px' }} href="#"
+                href="https://www.instagram.com/lesechosdupacifique73/"
+              >
                 <FaInstagram className="icon is-large" title="instagram" />
               </a>
             </div>
